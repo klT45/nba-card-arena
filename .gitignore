@@ -150,3 +150,4 @@ lebron_raw.png
 
 # Raw third-party source photos and cutouts (local only; required by scripts/build_static_cards.py)
 cards/_source/
+cards/_work/

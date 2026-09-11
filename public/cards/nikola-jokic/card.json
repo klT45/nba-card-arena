@@ -21,12 +21,18 @@
     "playmaking": 99,
     "defense": 90
   },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51915490370).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "assets": {
     "front": "/cards/nikola-jokic/front.webp",
     "thumb": "/cards/nikola-jokic/thumb.webp",
     "subject": "/cards/nikola-jokic/subject.webp",
-    "background": "/cards/nikola-jokic/background.webp"
+    "background": "/cards/nikola-jokic/background.webp",
+    "layers": {
+      "subject": "/cards/nikola-jokic/layers/subject.png",
+      "background": "/cards/nikola-jokic/layers/background.png",
+      "lineart": "/cards/nikola-jokic/layers/lineart.png",
+      "text": "/cards/nikola-jokic/layers/text.png"
+    }
   }
 }

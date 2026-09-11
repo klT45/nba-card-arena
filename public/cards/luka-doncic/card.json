@@ -1,0 +1,40 @@
+{
+  "id": "luka-doncic",
+  "name": "Luka Doncic",
+  "number": "77",
+  "team": "Los Angeles",
+  "teamShort": "LAL",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "MYTHIC",
+  "rating": 97,
+  "accent": "#7fc4f2",
+  "accent2": "#002b5e",
+  "title": "THE MAESTRO",
+  "stats": {
+    "finishing": 93,
+    "shooting": 95,
+    "playmaking": 98,
+    "defense": 82
+  },
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51916605744).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "assets": {
+    "front": "/cards/luka-doncic/front.webp",
+    "thumb": "/cards/luka-doncic/thumb.webp",
+    "subject": "/cards/luka-doncic/subject.webp",
+    "background": "/cards/luka-doncic/background.webp",
+    "layers": {
+      "subject": "/cards/luka-doncic/layers/subject.png",
+      "background": "/cards/luka-doncic/layers/background.png",
+      "lineart": "/cards/luka-doncic/layers/lineart.png",
+      "text": "/cards/luka-doncic/layers/text.png"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "id": "devin-booker",
   "name": "Devin Booker",
-  "number": "01",
+  "number": "1",
   "team": "Phoenix",
   "teamShort": "PHX",
   "positions": [
@@ -15,7 +15,7 @@
   "rarity": "ELITE",
   "rating": 94,
   "accent": "#ffb81c",
-  "accent2": "#5f259f",
+  "accent2": "#3d1a63",
   "title": "DESERT SNIPER",
   "stats": {
     "finishing": 92,
@@ -23,12 +23,18 @@
     "playmaking": 90,
     "defense": 84
   },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Booker_and_Curry,_Paris_2024_Olympic_Games.jpg",
-  "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51915986756).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "assets": {
     "front": "/cards/devin-booker/front.webp",
     "thumb": "/cards/devin-booker/thumb.webp",
     "subject": "/cards/devin-booker/subject.webp",
-    "background": "/cards/devin-booker/background.webp"
+    "background": "/cards/devin-booker/background.webp",
+    "layers": {
+      "subject": "/cards/devin-booker/layers/subject.png",
+      "background": "/cards/devin-booker/layers/background.png",
+      "lineart": "/cards/devin-booker/layers/lineart.png",
+      "text": "/cards/devin-booker/layers/text.png"
+    }
   }
 }

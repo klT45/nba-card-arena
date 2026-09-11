@@ -13,7 +13,7 @@
   "rarity": "MYTHIC",
   "rating": 97,
   "accent": "#ffc72c",
-  "accent2": "#1d428a",
+  "accent2": "#132a5e",
   "title": "THE CHEF",
   "stats": {
     "finishing": 91,
@@ -21,12 +21,18 @@
     "playmaking": 96,
     "defense": 82
   },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51913998322).jpg",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "assets": {
     "front": "/cards/stephen-curry/front.webp",
     "thumb": "/cards/stephen-curry/thumb.webp",
     "subject": "/cards/stephen-curry/subject.webp",
-    "background": "/cards/stephen-curry/background.webp"
+    "background": "/cards/stephen-curry/background.webp",
+    "layers": {
+      "subject": "/cards/stephen-curry/layers/subject.png",
+      "background": "/cards/stephen-curry/layers/background.png",
+      "lineart": "/cards/stephen-curry/layers/lineart.png",
+      "text": "/cards/stephen-curry/layers/text.png"
+    }
   }
 }

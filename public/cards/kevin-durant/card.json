@@ -15,7 +15,7 @@
   "rarity": "MYTHIC",
   "rating": 97,
   "accent": "#ff6a13",
-  "accent2": "#28155e",
+  "accent2": "#241456",
   "title": "SLIM REAPER",
   "stats": {
     "finishing": 96,
@@ -23,12 +23,18 @@
     "playmaking": 91,
     "defense": 89
   },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant,_Olympic_Games_2024.jpg",
-  "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
+  "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
   "assets": {
     "front": "/cards/kevin-durant/front.webp",
     "thumb": "/cards/kevin-durant/thumb.webp",
     "subject": "/cards/kevin-durant/subject.webp",
-    "background": "/cards/kevin-durant/background.webp"
+    "background": "/cards/kevin-durant/background.webp",
+    "layers": {
+      "subject": "/cards/kevin-durant/layers/subject.png",
+      "background": "/cards/kevin-durant/layers/background.png",
+      "lineart": "/cards/kevin-durant/layers/lineart.png",
+      "text": "/cards/kevin-durant/layers/text.png"
+    }
   }
 }

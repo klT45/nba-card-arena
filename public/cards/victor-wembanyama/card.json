@@ -1,0 +1,40 @@
+{
+  "id": "victor-wembanyama",
+  "name": "Victor Wembanyama",
+  "number": "1",
+  "team": "San Antonio",
+  "teamShort": "SAS",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "rating": 96,
+  "accent": "#cfd4da",
+  "accent2": "#1b1e24",
+  "title": "THE ALIEN",
+  "stats": {
+    "finishing": 92,
+    "shooting": 90,
+    "playmaking": 85,
+    "defense": 99
+  },
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_(51915916671).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "assets": {
+    "front": "/cards/victor-wembanyama/front.webp",
+    "thumb": "/cards/victor-wembanyama/thumb.webp",
+    "subject": "/cards/victor-wembanyama/subject.webp",
+    "background": "/cards/victor-wembanyama/background.webp",
+    "layers": {
+      "subject": "/cards/victor-wembanyama/layers/subject.png",
+      "background": "/cards/victor-wembanyama/layers/background.png",
+      "lineart": "/cards/victor-wembanyama/layers/lineart.png",
+      "text": "/cards/victor-wembanyama/layers/text.png"
+    }
+  }
+}

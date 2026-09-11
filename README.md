@@ -1,69 +1,77 @@
 # NBA Card Arena · NBA球星卡抽卡组阵容
 
-> 抽选 NBA 球星闪卡，组建你的梦幻阵容。
-> 每张卡由 `holo-card-studio` 技能制作：Blender 全息材质 + Three.js 可交互网页（拖拽旋转 / 翻面 / 镭射 / 手机适配）。
+> 抽选 NBA 球星闪卡，组建你的梦幻五人首发。
+> 卡面由 `holo-card-studio` 技能的四层素材规范制作，网页端用其实时镭射着色器渲染：
+> 视差分层、彩虹镭射、扫光、星点、Bloom。
 
 仓库：https://github.com/klT45/nba-card-arena
 
-## 首张卡 · LeBron James No.23（已交付）
-
-- 目录：`cards/lebron-james-001/`
-- 配置：湖人紫金配色，`CHOSEN ONE / 4× NBA Champion · All-Time Scoring King`，编号 `001 / 023`
-- 产物：
-  - `card.blend` — 可编辑 Blender 工程（已兼容 Blender 5.x，见下）
-  - `renders/hero.png` — 渲染图
-  - `web/` — 本地预览站（`node server.mjs` 后打开 http://127.0.0.1:4173）
-  - `assets/` — background / subject / lineart / text 四层图 + `card-config.json`
-  - `verification.json` + `asset-validation.json` — 构建报告
-
-本地预览：
+## 在线体验
 
 ```bash
-cd cards/lebron-james-001/web
-npm install --ignore-scripts --no-audit --no-fund
-node server.mjs
-# 打开 http://127.0.0.1:4173
+npm install
+npm run build:cards   # 生成 9 张卡的图层与静态图（需要 cards/_work/cut/*.png）
+npm run dev           # http://127.0.0.1:5173
+# 或
+npm run preview       # http://127.0.0.1:4174
 ```
+
+## 卡池（9 位 · 覆盖五个位置）
+
+| 球员 | 位置 | OVR | 稀有度 |
+| --- | --- | --- | --- |
+| LeBron James | PG / SF | 98 | MYTHIC |
+| Stephen Curry | PG | 97 | MYTHIC |
+| Luka Doncic | PG / SG | 97 | MYTHIC |
+| Devin Booker | SG / PG | 94 | ELITE |
+| Kevin Durant | SF / PF | 97 | MYTHIC |
+| Jayson Tatum | SF / PF | 96 | MYTHIC |
+| Giannis Antetokounmpo | PF / C | 97 | MYTHIC |
+| Victor Wembanyama | PF / C | 96 | MYTHIC |
+| Nikola Jokic | C | 98 | MYTHIC |
+
+## 功能
+
+- **展厅**：按位置筛选，卡片拖拽时只更新 CSS 变换（不持续跑后处理），保持滑动流畅。
+- **实时镭射卡面**：详情弹窗与首页主卡由 `src/holo.js` 实时渲染，复用技能的四层着色器。
+- **抽卡**：随机抽取 → 卡面揭晓 → 选择位置 → 确认加入（确认后自动关闭弹窗）→ 或「暂不加入」。
+- **阵容**：五个位置各限一人；多位置球星可自由选择；同一球员不可重复上阵；TEAM OVR 实时计算。
+- **中文排版**：标题使用中文字体栈（Noto Sans SC / PingFang SC / 微软雅黑），修正了此前中文继承
+  拉丁紧排参数导致的字距/行高错乱。
+
+## 素材管线
+
+```
+scripts/source_players.py   # 从 Wikimedia Commons 检索候选照片 → rembg(u2net_human_seg) 抠图 → 客观打分选优
+scripts/build_cards.py      # 生成四层素材 + 静态卡面，并写出 manifest.json
+src/holo.js                 # 技能着色器的网页端实现（薄卡片网格，无需逐卡 Blender 导出）
+```
+
+`build_cards.py` 为每位球员输出与前缀一致的等尺寸图层（1024×1493）：
+`layers/subject.png`（带真实 alpha）、`layers/background.png`、`layers/lineart.png`（白底墨线）、
+`layers/text.png`（仅文字，带 alpha），以及展厅/抽卡用的合成 `front.webp` / `thumb.webp`。
+图层通过技能 `validate_assets.py` 的等价校验（尺寸一致、主体与文字同时存在可见与透明像素、线稿深色压白底）。
 
 ## 目录结构
 
 ```
 nba-card-arena/
 ├── cards/
-│   └── lebron-james-001/   # 首张：LeBron James 全息镭射卡
-├── docs/                   # （规划）抽卡概率、阵容规则
-├── app/                    # （规划）抽卡 + 阵容前端
-└── README.md
+│   ├── lebron-james-001/     # 技能产出的首张卡（Blender 工程 + 四层图 + 本地 3D 预览）
+│   └── _work/                # 本地缓存：候选原图与抠图（不入库）
+├── public/
+│   ├── cards/<id>/           # 生成的卡面与图层（入库）
+│   └── legacy/lebron/        # 首张卡的 Three.js 3D 预览（静态托管）
+├── scripts/                  # 素材管线
+├── src/                      # 站点代码（main.js / holo.js / style.css）
+└── index.html
 ```
-
-## 路线图
-
-- [x] 技能包接入（`holo-card-studio`）
-- [x] 首张闪卡：LeBron James 全息卡 + 本地预览验证
-- [ ] 第 2–5 张卡（库里 / 杜兰特 / 约基奇 / 字母哥 …）
-- [ ] 多卡展厅（参考技能 `references/gallery-distribution.md`）
-- [ ] 抽卡系统（概率 / 保底 / 重复分解）
-- [ ] 阵容系统（5 人首发 + 能力值 + 羁绊）
-
-## 制卡方式（给未来的自己）
-
-技能已安装到：
-
-- `C:/Users/lu/.agents/skills/holo-card-studio/`（自动加载）
-- `C:/Users/lu/.config/opencode/skills/holo-card-studio/`（全局）
-
-新卡流程（全息路线）：准备 1024×1536 四层 PNG → 写 `card-config.json` →
-`generate_typography.py` 生成文字层 → `validate_assets.py` 校验 →
-`scripts/holographic/run_pipeline.py --project <dir>` 构建。
-
-> 兼容性补丁：原技能只支持 Blender 4.5（`scene.node_tree`），
-> 本机 Blender 5.1 已通过补丁兼容（`compositing_node_group` + Glare 节点兜底），
-> 改动在技能目录 `scripts/holographic/build_card.py` 与 `scripts/build_card.py`。
 
 ## 素材与权利声明（重要）
 
-- 首张卡主体图来源：https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/ ，
-  License 为 **CC BY-NC 4.0（需署名、非商业）**，原始下载文件未入库，仅保留署名与链接。
-- 球员肖像权、NBA / 球队商标归各自权利人所有。本仓库首张卡仅作**技术演示与个人学习**，
-  不得用于商业发行。如需公开发行请替换为正版授权素材或原创画作。
+- 除 LeBron 外，全部球员照片来自 **Wikimedia Commons**，以 **CC BY 2.0 / CC BY-SA 4.0** 授权，
+  已在 `public/cards/manifest.json` 的 `sourceUrl` / `sourceCredit` 中逐张署名。原始照片不入库。
+- LeBron 主体图来源：https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/
+  （**CC BY-NC 4.0：署名、非商业**），原始文件不入库。
+- 球员肖像权、NBA / 球队商标归各自权利人所有。本仓库仅作**技术演示与个人学习**，不得用于商业发行。
 - 代码部分 MIT（见 LICENSE）。

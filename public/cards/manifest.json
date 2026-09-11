@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "players": [
     {
       "id": "lebron-james",
@@ -18,7 +18,7 @@
       "rarity": "MYTHIC",
       "rating": 98,
       "accent": "#f6c547",
-      "accent2": "#6c2bd9",
+      "accent2": "#2a1b5e",
       "title": "THE CHOSEN ONE",
       "stats": {
         "finishing": 99,
@@ -32,7 +32,13 @@
         "front": "/cards/lebron-james/front.webp",
         "thumb": "/cards/lebron-james/thumb.webp",
         "subject": "/cards/lebron-james/subject.webp",
-        "background": "/cards/lebron-james/background.webp"
+        "background": "/cards/lebron-james/background.webp",
+        "layers": {
+          "subject": "/cards/lebron-james/layers/subject.png",
+          "background": "/cards/lebron-james/layers/background.png",
+          "lineart": "/cards/lebron-james/layers/lineart.png",
+          "text": "/cards/lebron-james/layers/text.png"
+        }
       }
     },
     {
@@ -50,7 +56,7 @@
       "rarity": "MYTHIC",
       "rating": 97,
       "accent": "#ffc72c",
-      "accent2": "#1d428a",
+      "accent2": "#132a5e",
       "title": "THE CHEF",
       "stats": {
         "finishing": 91,
@@ -58,19 +64,25 @@
         "playmaking": 96,
         "defense": 82
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51913998322).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "assets": {
         "front": "/cards/stephen-curry/front.webp",
         "thumb": "/cards/stephen-curry/thumb.webp",
         "subject": "/cards/stephen-curry/subject.webp",
-        "background": "/cards/stephen-curry/background.webp"
+        "background": "/cards/stephen-curry/background.webp",
+        "layers": {
+          "subject": "/cards/stephen-curry/layers/subject.png",
+          "background": "/cards/stephen-curry/layers/background.png",
+          "lineart": "/cards/stephen-curry/layers/lineart.png",
+          "text": "/cards/stephen-curry/layers/text.png"
+        }
       }
     },
     {
       "id": "devin-booker",
       "name": "Devin Booker",
-      "number": "01",
+      "number": "1",
       "team": "Phoenix",
       "teamShort": "PHX",
       "positions": [
@@ -84,7 +96,7 @@
       "rarity": "ELITE",
       "rating": 94,
       "accent": "#ffb81c",
-      "accent2": "#5f259f",
+      "accent2": "#3d1a63",
       "title": "DESERT SNIPER",
       "stats": {
         "finishing": 92,
@@ -92,13 +104,19 @@
         "playmaking": 90,
         "defense": 84
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Booker_and_Curry,_Paris_2024_Olympic_Games.jpg",
-      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51915986756).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "assets": {
         "front": "/cards/devin-booker/front.webp",
         "thumb": "/cards/devin-booker/thumb.webp",
         "subject": "/cards/devin-booker/subject.webp",
-        "background": "/cards/devin-booker/background.webp"
+        "background": "/cards/devin-booker/background.webp",
+        "layers": {
+          "subject": "/cards/devin-booker/layers/subject.png",
+          "background": "/cards/devin-booker/layers/background.png",
+          "lineart": "/cards/devin-booker/layers/lineart.png",
+          "text": "/cards/devin-booker/layers/text.png"
+        }
       }
     },
     {
@@ -118,7 +136,7 @@
       "rarity": "MYTHIC",
       "rating": 97,
       "accent": "#ff6a13",
-      "accent2": "#28155e",
+      "accent2": "#241456",
       "title": "SLIM REAPER",
       "stats": {
         "finishing": 96,
@@ -126,13 +144,19 @@
         "playmaking": 91,
         "defense": 89
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant,_Olympic_Games_2024.jpg",
-      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
+      "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
       "assets": {
         "front": "/cards/kevin-durant/front.webp",
         "thumb": "/cards/kevin-durant/thumb.webp",
         "subject": "/cards/kevin-durant/subject.webp",
-        "background": "/cards/kevin-durant/background.webp"
+        "background": "/cards/kevin-durant/background.webp",
+        "layers": {
+          "subject": "/cards/kevin-durant/layers/subject.png",
+          "background": "/cards/kevin-durant/layers/background.png",
+          "lineart": "/cards/kevin-durant/layers/lineart.png",
+          "text": "/cards/kevin-durant/layers/text.png"
+        }
       }
     },
     {
@@ -151,8 +175,8 @@
       ],
       "rarity": "MYTHIC",
       "rating": 97,
-      "accent": "#eee1c6",
-      "accent2": "#00471b",
+      "accent": "#e8dcc0",
+      "accent2": "#0b3a1d",
       "title": "GREEK FREAK",
       "stats": {
         "finishing": 99,
@@ -160,13 +184,19 @@
         "playmaking": 91,
         "defense": 97
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915070867).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915516179).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "assets": {
         "front": "/cards/giannis-antetokounmpo/front.webp",
         "thumb": "/cards/giannis-antetokounmpo/thumb.webp",
         "subject": "/cards/giannis-antetokounmpo/subject.webp",
-        "background": "/cards/giannis-antetokounmpo/background.webp"
+        "background": "/cards/giannis-antetokounmpo/background.webp",
+        "layers": {
+          "subject": "/cards/giannis-antetokounmpo/layers/subject.png",
+          "background": "/cards/giannis-antetokounmpo/layers/background.png",
+          "lineart": "/cards/giannis-antetokounmpo/layers/lineart.png",
+          "text": "/cards/giannis-antetokounmpo/layers/text.png"
+        }
       }
     },
     {
@@ -192,13 +222,139 @@
         "playmaking": 99,
         "defense": 90
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51915490370).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "assets": {
         "front": "/cards/nikola-jokic/front.webp",
         "thumb": "/cards/nikola-jokic/thumb.webp",
         "subject": "/cards/nikola-jokic/subject.webp",
-        "background": "/cards/nikola-jokic/background.webp"
+        "background": "/cards/nikola-jokic/background.webp",
+        "layers": {
+          "subject": "/cards/nikola-jokic/layers/subject.png",
+          "background": "/cards/nikola-jokic/layers/background.png",
+          "lineart": "/cards/nikola-jokic/layers/lineart.png",
+          "text": "/cards/nikola-jokic/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "luka-doncic",
+      "name": "Luka Doncic",
+      "number": "77",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 97,
+      "accent": "#7fc4f2",
+      "accent2": "#002b5e",
+      "title": "THE MAESTRO",
+      "stats": {
+        "finishing": 93,
+        "shooting": 95,
+        "playmaking": 98,
+        "defense": 82
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51916605744).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/luka-doncic/front.webp",
+        "thumb": "/cards/luka-doncic/thumb.webp",
+        "subject": "/cards/luka-doncic/subject.webp",
+        "background": "/cards/luka-doncic/background.webp",
+        "layers": {
+          "subject": "/cards/luka-doncic/layers/subject.png",
+          "background": "/cards/luka-doncic/layers/background.png",
+          "lineart": "/cards/luka-doncic/layers/lineart.png",
+          "text": "/cards/luka-doncic/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "jayson-tatum",
+      "name": "Jayson Tatum",
+      "number": "0",
+      "team": "Boston",
+      "teamShort": "BOS",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 96,
+      "accent": "#3ecf7a",
+      "accent2": "#07321a",
+      "title": "THE CLOSER",
+      "stats": {
+        "finishing": 94,
+        "shooting": 93,
+        "playmaking": 89,
+        "defense": 91
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jayson_Tatum_(51916268559).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/jayson-tatum/front.webp",
+        "thumb": "/cards/jayson-tatum/thumb.webp",
+        "subject": "/cards/jayson-tatum/subject.webp",
+        "background": "/cards/jayson-tatum/background.webp",
+        "layers": {
+          "subject": "/cards/jayson-tatum/layers/subject.png",
+          "background": "/cards/jayson-tatum/layers/background.png",
+          "lineart": "/cards/jayson-tatum/layers/lineart.png",
+          "text": "/cards/jayson-tatum/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "victor-wembanyama",
+      "name": "Victor Wembanyama",
+      "number": "1",
+      "team": "San Antonio",
+      "teamShort": "SAS",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 96,
+      "accent": "#cfd4da",
+      "accent2": "#1b1e24",
+      "title": "THE ALIEN",
+      "stats": {
+        "finishing": 92,
+        "shooting": 90,
+        "playmaking": 85,
+        "defense": 99
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_(51915916671).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/victor-wembanyama/front.webp",
+        "thumb": "/cards/victor-wembanyama/thumb.webp",
+        "subject": "/cards/victor-wembanyama/subject.webp",
+        "background": "/cards/victor-wembanyama/background.webp",
+        "layers": {
+          "subject": "/cards/victor-wembanyama/layers/subject.png",
+          "background": "/cards/victor-wembanyama/layers/background.png",
+          "lineart": "/cards/victor-wembanyama/layers/lineart.png",
+          "text": "/cards/victor-wembanyama/layers/text.png"
+        }
       }
     }
   ]

@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:cards": "python scripts/build_static_cards.py",
+    "source:players": "python scripts/source_players.py",
+    "build:cards": "python scripts/build_cards.py",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
   }
 }

@@ -30,23 +30,33 @@
         <div class="hero-copy">
           <p class="kicker"><span></span> SERIES 01 · LEGENDS IN MOTION</p>
           <h1>抽出传奇<br /><i>组建首发。</i></h1>
-          <p class="hero-desc">六位球星，五个位置。每次抽取都是阵容的另一种可能。收藏全息卡面，根据球员位置排出你的终极五人组。</p>
+          <p class="hero-desc">九位球星，五个位置。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
           <div class="hero-actions">
             <button class="cta" data-action="draw">开启一包 <b>↗</b></button>
             <a class="ghost" href="#gallery">进入展厅 <span>↓</span></a>
           </div>
           <div class="series-stats">
-            <div><strong id="card-count">06</strong><span>首发卡池</span></div>
+            <div><strong id="card-count">09</strong><span>首发卡池</span></div>
             <div><strong>05</strong><span>阵容席位</span></div>
             <div><strong>2.5%</strong><span>神话卡率</span></div>
           </div>
         </div>
-        <div class="hero-stack" id="hero-stack" aria-label="球星卡预览"></div>
+        <div class="hero-stack" aria-label="球星卡预览">
+          <div class="holo-stage hero-holo" id="hero-holo"></div>
+          <div class="hero-caption">
+            <div class="hero-caption-name"><strong id="hero-player">—</strong><small id="hero-sub">—</small></div>
+            <div class="hero-nav">
+              <button type="button" id="hero-prev" aria-label="上一位球星">‹</button>
+              <div class="hero-dots" id="hero-dots"></div>
+              <button type="button" id="hero-next" aria-label="下一位球星">›</button>
+            </div>
+          </div>
+        </div>
         <div class="hero-index" aria-hidden="true">001<span>/ SERIES 01</span></div>
       </section>
 
       <section class="ticker" aria-label="球员滚动列表">
-        <div>LEBRON JAMES <i>◆</i> STEPHEN CURRY <i>◆</i> KEVIN DURANT <i>◆</i> NIKOLA JOKIC <i>◆</i> GIANNIS ANTETOKOUNMPO <i>◆</i> DEVIN BOOKER <i>◆</i></div>
+        <div>LEBRON JAMES <i>◆</i> STEPHEN CURRY <i>◆</i> LUKA DONCIC <i>◆</i> KEVIN DURANT <i>◆</i> NIKOLA JOKIC <i>◆</i> GIANNIS ANTETOKOUNMPO <i>◆</i> JAYSON TATUM <i>◆</i> DEVIN BOOKER <i>◆</i> VICTOR WEMBANYAMA <i>◆</i> </div>
       </section>
 
       <section class="gallery section" id="gallery">
@@ -55,7 +65,7 @@
           <p>按场上位置筛选。点击卡片查看分层全息效果，拖动时仅更新 CSS 变换，不持续运行高开销后处理。</p>
         </div>
         <div class="filters" id="filters" role="group" aria-label="位置筛选">
-          <button class="active" data-position="ALL">全部 <span>06</span></button>
+          <button class="active" data-position="ALL">全部 <span>09</span></button>
           <button data-position="PG">控卫</button>
           <button data-position="SG">分卫</button>
           <button data-position="SF">小前锋</button>
@@ -68,7 +78,7 @@
       <section class="lineup section" id="lineup">
         <div class="section-head lineup-head">
           <div><p class="kicker"><span></span> STARTING FIVE</p><h2>我的首发阵容</h2></div>
-          <div class="team-score"><span>TEAM OVR</span><strong id="team-rating">--</strong></div>
+          <div class="team-score"><span>TEAM OVR</span><strong id="team-rating">--</strong><small id="lineup-count">0 / 5</small></div>
         </div>
         <div class="court-wrap">
           <div class="court" id="court">
@@ -85,7 +95,7 @@
             <h3>按位置上阵</h3>
             <p>球员可以进入其任一擅长位置。双位置球星可灵活补位，同一球员不能重复上阵。</p>
             <div class="position-key"><span>PG 控卫</span><span>SG 分卫</span><span>SF 小前锋</span><span>PF 大前锋</span><span>C 中锋</span></div>
-            <button class="cta wide" data-action="draw">抽取补强 <b>＋</b></button>
+            <button class="cta wide" id="lineup-draw">抽取补强 <b>＋</b></button>
             <button class="reset-lineup" id="reset-lineup">清空阵容</button>
           </aside>
         </div>

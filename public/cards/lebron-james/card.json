@@ -15,7 +15,7 @@
   "rarity": "MYTHIC",
   "rating": 98,
   "accent": "#f6c547",
-  "accent2": "#6c2bd9",
+  "accent2": "#2a1b5e",
   "title": "THE CHOSEN ONE",
   "stats": {
     "finishing": 99,
@@ -29,6 +29,12 @@
     "front": "/cards/lebron-james/front.webp",
     "thumb": "/cards/lebron-james/thumb.webp",
     "subject": "/cards/lebron-james/subject.webp",
-    "background": "/cards/lebron-james/background.webp"
+    "background": "/cards/lebron-james/background.webp",
+    "layers": {
+      "subject": "/cards/lebron-james/layers/subject.png",
+      "background": "/cards/lebron-james/layers/background.png",
+      "lineart": "/cards/lebron-james/layers/lineart.png",
+      "text": "/cards/lebron-james/layers/text.png"
+    }
   }
 }
