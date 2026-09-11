@@ -101,3 +101,27 @@
 }
 
 @media(max-width:900px){.hero-stack{height:auto;min-height:0}}
+
+/* ==========================================================================
+   Library-driven additions: secondary filters, rarity/style tags, info grid.
+   Player ratings were removed, so the lineup header now shows completion.
+   ========================================================================== */
+.filter-bar{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px}
+.filter-bar .filters{border-bottom:0;padding-bottom:0}
+.filter-selects{display:flex;gap:12px;flex-wrap:wrap}
+.filter-selects label{display:flex;align-items:center;gap:8px;font-size:12px;color:#8b919b}
+.filter-selects select{background:#12161e;color:var(--ink);border:1px solid #303540;padding:9px 12px;font:600 12px var(--font-display);letter-spacing:.06em;border-radius:8px;cursor:pointer}
+.filter-selects select:hover{border-color:var(--lime)}
+
+.rarity-badge{font:900 11px var(--font-display);letter-spacing:.14em;padding:5px 10px;border-radius:999px;border:1px solid #3a414d;color:#aeb4bf;white-space:nowrap}
+.rarity-badge.rarity-mythic{border-color:var(--lime);color:var(--lime)}
+.rarity-badge.rarity-elite{border-color:#7fc4f2;color:#7fc4f2}
+.style-tag{margin-top:8px;font:700 11px var(--font-display);letter-spacing:.12em;color:#6f7681;text-transform:uppercase}
+
+.info-grid{margin:22px 0 4px;border-top:1px solid #262c36}
+.info-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid #1e232c;font-size:12px}
+.info-row span{color:#8b919b}
+.info-row b{font-weight:600}
+.team-score strong{font-size:46px}
+.admin-link{font:700 11px var(--font-display);letter-spacing:.16em;color:#8b919b;text-decoration:none;border:1px solid #333a46;padding:9px 14px;border-radius:8px}
+.admin-link:hover{border-color:var(--lime);color:var(--lime)}

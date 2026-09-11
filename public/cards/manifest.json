@@ -1,5 +1,32 @@
 {
-  "version": 2,
+  "version": 3,
+  "styles": [
+    {
+      "id": "arena",
+      "name": "霓虹竞技场",
+      "desc": "深色球场渐变 + 光柱 + 团队色霓虹"
+    },
+    {
+      "id": "atelier",
+      "name": "幻光典藏",
+      "desc": "技能默认：墨蓝底 + 古金描边 + 菱纹"
+    },
+    {
+      "id": "gold",
+      "name": "鎏金典藏",
+      "desc": "金属拉丝金 + 高亮金边"
+    },
+    {
+      "id": "ink",
+      "name": "水墨",
+      "desc": "宣纸米白 + 墨晕 + 朱红印章"
+    },
+    {
+      "id": "prism",
+      "name": "棱镜虹彩",
+      "desc": "高饱和多色渐变 + 强虹光"
+    }
+  ],
   "players": [
     {
       "id": "lebron-james",
@@ -16,23 +43,21 @@
         "小前锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 98,
+      "title": "THE CHOSEN ONE",
       "accent": "#f6c547",
       "accent2": "#2a1b5e",
-      "title": "THE CHOSEN ONE",
-      "stats": {
-        "finishing": 99,
-        "shooting": 91,
-        "playmaking": 97,
-        "defense": 92
-      },
+      "style": "atelier",
       "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
       "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",
+      "parameters": {
+        "foil": 0.62,
+        "subjectScale": 1.03,
+        "subjectDepth": 0.28,
+        "backgroundDepth": -0.16
+      },
       "assets": {
         "front": "/cards/lebron-james/front.webp",
         "thumb": "/cards/lebron-james/thumb.webp",
-        "subject": "/cards/lebron-james/subject.webp",
-        "background": "/cards/lebron-james/background.webp",
         "layers": {
           "subject": "/cards/lebron-james/layers/subject.png",
           "background": "/cards/lebron-james/layers/background.png",
@@ -54,23 +79,21 @@
         "控卫"
       ],
       "rarity": "MYTHIC",
-      "rating": 97,
+      "title": "THE CHEF",
       "accent": "#ffc72c",
       "accent2": "#132a5e",
-      "title": "THE CHEF",
-      "stats": {
-        "finishing": 91,
-        "shooting": 99,
-        "playmaking": 96,
-        "defense": 82
-      },
+      "style": "arena",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.68,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.3,
+        "backgroundDepth": -0.18
+      },
       "assets": {
         "front": "/cards/stephen-curry/front.webp",
         "thumb": "/cards/stephen-curry/thumb.webp",
-        "subject": "/cards/stephen-curry/subject.webp",
-        "background": "/cards/stephen-curry/background.webp",
         "layers": {
           "subject": "/cards/stephen-curry/layers/subject.png",
           "background": "/cards/stephen-curry/layers/background.png",
@@ -94,23 +117,21 @@
         "控卫"
       ],
       "rarity": "ELITE",
-      "rating": 94,
+      "title": "DESERT SNIPER",
       "accent": "#ffb81c",
       "accent2": "#3d1a63",
-      "title": "DESERT SNIPER",
-      "stats": {
-        "finishing": 92,
-        "shooting": 96,
-        "playmaking": 90,
-        "defense": 84
-      },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51915986756).jpg",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51916268559).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.68,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.3,
+        "backgroundDepth": -0.18
+      },
       "assets": {
         "front": "/cards/devin-booker/front.webp",
         "thumb": "/cards/devin-booker/thumb.webp",
-        "subject": "/cards/devin-booker/subject.webp",
-        "background": "/cards/devin-booker/background.webp",
         "layers": {
           "subject": "/cards/devin-booker/layers/subject.png",
           "background": "/cards/devin-booker/layers/background.png",
@@ -134,23 +155,21 @@
         "大前锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 97,
+      "title": "SLIM REAPER",
       "accent": "#ff6a13",
       "accent2": "#241456",
-      "title": "SLIM REAPER",
-      "stats": {
-        "finishing": 96,
-        "shooting": 98,
-        "playmaking": 91,
-        "defense": 89
-      },
+      "style": "ink",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
       "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 0.4,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.26,
+        "backgroundDepth": -0.14
+      },
       "assets": {
         "front": "/cards/kevin-durant/front.webp",
         "thumb": "/cards/kevin-durant/thumb.webp",
-        "subject": "/cards/kevin-durant/subject.webp",
-        "background": "/cards/kevin-durant/background.webp",
         "layers": {
           "subject": "/cards/kevin-durant/layers/subject.png",
           "background": "/cards/kevin-durant/layers/background.png",
@@ -174,23 +193,21 @@
         "中锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 97,
+      "title": "GREEK FREAK",
       "accent": "#e8dcc0",
       "accent2": "#0b3a1d",
-      "title": "GREEK FREAK",
-      "stats": {
-        "finishing": 99,
-        "shooting": 84,
-        "playmaking": 91,
-        "defense": 97
-      },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915516179).jpg",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51914060952).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.68,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.3,
+        "backgroundDepth": -0.18
+      },
       "assets": {
         "front": "/cards/giannis-antetokounmpo/front.webp",
         "thumb": "/cards/giannis-antetokounmpo/thumb.webp",
-        "subject": "/cards/giannis-antetokounmpo/subject.webp",
-        "background": "/cards/giannis-antetokounmpo/background.webp",
         "layers": {
           "subject": "/cards/giannis-antetokounmpo/layers/subject.png",
           "background": "/cards/giannis-antetokounmpo/layers/background.png",
@@ -212,23 +229,21 @@
         "中锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 98,
+      "title": "THE JOKER",
       "accent": "#fec524",
       "accent2": "#0e2240",
-      "title": "THE JOKER",
-      "stats": {
-        "finishing": 96,
-        "shooting": 92,
-        "playmaking": 99,
-        "defense": 90
-      },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51915490370).jpg",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.8,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
       "assets": {
         "front": "/cards/nikola-jokic/front.webp",
         "thumb": "/cards/nikola-jokic/thumb.webp",
-        "subject": "/cards/nikola-jokic/subject.webp",
-        "background": "/cards/nikola-jokic/background.webp",
         "layers": {
           "subject": "/cards/nikola-jokic/layers/subject.png",
           "background": "/cards/nikola-jokic/layers/background.png",
@@ -252,23 +267,21 @@
         "分卫"
       ],
       "rarity": "MYTHIC",
-      "rating": 97,
+      "title": "THE MAESTRO",
       "accent": "#7fc4f2",
       "accent2": "#002b5e",
-      "title": "THE MAESTRO",
-      "stats": {
-        "finishing": 93,
-        "shooting": 95,
-        "playmaking": 98,
-        "defense": 82
-      },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51916605744).jpg",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51914012797).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.95,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.22
+      },
       "assets": {
         "front": "/cards/luka-doncic/front.webp",
         "thumb": "/cards/luka-doncic/thumb.webp",
-        "subject": "/cards/luka-doncic/subject.webp",
-        "background": "/cards/luka-doncic/background.webp",
         "layers": {
           "subject": "/cards/luka-doncic/layers/subject.png",
           "background": "/cards/luka-doncic/layers/background.png",
@@ -292,23 +305,21 @@
         "大前锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 96,
+      "title": "THE CLOSER",
       "accent": "#3ecf7a",
       "accent2": "#07321a",
-      "title": "THE CLOSER",
-      "stats": {
-        "finishing": 94,
-        "shooting": 93,
-        "playmaking": 89,
-        "defense": 91
-      },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jayson_Tatum_(51916268559).jpg",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jason_Tatum_(51914776391).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.8,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
       "assets": {
         "front": "/cards/jayson-tatum/front.webp",
         "thumb": "/cards/jayson-tatum/thumb.webp",
-        "subject": "/cards/jayson-tatum/subject.webp",
-        "background": "/cards/jayson-tatum/background.webp",
         "layers": {
           "subject": "/cards/jayson-tatum/layers/subject.png",
           "background": "/cards/jayson-tatum/layers/background.png",
@@ -332,23 +343,21 @@
         "中锋"
       ],
       "rarity": "MYTHIC",
-      "rating": 96,
+      "title": "THE ALIEN",
       "accent": "#cfd4da",
       "accent2": "#1b1e24",
-      "title": "THE ALIEN",
-      "stats": {
-        "finishing": 92,
-        "shooting": 90,
-        "playmaking": 85,
-        "defense": 99
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_San_Antonio_Spurs_2025_NBA_Cup.jpg",
+      "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 0.95,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.22
       },
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_(51915916671).jpg",
-      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "assets": {
         "front": "/cards/victor-wembanyama/front.webp",
         "thumb": "/cards/victor-wembanyama/thumb.webp",
-        "subject": "/cards/victor-wembanyama/subject.webp",
-        "background": "/cards/victor-wembanyama/background.webp",
         "layers": {
           "subject": "/cards/victor-wembanyama/layers/subject.png",
           "background": "/cards/victor-wembanyama/layers/background.png",

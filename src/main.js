@@ -2,16 +2,15 @@ import { createHoloCard } from "./holo.js";
 
 const state = {
   players: [],
-  filter: "ALL",
+  styles: [],
+  filter: { position: "ALL", team: "ALL", style: "ALL" },
   lineup: loadLineup(),
   heroIndex: 0,
-  heroTimer: 0,
 };
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const SLOTS = ["PG", "SG", "SF", "PF", "C"];
-const STAT_LABELS = { finishing: "终结", shooting: "投射", playmaking: "组织", defense: "防守" };
 
 function loadLineup() {
   try { return JSON.parse(localStorage.getItem("nba-card-lineup")) || {}; } catch { return {}; }
@@ -20,6 +19,7 @@ function saveLineup() { localStorage.setItem("nba-card-lineup", JSON.stringify(s
 function esc(s) { return String(s).replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c])); }
 function positionText(p) { return p.positions.map((x, i) => `${x} ${p.positionsZh[i]}`).join(" / "); }
 function playerById(id) { return state.players.find((p) => p.id === id); }
+function styleName(id) { return state.styles.find((s) => s.id === id)?.name || id; }
 function toast(message, kind = "ok") {
   const el = $("#toast");
   el.textContent = message;
@@ -52,8 +52,7 @@ function unmountHolo(container) {
     container.__holo = null;
     container.classList.remove("is-ready");
   }
-  const fallback = $(".holo-fallback", container);
-  if (fallback) fallback.remove();
+  $(".holo-fallback", container)?.remove();
 }
 
 /* ---------------------------------------------------------------- render --- */
@@ -68,30 +67,53 @@ function renderHero() {
   const p = state.players[state.heroIndex];
   if (!p) return;
   $("#hero-player").textContent = p.name;
-  $("#hero-sub").textContent = `${positionText(p)} · ${p.teamShort}`;
+  $("#hero-sub").textContent = `${positionText(p)} · ${p.teamShort} · ${styleName(p.style)}`;
   $("#hero-dots").innerHTML = state.players
     .map((x, i) => `<button type="button" data-hero="${i}" class="${i === state.heroIndex ? "active" : ""}" aria-label="查看 ${esc(x.name)}"><i></i></button>`)
     .join("");
   $("#card-count").textContent = String(state.players.length).padStart(2, "0");
-  const allCount = $('#filters [data-position="ALL"] span');
-  if (allCount) allCount.textContent = String(state.players.length).padStart(2, "0");
-  if ($("#hero-holo").__holo) $("#hero-holo").__holo.show(p);
+  const sc = $("#style-count");
+  if (sc) sc.textContent = String(state.styles.length).padStart(2, "0");
+  const all = $('#filters [data-position="ALL"] span');
+  if (all) all.textContent = String(state.players.length).padStart(2, "0");
+  $("#hero-holo").__holo?.show(p);
 }
 
 function rotateHero(step = 1) {
+  if (!state.players.length) return;
   state.heroIndex = (state.heroIndex + step + state.players.length) % state.players.length;
   renderHero();
 }
 
+function visiblePlayers() {
+  const { position, team, style } = state.filter;
+  return state.players.filter((p) =>
+    (position === "ALL" || p.positions.includes(position)) &&
+    (team === "ALL" || p.teamShort === team) &&
+    (style === "ALL" || p.style === style));
+}
+
 function renderGallery() {
-  const list = state.filter === "ALL" ? state.players : state.players.filter((p) => p.positions.includes(state.filter));
+  const list = visiblePlayers();
   $("#card-grid").innerHTML = list.map((p) => `
     <article class="gallery-card" data-player="${p.id}">
       ${cardVisual(p)}
-      <div class="card-meta"><div><h3>${esc(p.name)}</h3><p>${positionText(p)} · ${p.teamShort}</p></div><span class="rating">${p.rating}</span></div>
+      <div class="card-meta">
+        <div><h3>${esc(p.name)}</h3><p>${positionText(p)} · ${p.teamShort}</p></div>
+        <span class="rarity-badge rarity-${p.rarity.toLowerCase()}">${p.rarity}</span>
+      </div>
+      <div class="style-tag">${esc(styleName(p.style))}</div>
       <div class="card-actions"><button data-detail="${p.id}">查看卡面</button><button data-add="${p.id}">加入阵容</button></div>
-    </article>`).join("") || "<p class=\"empty\">该位置暂无球员。</p>";
+    </article>`).join("") || '<p class="empty">没有符合条件的球员。</p>';
   setupTilts($("#card-grid"));
+}
+
+function renderFilterOptions() {
+  const teams = [...new Set(state.players.map((p) => p.teamShort))].sort();
+  $("#team-filter").innerHTML = `<option value="ALL">全部球队</option>` +
+    teams.map((t) => `<option value="${t}">${t}</option>`).join("");
+  $("#style-filter").innerHTML = `<option value="ALL">全部风格</option>` +
+    state.styles.map((s) => `<option value="${s.id}">${esc(s.name)}</option>`).join("");
 }
 
 /* Tilt is CSS-transform only: no continuous post-processing while dragging. */
@@ -144,9 +166,8 @@ function renderLineup() {
       : "";
     slot.classList.toggle("filled", !!p);
   });
-  const team = SLOTS.map((s) => playerById(state.lineup[s])).filter(Boolean);
-  $("#team-rating").textContent = team.length ? Math.round(team.reduce((n, p) => n + p.rating, 0) / team.length) : "--";
-  $("#lineup-count").textContent = `${team.length} / 5`;
+  const n = SLOTS.filter((s) => state.lineup[s]).length;
+  $("#lineup-count").textContent = `${n} / 5`;
 }
 
 function positionsFor(p) {
@@ -194,29 +215,30 @@ function addPlayerAt(id, pos) {
 async function openDetail(id) {
   const p = playerById(id);
   if (!p) return;
-  const stats = Object.entries(p.stats).map(([k, v]) =>
-    `<div class="stat-row"><span>${STAT_LABELS[k]}</span><span class="stat-bar"><i style="width:${v}%"></i></span><b>${v}</b></div>`).join("");
+  const info = [
+    ["球队", `${p.team} ${p.teamShort}`],
+    ["位置", positionText(p)],
+    ["编号", `No.${p.number}`],
+    ["卡面风格", styleName(p.style)],
+  ].map(([k, v]) => `<div class="info-row"><span>${k}</span><b>${esc(v)}</b></div>`).join("");
   $("#detail-content").innerHTML = `
     <div class="detail-layout">
       <div class="detail-visual"><div class="holo-stage detail-holo" id="detail-holo"></div></div>
       <div class="detail-copy">
-        <p class="kicker"><span></span>${p.rarity} · OVR ${p.rating}</p>
+        <p class="kicker"><span></span>${p.rarity} · ${esc(styleName(p.style))}</p>
         <h2>${esc(p.name)}<i>${esc(p.title)}</i></h2>
         <div class="position-chips">${p.positions.map((x, i) => `<span>${x} ${p.positionsZh[i]}</span>`).join("")}</div>
-        <div class="stats">${stats}</div>
+        <div class="info-grid">${info}</div>
         ${pickerHTML(p)}
         ${p.id === "lebron-james" ? '<a class="ghost legacy-link" href="/legacy/lebron/" target="_blank" rel="noreferrer">打开完整 3D 卡 ↗</a>' : ""}
-        <p class="source-note">图片：${esc(p.sourceCredit)}<br><a href="${p.sourceUrl}" target="_blank" rel="noreferrer">查看素材来源</a></p>
+        <p class="source-note">图片：${esc(p.sourceCredit || "—")}<br><a href="${p.sourceUrl || "#"}" target="_blank" rel="noreferrer">查看素材来源</a></p>
       </div>
     </div>`;
   const dialog = $("#card-dialog");
   if (!dialog.open) dialog.showModal();
-  const stage = $("#detail-holo");
-  await mountHolo(stage, p, { auto: true, foil: 0.72 });
+  await mountHolo($("#detail-holo"), p, { auto: true });
 }
-function closeDetail() {
-  unmountHolo($("#detail-holo"));
-}
+function closeDetail() { unmountHolo($("#detail-holo")); }
 
 /* ----------------------------------------------------------------- draw ---- */
 function openDraw() {
@@ -229,8 +251,7 @@ function openDraw() {
 
 function ripPack() {
   const content = $("#draw-content");
-  const pack = $(".pack", content);
-  pack.classList.add("ripping");
+  $(".pack", content).classList.add("ripping");
   setTimeout(async () => {
     const p = state.players[Math.floor(Math.random() * state.players.length)];
     content.innerHTML = `
@@ -238,12 +259,12 @@ function ripPack() {
         <div class="draw-result">
           <div class="holo-stage draw-holo" id="draw-holo"></div>
           <h2>${esc(p.name)}</h2>
-          <p class="draw-sub">${positionText(p)} · ${p.teamShort} · OVR ${p.rating}</p>
-          ${pickerHTML(p, { confirmLabel: "加入首发" })}
+          <p class="draw-sub">${positionText(p)} · ${p.teamShort} · ${esc(styleName(p.style))}</p>
+          ${pickerHTML(p)}
           <button class="skip" data-skip>暂不加入</button>
         </div>
       </div>`;
-    await mountHolo($("#draw-holo"), p, { auto: true, foil: 0.75 });
+    await mountHolo($("#draw-holo"), p, { auto: true });
   }, 520);
 }
 
@@ -262,24 +283,22 @@ function bind() {
 
     if (heroDot) { state.heroIndex = Number(heroDot.dataset.hero); renderHero(); return; }
     if (chip && !chip.disabled) {
-      const chips = $$(".pos-chip", chip.closest(".picker"));
-      chips.forEach((c) => c.classList.toggle("selected", c === chip));
-      const btn = $("[data-confirm]", chip.closest(".picker"));
+      const picker = chip.closest(".picker");
+      $$(".pos-chip", picker).forEach((c) => c.classList.toggle("selected", c === chip));
+      const btn = $("[data-confirm]", picker);
       if (btn) btn.disabled = false;
       return;
     }
     if (confirm) {
-      const picker = confirm.closest(".picker");
-      const pos = $(".pos-chip.selected", picker)?.dataset.pos;
+      const pos = $(".pos-chip.selected", confirm.closest(".picker"))?.dataset.pos;
       if (!pos) return;
       addPlayerAt(confirm.dataset.confirm, pos);
-      const dialog = confirm.closest("dialog");
-      if (dialog) closeDialog(dialog);
+      closeDialog(confirm.closest("dialog"));
       return;
     }
     if (skip) { closeDialog(skip.closest("dialog")); return; }
     if (detail) { openDetail(detail.dataset.detail); return; }
-    if (add) { addFlow(add.dataset.add); return; }
+    if (add) { openDetail(add.dataset.add); return; }
     if (remove) { delete state.lineup[remove.dataset.remove]; saveLineup(); renderLineup(); return; }
     if (draw) { openDraw(); return; }
   });
@@ -287,10 +306,12 @@ function bind() {
   $("#filters").addEventListener("click", (e) => {
     const b = e.target.closest("[data-position]");
     if (!b) return;
-    state.filter = b.dataset.position;
+    state.filter.position = b.dataset.position;
     $$("#filters button").forEach((x) => x.classList.toggle("active", x === b));
     renderGallery();
   });
+  $("#team-filter").addEventListener("change", (e) => { state.filter.team = e.target.value; renderGallery(); });
+  $("#style-filter").addEventListener("change", (e) => { state.filter.style = e.target.value; renderGallery(); });
 
   $("#reset-lineup").onclick = () => { state.lineup = {}; saveLineup(); renderLineup(); toast("阵容已清空"); };
   $("#hero-prev").onclick = () => rotateHero(-1);
@@ -316,12 +337,6 @@ function closeDialog(dialog) {
   dialog.close();
 }
 
-function addFlow(id) {
-  const p = playerById(id);
-  if (!p) return;
-  openDetail(id);
-}
-
 /* ----------------------------------------------------------------- init ---- */
 async function init() {
   try {
@@ -330,16 +345,15 @@ async function init() {
       return r.json();
     });
     state.players = data.players;
-    // Featured player starts on the first MYTHIC card.
-    state.heroIndex = Math.max(0, state.players.findIndex((p) => p.rarity === "MYTHIC"));
+    state.styles = data.styles || [];
+    renderFilterOptions();
+    state.heroIndex = 0;
     renderGallery();
     renderLineup();
     bind();
     renderHero();
-    await mountHolo($("#hero-holo"), state.players[state.heroIndex], { auto: true, foil: 0.66 });
-    state.heroTimer = setInterval(() => {
-      if (!document.hidden && !$("#hero-holo").__holo?.dragging) rotateHero(1);
-    }, 8000);
+    await mountHolo($("#hero-holo"), state.players[state.heroIndex], { auto: true });
+    setInterval(() => { if (!document.hidden) rotateHero(1); }, 8000);
   } catch (e) {
     console.error(e);
     $("#card-grid").innerHTML = `<p class="empty">${esc(e.message)}。请先运行 npm run build:cards。</p>`;

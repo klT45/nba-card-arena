@@ -30,7 +30,7 @@
         <div class="hero-copy">
           <p class="kicker"><span></span> SERIES 01 · LEGENDS IN MOTION</p>
           <h1>抽出传奇<br /><i>组建首发。</i></h1>
-          <p class="hero-desc">九位球星，五个位置。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
+          <p class="hero-desc">九位球星，五个位置，五种卡面风格。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
           <div class="hero-actions">
             <button class="cta" data-action="draw">开启一包 <b>↗</b></button>
             <a class="ghost" href="#gallery">进入展厅 <span>↓</span></a>
@@ -38,7 +38,7 @@
           <div class="series-stats">
             <div><strong id="card-count">09</strong><span>首发卡池</span></div>
             <div><strong>05</strong><span>阵容席位</span></div>
-            <div><strong>2.5%</strong><span>神话卡率</span></div>
+            <div><strong id="style-count">05</strong><span>卡面风格</span></div>
           </div>
         </div>
         <div class="hero-stack" aria-label="球星卡预览">
@@ -62,15 +62,21 @@
       <section class="gallery section" id="gallery">
         <div class="section-head">
           <div><p class="kicker"><span></span> COLLECTION HALL</p><h2>球星卡展厅</h2></div>
-          <p>按场上位置筛选。点击卡片查看分层全息效果，拖动时仅更新 CSS 变换，不持续运行高开销后处理。</p>
+          <p>按位置、球队和卡面风格筛选。点击卡片查看实时镭射卡面，拖动时仅更新 CSS 变换，不持续运行高开销后处理。</p>
         </div>
-        <div class="filters" id="filters" role="group" aria-label="位置筛选">
-          <button class="active" data-position="ALL">全部 <span>09</span></button>
-          <button data-position="PG">控卫</button>
-          <button data-position="SG">分卫</button>
-          <button data-position="SF">小前锋</button>
-          <button data-position="PF">大前锋</button>
-          <button data-position="C">中锋</button>
+        <div class="filter-bar">
+          <div class="filters" id="filters" role="group" aria-label="位置筛选">
+            <button class="active" data-position="ALL">全部 <span>09</span></button>
+            <button data-position="PG">控卫</button>
+            <button data-position="SG">分卫</button>
+            <button data-position="SF">小前锋</button>
+            <button data-position="PF">大前锋</button>
+            <button data-position="C">中锋</button>
+          </div>
+          <div class="filter-selects">
+            <label>球队 <select id="team-filter"></select></label>
+            <label>风格 <select id="style-filter"></select></label>
+          </div>
         </div>
         <div class="card-grid" id="card-grid" aria-live="polite"></div>
       </section>
@@ -78,7 +84,7 @@
       <section class="lineup section" id="lineup">
         <div class="section-head lineup-head">
           <div><p class="kicker"><span></span> STARTING FIVE</p><h2>我的首发阵容</h2></div>
-          <div class="team-score"><span>TEAM OVR</span><strong id="team-rating">--</strong><small id="lineup-count">0 / 5</small></div>
+          <div class="team-score"><span>LINEUP</span><strong id="lineup-count">0 / 5</strong><small>已上阵</small></div>
         </div>
         <div class="court-wrap">
           <div class="court" id="court">
@@ -102,7 +108,7 @@
       </section>
     </main>
 
-    <footer><div class="brand"><span class="brand-mark">CA</span><span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span></div><p>PERSONAL TECH DEMO · PLAYER IMAGERY CREDITED IN EACH CARD</p></footer>
+    <footer><div class="brand"><span class="brand-mark">CA</span><span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span></div><p>PERSONAL TECH DEMO · PLAYER IMAGERY CREDITED IN EACH CARD</p><a class="admin-link" href="/admin.html">卡库管理 ↗</a></footer>
 
     <dialog id="card-dialog" class="card-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="detail-content"></div></dialog>
     <dialog id="draw-dialog" class="draw-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="draw-content"></div></dialog>

@@ -13,23 +13,21 @@
     "控卫"
   ],
   "rarity": "ELITE",
-  "rating": 94,
+  "title": "DESERT SNIPER",
   "accent": "#ffb81c",
   "accent2": "#3d1a63",
-  "title": "DESERT SNIPER",
-  "stats": {
-    "finishing": 92,
-    "shooting": 96,
-    "playmaking": 90,
-    "defense": 84
-  },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51915986756).jpg",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51916268559).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
   "assets": {
     "front": "/cards/devin-booker/front.webp",
     "thumb": "/cards/devin-booker/thumb.webp",
-    "subject": "/cards/devin-booker/subject.webp",
-    "background": "/cards/devin-booker/background.webp",
     "layers": {
       "subject": "/cards/devin-booker/layers/subject.png",
       "background": "/cards/devin-booker/layers/background.png",

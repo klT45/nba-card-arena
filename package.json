@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "source:players": "python scripts/source_players.py",
+    "cutouts": "python scripts/make_cutouts.py",
     "build:cards": "python scripts/build_cards.py",
     "dev": "vite",
     "build": "vite build",

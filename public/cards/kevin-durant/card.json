@@ -13,23 +13,21 @@
     "大前锋"
   ],
   "rarity": "MYTHIC",
-  "rating": 97,
+  "title": "SLIM REAPER",
   "accent": "#ff6a13",
   "accent2": "#241456",
-  "title": "SLIM REAPER",
-  "stats": {
-    "finishing": 96,
-    "shooting": 98,
-    "playmaking": 91,
-    "defense": 89
-  },
+  "style": "ink",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
   "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 0.4,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.26,
+    "backgroundDepth": -0.14
+  },
   "assets": {
     "front": "/cards/kevin-durant/front.webp",
     "thumb": "/cards/kevin-durant/thumb.webp",
-    "subject": "/cards/kevin-durant/subject.webp",
-    "background": "/cards/kevin-durant/background.webp",
     "layers": {
       "subject": "/cards/kevin-durant/layers/subject.png",
       "background": "/cards/kevin-durant/layers/background.png",

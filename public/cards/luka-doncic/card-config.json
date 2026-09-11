@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Luka Doncic",
+  "subtitle": "THE MAESTRO",
+  "collection": "CARD ARENA",
+  "edition": "No.77",
+  "description": "Los Angeles · PG / SG",
+  "assets": {
+    "subject": "/cards/luka-doncic/layers/subject.png",
+    "background": "/cards/luka-doncic/layers/background.png",
+    "lineart": "/cards/luka-doncic/layers/lineart.png",
+    "text": "/cards/luka-doncic/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

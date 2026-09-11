@@ -13,23 +13,21 @@
     "分卫"
   ],
   "rarity": "MYTHIC",
-  "rating": 97,
+  "title": "THE MAESTRO",
   "accent": "#7fc4f2",
   "accent2": "#002b5e",
-  "title": "THE MAESTRO",
-  "stats": {
-    "finishing": 93,
-    "shooting": 95,
-    "playmaking": 98,
-    "defense": 82
-  },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51916605744).jpg",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51914012797).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
   "assets": {
     "front": "/cards/luka-doncic/front.webp",
     "thumb": "/cards/luka-doncic/thumb.webp",
-    "subject": "/cards/luka-doncic/subject.webp",
-    "background": "/cards/luka-doncic/background.webp",
     "layers": {
       "subject": "/cards/luka-doncic/layers/subject.png",
       "background": "/cards/luka-doncic/layers/background.png",

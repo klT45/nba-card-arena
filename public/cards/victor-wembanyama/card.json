@@ -13,23 +13,21 @@
     "中锋"
   ],
   "rarity": "MYTHIC",
-  "rating": 96,
+  "title": "THE ALIEN",
   "accent": "#cfd4da",
   "accent2": "#1b1e24",
-  "title": "THE ALIEN",
-  "stats": {
-    "finishing": 92,
-    "shooting": 90,
-    "playmaking": 85,
-    "defense": 99
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_San_Antonio_Spurs_2025_NBA_Cup.jpg",
+  "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
   },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_(51915916671).jpg",
-  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "assets": {
     "front": "/cards/victor-wembanyama/front.webp",
     "thumb": "/cards/victor-wembanyama/thumb.webp",
-    "subject": "/cards/victor-wembanyama/subject.webp",
-    "background": "/cards/victor-wembanyama/background.webp",
     "layers": {
       "subject": "/cards/victor-wembanyama/layers/subject.png",
       "background": "/cards/victor-wembanyama/layers/background.png",

@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "arena",
+  "title": "Giannis Antetokounmpo",
+  "subtitle": "GREEK FREAK",
+  "collection": "CARD ARENA",
+  "edition": "No.34",
+  "description": "Milwaukee · PF / C",
+  "assets": {
+    "subject": "/cards/giannis-antetokounmpo/layers/subject.png",
+    "background": "/cards/giannis-antetokounmpo/layers/background.png",
+    "lineart": "/cards/giannis-antetokounmpo/layers/lineart.png",
+    "text": "/cards/giannis-antetokounmpo/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

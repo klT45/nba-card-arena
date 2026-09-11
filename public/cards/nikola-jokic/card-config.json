@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Nikola Jokic",
+  "subtitle": "THE JOKER",
+  "collection": "CARD ARENA",
+  "edition": "No.15",
+  "description": "Denver · C",
+  "assets": {
+    "subject": "/cards/nikola-jokic/layers/subject.png",
+    "background": "/cards/nikola-jokic/layers/background.png",
+    "lineart": "/cards/nikola-jokic/layers/lineart.png",
+    "text": "/cards/nikola-jokic/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

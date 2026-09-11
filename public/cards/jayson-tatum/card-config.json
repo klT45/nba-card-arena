@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Jayson Tatum",
+  "subtitle": "THE CLOSER",
+  "collection": "CARD ARENA",
+  "edition": "No.0",
+  "description": "Boston · SF / PF",
+  "assets": {
+    "subject": "/cards/jayson-tatum/layers/subject.png",
+    "background": "/cards/jayson-tatum/layers/background.png",
+    "lineart": "/cards/jayson-tatum/layers/lineart.png",
+    "text": "/cards/jayson-tatum/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

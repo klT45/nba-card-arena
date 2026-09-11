@@ -13,23 +13,21 @@
     "大前锋"
   ],
   "rarity": "MYTHIC",
-  "rating": 96,
+  "title": "THE CLOSER",
   "accent": "#3ecf7a",
   "accent2": "#07321a",
-  "title": "THE CLOSER",
-  "stats": {
-    "finishing": 94,
-    "shooting": 93,
-    "playmaking": 89,
-    "defense": 91
-  },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jayson_Tatum_(51916268559).jpg",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jason_Tatum_(51914776391).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
   "assets": {
     "front": "/cards/jayson-tatum/front.webp",
     "thumb": "/cards/jayson-tatum/thumb.webp",
-    "subject": "/cards/jayson-tatum/subject.webp",
-    "background": "/cards/jayson-tatum/background.webp",
     "layers": {
       "subject": "/cards/jayson-tatum/layers/subject.png",
       "background": "/cards/jayson-tatum/layers/background.png",

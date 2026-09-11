@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "ink",
+  "title": "Kevin Durant",
+  "subtitle": "SLIM REAPER",
+  "collection": "CARD ARENA",
+  "edition": "No.35",
+  "description": "Phoenix · SF / PF",
+  "assets": {
+    "subject": "/cards/kevin-durant/layers/subject.png",
+    "background": "/cards/kevin-durant/layers/background.png",
+    "lineart": "/cards/kevin-durant/layers/lineart.png",
+    "text": "/cards/kevin-durant/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.4,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.26,
+    "backgroundDepth": -0.14
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

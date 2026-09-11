@@ -11,23 +11,21 @@
     "控卫"
   ],
   "rarity": "MYTHIC",
-  "rating": 97,
+  "title": "THE CHEF",
   "accent": "#ffc72c",
   "accent2": "#132a5e",
-  "title": "THE CHEF",
-  "stats": {
-    "finishing": 91,
-    "shooting": 99,
-    "playmaking": 96,
-    "defense": 82
-  },
+  "style": "arena",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
   "assets": {
     "front": "/cards/stephen-curry/front.webp",
     "thumb": "/cards/stephen-curry/thumb.webp",
-    "subject": "/cards/stephen-curry/subject.webp",
-    "background": "/cards/stephen-curry/background.webp",
     "layers": {
       "subject": "/cards/stephen-curry/layers/subject.png",
       "background": "/cards/stephen-curry/layers/background.png",

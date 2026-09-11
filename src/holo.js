@@ -194,6 +194,11 @@ export function createHoloCard(container, options = {}) {
     uniforms.tText.value = textures[2];
     uniforms.tLine.value = textures[3];
     uniforms.tBack.value = backTexture(next, hex(next.accent));
+    const pr = next.parameters || {};
+    uniforms.uFoil.value = pr.foil ?? options.foil ?? 0.68;
+    uniforms.uScale.value = pr.subjectScale ?? 1.04;
+    uniforms.uDepth.value = pr.subjectDepth ?? 0.3;
+    uniforms.uBgDepth.value = pr.backgroundDepth ?? -0.18;
   }
 
   function hex(value) {

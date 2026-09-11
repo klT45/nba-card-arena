@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090e" />
+    <title>卡库管理 · NBA Card Arena</title>
+    <link rel="stylesheet" href="/src/admin.css" />
+  </head>
+  <body>
+    <header class="admin-top">
+      <a class="abrand" href="/"><span>CA</span><strong>卡库管理</strong><small>PLAYER LIBRARY</small></a>
+      <div class="top-actions">
+        <span id="api-state" class="api-state">检测中…</span>
+        <button id="rebuild-all" class="btn">全部重建</button>
+        <button id="new-player" class="btn primary">＋ 新增球员</button>
+        <a class="btn ghost" href="/">返回展厅 ↗</a>
+      </div>
+    </header>
+    <p class="notice" id="notice" hidden></p>
+    <main class="admin-wrap">
+      <aside class="player-list" id="player-list" aria-label="球员列表"></aside>
+      <section class="editor" id="editor">
+        <p class="placeholder">从左侧选择一位球员，或点「新增球员」。</p>
+      </section>
+    </main>
+    <section class="logbox" aria-label="构建日志">
+      <div class="log-head"><span>构建日志</span><button id="clear-log" class="btn tiny">清空</button></div>
+      <pre id="log" class="log"></pre>
+    </section>
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>

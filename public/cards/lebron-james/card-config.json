@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "atelier",
+  "title": "LeBron James",
+  "subtitle": "THE CHOSEN ONE",
+  "collection": "CARD ARENA",
+  "edition": "No.23",
+  "description": "Los Angeles · PG / SF",
+  "assets": {
+    "subject": "/cards/lebron-james/layers/subject.png",
+    "background": "/cards/lebron-james/layers/background.png",
+    "lineart": "/cards/lebron-james/layers/lineart.png",
+    "text": "/cards/lebron-james/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.62,
+    "subjectScale": 1.03,
+    "subjectDepth": 0.28,
+    "backgroundDepth": -0.16
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

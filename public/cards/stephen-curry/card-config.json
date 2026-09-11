@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "arena",
+  "title": "Stephen Curry",
+  "subtitle": "THE CHEF",
+  "collection": "CARD ARENA",
+  "edition": "No.30",
+  "description": "Golden State · PG",
+  "assets": {
+    "subject": "/cards/stephen-curry/layers/subject.png",
+    "background": "/cards/stephen-curry/layers/background.png",
+    "lineart": "/cards/stephen-curry/layers/lineart.png",
+    "text": "/cards/stephen-curry/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

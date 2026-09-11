@@ -13,23 +13,21 @@
     "中锋"
   ],
   "rarity": "MYTHIC",
-  "rating": 97,
+  "title": "GREEK FREAK",
   "accent": "#e8dcc0",
   "accent2": "#0b3a1d",
-  "title": "GREEK FREAK",
-  "stats": {
-    "finishing": 99,
-    "shooting": 84,
-    "playmaking": 91,
-    "defense": 97
-  },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915516179).jpg",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51914060952).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
   "assets": {
     "front": "/cards/giannis-antetokounmpo/front.webp",
     "thumb": "/cards/giannis-antetokounmpo/thumb.webp",
-    "subject": "/cards/giannis-antetokounmpo/subject.webp",
-    "background": "/cards/giannis-antetokounmpo/background.webp",
     "layers": {
       "subject": "/cards/giannis-antetokounmpo/layers/subject.png",
       "background": "/cards/giannis-antetokounmpo/layers/background.png",

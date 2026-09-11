@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Victor Wembanyama",
+  "subtitle": "THE ALIEN",
+  "collection": "CARD ARENA",
+  "edition": "No.1",
+  "description": "San Antonio · PF / C",
+  "assets": {
+    "subject": "/cards/victor-wembanyama/layers/subject.png",
+    "background": "/cards/victor-wembanyama/layers/background.png",
+    "lineart": "/cards/victor-wembanyama/layers/lineart.png",
+    "text": "/cards/victor-wembanyama/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

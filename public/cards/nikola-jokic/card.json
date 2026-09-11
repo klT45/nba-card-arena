@@ -11,23 +11,21 @@
     "中锋"
   ],
   "rarity": "MYTHIC",
-  "rating": 98,
+  "title": "THE JOKER",
   "accent": "#fec524",
   "accent2": "#0e2240",
-  "title": "THE JOKER",
-  "stats": {
-    "finishing": 96,
-    "shooting": 92,
-    "playmaking": 99,
-    "defense": 90
-  },
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51915490370).jpg",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
   "assets": {
     "front": "/cards/nikola-jokic/front.webp",
     "thumb": "/cards/nikola-jokic/thumb.webp",
-    "subject": "/cards/nikola-jokic/subject.webp",
-    "background": "/cards/nikola-jokic/background.webp",
     "layers": {
       "subject": "/cards/nikola-jokic/layers/subject.png",
       "background": "/cards/nikola-jokic/layers/background.png",
