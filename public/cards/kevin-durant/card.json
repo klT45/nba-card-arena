@@ -1,0 +1,34 @@
+{
+  "id": "kevin-durant",
+  "name": "Kevin Durant",
+  "number": "35",
+  "team": "Phoenix",
+  "teamShort": "PHX",
+  "positions": [
+    "SF",
+    "PF"
+  ],
+  "positionsZh": [
+    "小前锋",
+    "大前锋"
+  ],
+  "rarity": "MYTHIC",
+  "rating": 97,
+  "accent": "#ff6a13",
+  "accent2": "#28155e",
+  "title": "SLIM REAPER",
+  "stats": {
+    "finishing": 96,
+    "shooting": 98,
+    "playmaking": 91,
+    "defense": 89
+  },
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant,_Olympic_Games_2024.jpg",
+  "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+  "assets": {
+    "front": "/cards/kevin-durant/front.webp",
+    "thumb": "/cards/kevin-durant/thumb.webp",
+    "subject": "/cards/kevin-durant/subject.webp",
+    "background": "/cards/kevin-durant/background.webp"
+  }
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090e" />
+    <meta name="description" content="抽取 NBA 球星闪卡，组建你的梦幻首发阵容。" />
+    <title>NBA Card Arena · 球星卡竞技场</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="NBA Card Arena 首页">
+        <span class="brand-mark">CA</span>
+        <span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#gallery">展厅</a>
+        <a href="#lineup">阵容</a>
+        <button class="nav-draw" data-action="draw">立即抽取 <span>01</span></button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker"><span></span> SERIES 01 · LEGENDS IN MOTION</p>
+          <h1>抽出传奇<br /><i>组建首发。</i></h1>
+          <p class="hero-desc">六位球星，五个位置。每次抽取都是阵容的另一种可能。收藏全息卡面，根据球员位置排出你的终极五人组。</p>
+          <div class="hero-actions">
+            <button class="cta" data-action="draw">开启一包 <b>↗</b></button>
+            <a class="ghost" href="#gallery">进入展厅 <span>↓</span></a>
+          </div>
+          <div class="series-stats">
+            <div><strong id="card-count">06</strong><span>首发卡池</span></div>
+            <div><strong>05</strong><span>阵容席位</span></div>
+            <div><strong>2.5%</strong><span>神话卡率</span></div>
+          </div>
+        </div>
+        <div class="hero-stack" id="hero-stack" aria-label="球星卡预览"></div>
+        <div class="hero-index" aria-hidden="true">001<span>/ SERIES 01</span></div>
+      </section>
+
+      <section class="ticker" aria-label="球员滚动列表">
+        <div>LEBRON JAMES <i>◆</i> STEPHEN CURRY <i>◆</i> KEVIN DURANT <i>◆</i> NIKOLA JOKIC <i>◆</i> GIANNIS ANTETOKOUNMPO <i>◆</i> DEVIN BOOKER <i>◆</i></div>
+      </section>
+
+      <section class="gallery section" id="gallery">
+        <div class="section-head">
+          <div><p class="kicker"><span></span> COLLECTION HALL</p><h2>球星卡展厅</h2></div>
+          <p>按场上位置筛选。点击卡片查看分层全息效果，拖动时仅更新 CSS 变换，不持续运行高开销后处理。</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="位置筛选">
+          <button class="active" data-position="ALL">全部 <span>06</span></button>
+          <button data-position="PG">控卫</button>
+          <button data-position="SG">分卫</button>
+          <button data-position="SF">小前锋</button>
+          <button data-position="PF">大前锋</button>
+          <button data-position="C">中锋</button>
+        </div>
+        <div class="card-grid" id="card-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="lineup section" id="lineup">
+        <div class="section-head lineup-head">
+          <div><p class="kicker"><span></span> STARTING FIVE</p><h2>我的首发阵容</h2></div>
+          <div class="team-score"><span>TEAM OVR</span><strong id="team-rating">--</strong></div>
+        </div>
+        <div class="court-wrap">
+          <div class="court" id="court">
+            <span class="court-logo">CA</span>
+            <div class="court-line center-line"></div><div class="court-circle"></div>
+            <div class="slot slot-pg" data-slot="PG"></div>
+            <div class="slot slot-sg" data-slot="SG"></div>
+            <div class="slot slot-sf" data-slot="SF"></div>
+            <div class="slot slot-pf" data-slot="PF"></div>
+            <div class="slot slot-c" data-slot="C"></div>
+          </div>
+          <aside class="lineup-panel">
+            <p class="panel-label">LINEUP RULES</p>
+            <h3>按位置上阵</h3>
+            <p>球员可以进入其任一擅长位置。双位置球星可灵活补位，同一球员不能重复上阵。</p>
+            <div class="position-key"><span>PG 控卫</span><span>SG 分卫</span><span>SF 小前锋</span><span>PF 大前锋</span><span>C 中锋</span></div>
+            <button class="cta wide" data-action="draw">抽取补强 <b>＋</b></button>
+            <button class="reset-lineup" id="reset-lineup">清空阵容</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="brand"><span class="brand-mark">CA</span><span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span></div><p>PERSONAL TECH DEMO · PLAYER IMAGERY CREDITED IN EACH CARD</p></footer>
+
+    <dialog id="card-dialog" class="card-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="detail-content"></div></dialog>
+    <dialog id="draw-dialog" class="draw-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="draw-content"></div></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

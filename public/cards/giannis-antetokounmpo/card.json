@@ -1,0 +1,34 @@
+{
+  "id": "giannis-antetokounmpo",
+  "name": "Giannis Antetokounmpo",
+  "number": "34",
+  "team": "Milwaukee",
+  "teamShort": "MIL",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "rating": 97,
+  "accent": "#eee1c6",
+  "accent2": "#00471b",
+  "title": "GREEK FREAK",
+  "stats": {
+    "finishing": 99,
+    "shooting": 84,
+    "playmaking": 91,
+    "defense": 97
+  },
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915070867).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "assets": {
+    "front": "/cards/giannis-antetokounmpo/front.webp",
+    "thumb": "/cards/giannis-antetokounmpo/thumb.webp",
+    "subject": "/cards/giannis-antetokounmpo/subject.webp",
+    "background": "/cards/giannis-antetokounmpo/background.webp"
+  }
+}

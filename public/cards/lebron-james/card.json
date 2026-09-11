@@ -1,0 +1,34 @@
+{
+  "id": "lebron-james",
+  "name": "LeBron James",
+  "number": "23",
+  "team": "Los Angeles",
+  "teamShort": "LAL",
+  "positions": [
+    "PG",
+    "SF"
+  ],
+  "positionsZh": [
+    "控卫",
+    "小前锋"
+  ],
+  "rarity": "MYTHIC",
+  "rating": 98,
+  "accent": "#f6c547",
+  "accent2": "#6c2bd9",
+  "title": "THE CHOSEN ONE",
+  "stats": {
+    "finishing": 99,
+    "shooting": 91,
+    "playmaking": 97,
+    "defense": 92
+  },
+  "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
+  "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",
+  "assets": {
+    "front": "/cards/lebron-james/front.webp",
+    "thumb": "/cards/lebron-james/thumb.webp",
+    "subject": "/cards/lebron-james/subject.webp",
+    "background": "/cards/lebron-james/background.webp"
+  }
+}

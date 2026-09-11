@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "players": [
+    {
+      "id": "lebron-james",
+      "name": "LeBron James",
+      "number": "23",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "PG",
+        "SF"
+      ],
+      "positionsZh": [
+        "控卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 98,
+      "accent": "#f6c547",
+      "accent2": "#6c2bd9",
+      "title": "THE CHOSEN ONE",
+      "stats": {
+        "finishing": 99,
+        "shooting": 91,
+        "playmaking": 97,
+        "defense": 92
+      },
+      "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
+      "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",
+      "assets": {
+        "front": "/cards/lebron-james/front.webp",
+        "thumb": "/cards/lebron-james/thumb.webp",
+        "subject": "/cards/lebron-james/subject.webp",
+        "background": "/cards/lebron-james/background.webp"
+      }
+    },
+    {
+      "id": "stephen-curry",
+      "name": "Stephen Curry",
+      "number": "30",
+      "team": "Golden State",
+      "teamShort": "GSW",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 97,
+      "accent": "#ffc72c",
+      "accent2": "#1d428a",
+      "title": "THE CHEF",
+      "stats": {
+        "finishing": 91,
+        "shooting": 99,
+        "playmaking": 96,
+        "defense": 82
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51913998322).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/stephen-curry/front.webp",
+        "thumb": "/cards/stephen-curry/thumb.webp",
+        "subject": "/cards/stephen-curry/subject.webp",
+        "background": "/cards/stephen-curry/background.webp"
+      }
+    },
+    {
+      "id": "devin-booker",
+      "name": "Devin Booker",
+      "number": "01",
+      "team": "Phoenix",
+      "teamShort": "PHX",
+      "positions": [
+        "SG",
+        "PG"
+      ],
+      "positionsZh": [
+        "分卫",
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "rating": 94,
+      "accent": "#ffb81c",
+      "accent2": "#5f259f",
+      "title": "DESERT SNIPER",
+      "stats": {
+        "finishing": 92,
+        "shooting": 96,
+        "playmaking": 90,
+        "defense": 84
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Booker_and_Curry,_Paris_2024_Olympic_Games.jpg",
+      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+      "assets": {
+        "front": "/cards/devin-booker/front.webp",
+        "thumb": "/cards/devin-booker/thumb.webp",
+        "subject": "/cards/devin-booker/subject.webp",
+        "background": "/cards/devin-booker/background.webp"
+      }
+    },
+    {
+      "id": "kevin-durant",
+      "name": "Kevin Durant",
+      "number": "35",
+      "team": "Phoenix",
+      "teamShort": "PHX",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 97,
+      "accent": "#ff6a13",
+      "accent2": "#28155e",
+      "title": "SLIM REAPER",
+      "stats": {
+        "finishing": 96,
+        "shooting": 98,
+        "playmaking": 91,
+        "defense": 89
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant,_Olympic_Games_2024.jpg",
+      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+      "assets": {
+        "front": "/cards/kevin-durant/front.webp",
+        "thumb": "/cards/kevin-durant/thumb.webp",
+        "subject": "/cards/kevin-durant/subject.webp",
+        "background": "/cards/kevin-durant/background.webp"
+      }
+    },
+    {
+      "id": "giannis-antetokounmpo",
+      "name": "Giannis Antetokounmpo",
+      "number": "34",
+      "team": "Milwaukee",
+      "teamShort": "MIL",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 97,
+      "accent": "#eee1c6",
+      "accent2": "#00471b",
+      "title": "GREEK FREAK",
+      "stats": {
+        "finishing": 99,
+        "shooting": 84,
+        "playmaking": 91,
+        "defense": 97
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51915070867).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/giannis-antetokounmpo/front.webp",
+        "thumb": "/cards/giannis-antetokounmpo/thumb.webp",
+        "subject": "/cards/giannis-antetokounmpo/subject.webp",
+        "background": "/cards/giannis-antetokounmpo/background.webp"
+      }
+    },
+    {
+      "id": "nikola-jokic",
+      "name": "Nikola Jokic",
+      "number": "15",
+      "team": "Denver",
+      "teamShort": "DEN",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "rating": 98,
+      "accent": "#fec524",
+      "accent2": "#0e2240",
+      "title": "THE JOKER",
+      "stats": {
+        "finishing": 96,
+        "shooting": 92,
+        "playmaking": 99,
+        "defense": 90
+      },
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "assets": {
+        "front": "/cards/nikola-jokic/front.webp",
+        "thumb": "/cards/nikola-jokic/thumb.webp",
+        "subject": "/cards/nikola-jokic/subject.webp",
+        "background": "/cards/nikola-jokic/background.webp"
+      }
+    }
+  ]
+}
