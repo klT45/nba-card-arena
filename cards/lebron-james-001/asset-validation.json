@@ -1,0 +1,34 @@
+{
+  "subject": {
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "transparent_fraction": 0.7242,
+    "visible_fraction": 0.2396
+  },
+  "background": {
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  "lineart": {
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  "text": {
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "transparent_fraction": 0.9754,
+    "visible_fraction": 0.0212
+  }
+}

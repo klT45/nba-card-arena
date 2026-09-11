@@ -1,0 +1,25 @@
+{
+  "mode": "holographic",
+  "title": "LeBron James",
+  "subtitle": "LOS ANGELES LAKERS · No.23",
+  "technique": "CHOSEN ONE",
+  "tagline": "4× NBA Champion · All-Time Scoring King",
+  "edition": "001 / 023",
+  "collection": "NBA Holo Arena · Series 1",
+  "description": "LeBron James Lakers holographic collectible. Background: Crypto.com Arena night in purple & gold. Attribution: subject PNG CC BY-NC pngdownload.io.",
+  "parameters": {
+    "subjectScale": 1.25,
+    "subjectDepth": 0.4,
+    "backgroundDepth": -0.25,
+    "foil": 1.0,
+    "particles": 1.0,
+    "glow": 0.85
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      -0.06,
+      -0.085
+    ]
+  }
+}
