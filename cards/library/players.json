@@ -7,8 +7,14 @@
       "number": "23",
       "team": "Los Angeles",
       "teamShort": "LAL",
-      "positions": ["PG", "SF"],
-      "positionsZh": ["控卫", "小前锋"],
+      "positions": [
+        "PG",
+        "SF"
+      ],
+      "positionsZh": [
+        "控卫",
+        "小前锋"
+      ],
       "rarity": "MYTHIC",
       "title": "THE CHOSEN ONE",
       "accent": "#f6c547",
@@ -23,8 +29,12 @@
       "number": "30",
       "team": "Golden State",
       "teamShort": "GSW",
-      "positions": ["PG"],
-      "positionsZh": ["控卫"],
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
       "rarity": "MYTHIC",
       "title": "THE CHEF",
       "accent": "#ffc72c",
@@ -39,8 +49,14 @@
       "number": "1",
       "team": "Phoenix",
       "teamShort": "PHX",
-      "positions": ["SG", "PG"],
-      "positionsZh": ["分卫", "控卫"],
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
       "rarity": "ELITE",
       "title": "DESERT SNIPER",
       "accent": "#ffb81c",
@@ -55,8 +71,14 @@
       "number": "35",
       "team": "Phoenix",
       "teamShort": "PHX",
-      "positions": ["SF", "PF"],
-      "positionsZh": ["小前锋", "大前锋"],
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
       "rarity": "MYTHIC",
       "title": "SLIM REAPER",
       "accent": "#ff6a13",
@@ -71,8 +93,14 @@
       "number": "34",
       "team": "Milwaukee",
       "teamShort": "MIL",
-      "positions": ["PF", "C"],
-      "positionsZh": ["大前锋", "中锋"],
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
       "rarity": "MYTHIC",
       "title": "GREEK FREAK",
       "accent": "#e8dcc0",
@@ -87,8 +115,12 @@
       "number": "15",
       "team": "Denver",
       "teamShort": "DEN",
-      "positions": ["C"],
-      "positionsZh": ["中锋"],
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
       "rarity": "MYTHIC",
       "title": "THE JOKER",
       "accent": "#fec524",
@@ -103,8 +135,14 @@
       "number": "77",
       "team": "Los Angeles",
       "teamShort": "LAL",
-      "positions": ["PG", "SG"],
-      "positionsZh": ["控卫", "分卫"],
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
       "rarity": "MYTHIC",
       "title": "THE MAESTRO",
       "accent": "#7fc4f2",
@@ -119,8 +157,14 @@
       "number": "0",
       "team": "Boston",
       "teamShort": "BOS",
-      "positions": ["SF", "PF"],
-      "positionsZh": ["小前锋", "大前锋"],
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
       "rarity": "MYTHIC",
       "title": "THE CLOSER",
       "accent": "#3ecf7a",
@@ -135,8 +179,14 @@
       "number": "1",
       "team": "San Antonio",
       "teamShort": "SAS",
-      "positions": ["PF", "C"],
-      "positionsZh": ["大前锋", "中锋"],
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
       "rarity": "MYTHIC",
       "title": "THE ALIEN",
       "accent": "#cfd4da",

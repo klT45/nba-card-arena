@@ -2,9 +2,9 @@
  * Real-time holographic card viewer.
  *
  * Ports the holo-card-studio fragment shader (parallax layers, rainbow foil,
- * specular sweep, sparkle, bloom) onto a single thin card mesh, so the arena can
- * render the same foil treatment as the skill's Blender/GLB pipeline without a
- * per-card export. Only one or two instances run at a time (hero + detail).
+ * specular sweep, sparkle, bloom) onto a thin card mesh, and exposes the same
+ * controls the skill's viewer has: drag to rotate, wheel to zoom, flip to the
+ * back face, reset, auto-rotate, live foil/scale/depth sliders, and PNG export.
  */
 import * as THREE from "three";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
@@ -67,13 +67,20 @@ void main(){vec4 art=texture2D(tBack,vUv);vec2 p=vUv-.5;float filigree=.5+.5*sin
 const CARD_W = 3.394;
 const CARD_H = 4.95;
 const THICK = 0.085;
+const PARAM_MAP = { foil: "uFoil", subjectScale: "uScale", subjectDepth: "uDepth", backgroundDepth: "uBgDepth" };
+const PARAM_RANGE = { foil: [0, 1.2], subjectScale: [1, 1.7], subjectDepth: [0, 0.8], backgroundDepth: [-0.65, 0] };
 
-function backTexture(player, accent) {
+function hex(value) {
+  const v = (value || "#ffffff").replace("#", "");
+  return [0, 2, 4].map((i) => parseInt(v.slice(i, i + 2), 16));
+}
+
+function backTexture(player) {
+  const [r, g, b] = hex(player.accent);
   const c = document.createElement("canvas");
   c.width = 1024;
   c.height = 1493;
   const ctx = c.getContext("2d");
-  const [r, g, b] = accent;
   ctx.fillStyle = "#080a10";
   ctx.fillRect(0, 0, c.width, c.height);
   ctx.strokeStyle = `rgb(${r},${g},${b})`;
@@ -90,7 +97,7 @@ function backTexture(player, accent) {
   ctx.font = "900 210px 'Arial Narrow', Arial, sans-serif";
   ctx.fillText(player.teamShort || "NBA", c.width / 2, c.height / 2 + 40);
   ctx.fillStyle = "#d8dbe2";
-  ctx.font = "900 92px 'Arial Narrow', Arial, sans-serif";
+  ctx.font = "900 88px 'Arial Narrow', Arial, sans-serif";
   ctx.fillText((player.name || "").toUpperCase(), c.width / 2, c.height / 2 + 190);
   ctx.fillStyle = "#6b7280";
   ctx.font = "700 44px 'Arial Narrow', Arial, sans-serif";
@@ -103,26 +110,26 @@ function backTexture(player, accent) {
 export function createHoloCard(container, options = {}) {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let renderer, composer, bloom, root, uniforms, textures = null, player = null;
-  let auto = options.auto !== false, dragging = false, disposed = false;
-  let targetX = 0.02, targetY = -0.14, rotX = targetX, rotY = targetY;
+  let auto = options.auto !== false, dragging = false, disposed = false, flipped = false;
+  let targetX = 0.02, targetY = -0.14, targetZoom = 1, rotX = targetX, rotY = targetY;
   let last = { x: 0, y: 0 }, elapsed = 0, lastTime = 0, raf = 0;
-  let maxPR = Math.min(devicePixelRatio || 1, options.pixelRatio || 1.4), curPR = maxPR;
   let frames = 0, fps = 60, lastQ = 0;
+  const baseY = () => (flipped ? Math.PI : 0);
 
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-5, 5, 5.65, -5.65, 0.1, 100);
   camera.position.set(0, 0, 20);
   camera.lookAt(0, 0, 0);
   const inv = new THREE.Matrix4();
-
   const geo = new THREE.BoxGeometry(CARD_W, CARD_H, THICK, 1, 1, 1);
-  let frontMat, backMat, edgeMat, mesh;
+  const maxPR = Math.min(devicePixelRatio || 1, options.pixelRatio || 1.4);
+  let curPR = maxPR, frontMat, backMat, edgeMat;
 
   function resize() {
     const w = container.clientWidth, h = container.clientHeight;
     if (!w || !h || !renderer) return;
     const aspect = w / h;
-    const halfH = 5.65;
+    const halfH = 5.65 / targetZoom;
     camera.left = -halfH * aspect;
     camera.right = halfH * aspect;
     camera.top = halfH;
@@ -142,14 +149,14 @@ export function createHoloCard(container, options = {}) {
     if (document.hidden || disposed) return;
     elapsed += dt;
     if (auto && !dragging) {
-      targetY = Math.sin(elapsed * 0.42) * 0.34;
-      targetX = Math.sin(elapsed * 0.57) * 0.10;
+      targetY = baseY() + Math.sin(elapsed * 0.42) * 0.34;
+      targetX = Math.sin(elapsed * 0.57) * 0.1;
     }
     frames++;
     if (dt > 0) fps += (1 / dt - fps) * 0.04;
     if (frames % 120 === 0 && now - lastQ > 5000) {
       lastQ = now;
-      if (fps < 45 && bloom && bloom.enabled) bloom.enabled = false;
+      if (fps < 45 && bloom?.enabled) bloom.enabled = false;
       else if (fps > 56 && bloom && !bloom.enabled) bloom.enabled = true;
     }
     const ease = reduced ? 1 : 1 - Math.exp(-dt * 8);
@@ -163,47 +170,30 @@ export function createHoloCard(container, options = {}) {
     raf = requestAnimationFrame(frame);
   }
 
-  function play() {
-    if (!disposed && !raf) {
-      lastTime = performance.now();
-      raf = requestAnimationFrame(frame);
-    }
-  }
-  function pause() {
-    if (raf) cancelAnimationFrame(raf);
-    raf = 0;
+  const play = () => { if (!disposed && !raf) { lastTime = performance.now(); raf = requestAnimationFrame(frame); } };
+  const pause = () => { if (raf) cancelAnimationFrame(raf); raf = 0; };
+
+  function applyParams(p = {}) {
+    uniforms.uFoil.value = p.foil ?? options.foil ?? 0.68;
+    uniforms.uScale.value = p.subjectScale ?? 1.04;
+    uniforms.uDepth.value = p.subjectDepth ?? 0.3;
+    uniforms.uBgDepth.value = p.backgroundDepth ?? -0.18;
   }
 
   async function setPlayer(next) {
     player = next;
-    const loader = new THREE.TextureLoader();
     const src = next.assets.layers;
-    textures = await Promise.all([
-      loader.loadAsync(src.subject),
-      loader.loadAsync(src.background),
-      loader.loadAsync(src.text),
-      loader.loadAsync(src.lineart),
-    ]);
-    textures.forEach((t) => {
-      t.colorSpace = THREE.NoColorSpace;
-      t.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
-    });
+    const tex = await Promise.all(["subject", "background", "text", "lineart"].map((n) => new THREE.TextureLoader().loadAsync(src[n])));
+    tex.forEach((t) => { t.colorSpace = THREE.NoColorSpace; t.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4); });
     if (disposed) return;
-    uniforms.tSubject.value = textures[0];
-    uniforms.tBackground.value = textures[1];
-    uniforms.tText.value = textures[2];
-    uniforms.tLine.value = textures[3];
-    uniforms.tBack.value = backTexture(next, hex(next.accent));
-    const pr = next.parameters || {};
-    uniforms.uFoil.value = pr.foil ?? options.foil ?? 0.68;
-    uniforms.uScale.value = pr.subjectScale ?? 1.04;
-    uniforms.uDepth.value = pr.subjectDepth ?? 0.3;
-    uniforms.uBgDepth.value = pr.backgroundDepth ?? -0.18;
-  }
-
-  function hex(value) {
-    const v = (value || "#ffffff").replace("#", "");
-    return [0, 2, 4].map((i) => parseInt(v.slice(i, i + 2), 16));
+    textures?.forEach((t) => t.dispose());
+    textures = tex;
+    uniforms.tSubject.value = tex[0];
+    uniforms.tBackground.value = tex[1];
+    uniforms.tText.value = tex[2];
+    uniforms.tLine.value = tex[3];
+    uniforms.tBack.value = backTexture(next);
+    applyParams(next.parameters);
   }
 
   function init() {
@@ -220,15 +210,14 @@ export function createHoloCard(container, options = {}) {
       tLine: { value: null }, tBack: { value: null },
       uTime: { value: 0 }, uView: { value: new THREE.Vector3(0, 0, 1) },
       uFoil: { value: options.foil ?? 0.68 }, uScale: { value: 1.04 },
-      uDepth: { value: 0.30 }, uBgDepth: { value: -0.18 },
+      uDepth: { value: 0.3 }, uBgDepth: { value: -0.18 },
       uSafeScale: { value: 1.0 }, uSafeOffset: { value: new THREE.Vector2(0, 0) },
     };
     frontMat = new THREE.ShaderMaterial({ uniforms, vertexShader: VERTEX, fragmentShader: FRONT });
     backMat = new THREE.ShaderMaterial({ uniforms, vertexShader: VERTEX, fragmentShader: BACK });
     edgeMat = new THREE.ShaderMaterial({ uniforms, vertexShader: VERTEX, fragmentShader: EDGE });
-    mesh = new THREE.Mesh(geo, [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat]);
     root = new THREE.Group();
-    root.add(mesh);
+    root.add(new THREE.Mesh(geo, [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat]));
     scene.add(root);
 
     composer = new EffectComposer(renderer);
@@ -247,35 +236,93 @@ export function createHoloCard(container, options = {}) {
     };
     const onMove = (e) => {
       if (!dragging) return;
-      targetY = THREE.MathUtils.clamp(targetY + (e.clientX - last.x) * 0.006, -0.75, 0.75);
+      targetY = THREE.MathUtils.clamp(targetY + (e.clientX - last.x) * 0.006, baseY() - 0.72, baseY() + 0.72);
       targetX = THREE.MathUtils.clamp(targetX + (e.clientY - last.y) * 0.005, -0.5, 0.5);
       last = { x: e.clientX, y: e.clientY };
     };
     const onUp = () => { dragging = false; };
+    const onWheel = (e) => { e.preventDefault(); auto = false; zoom(-e.deltaY * 0.0012); };
+    const onKey = (e) => {
+      const k = e.key.toLowerCase();
+      if (k === "f") { e.preventDefault(); flip(); }
+      else if (k === "r") { e.preventDefault(); reset(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); auto = false; targetY -= 0.07; }
+      else if (e.key === "ArrowRight") { e.preventDefault(); auto = false; targetY += 0.07; }
+      else if (e.key === "ArrowUp") { e.preventDefault(); auto = false; targetX -= 0.06; }
+      else if (e.key === "ArrowDown") { e.preventDefault(); auto = false; targetX += 0.06; }
+      targetY = THREE.MathUtils.clamp(targetY, baseY() - 0.72, baseY() + 0.72);
+      targetX = THREE.MathUtils.clamp(targetX, -0.5, 0.5);
+    };
+    if (!container.hasAttribute("tabindex")) container.tabIndex = 0;
     container.addEventListener("pointerdown", onDown);
     container.addEventListener("pointermove", onMove);
     container.addEventListener("pointerup", onUp);
     container.addEventListener("pointercancel", onUp);
     container.addEventListener("lostpointercapture", onUp);
+    container.addEventListener("wheel", onWheel, { passive: false });
+    container.addEventListener("keydown", onKey);
 
     new ResizeObserver(resize).observe(container);
     resize();
-    new IntersectionObserver((entries) => {
-      entries.forEach((en) => (en.isIntersecting ? play() : pause()));
-    }, { threshold: 0.05 }).observe(container);
+    new IntersectionObserver((es) => es.forEach((en) => (en.isIntersecting ? play() : pause())), { threshold: 0.05 }).observe(container);
     play();
-    return { onDown, onMove, onUp };
+    return { onDown, onMove, onUp, onWheel, onKey };
+  }
+
+  function zoom(delta) {
+    targetZoom = THREE.MathUtils.clamp(targetZoom - delta, 0.82, 1.25);
+    resize();
+  }
+  function flip() {
+    flipped = !flipped;
+    auto = false;
+    targetY = baseY();
+    targetX = 0;
+    return flipped;
+  }
+  function reset() {
+    targetX = 0.02;
+    targetY = -0.14;
+    targetZoom = 1;
+    flipped = false;
+    auto = options.auto !== false;
+    applyParams(player?.parameters);
+    resize();
+  }
+  function save() {
+    if (!renderer) return;
+    composer.render();
+    const a = document.createElement("a");
+    a.download = `${(player?.name || "card").replace(/\s+/g, "-")}-holographic.png`;
+    a.href = renderer.domElement.toDataURL("image/png");
+    a.click();
   }
 
   const handlers = init();
 
   return {
-    async show(next) {
-      await setPlayer(next);
-    },
+    show: setPlayer,
     play,
     pause,
-    reset() { targetX = 0.02; targetY = -0.14; auto = options.auto !== false; },
+    reset,
+    flip,
+    zoom,
+    save,
+    get flipped() { return flipped; },
+    get auto() { return auto; },
+    setAuto(v) { auto = !!v; if (auto) play(); return auto; },
+    getParams() {
+      return {
+        foil: uniforms.uFoil.value, subjectScale: uniforms.uScale.value,
+        subjectDepth: uniforms.uDepth.value, backgroundDepth: uniforms.uBgDepth.value,
+      };
+    },
+    setParam(name, value) {
+      const u = PARAM_MAP[name];
+      if (!u) return;
+      const [lo, hi] = PARAM_RANGE[name];
+      uniforms[u].value = THREE.MathUtils.clamp(Number(value), lo, hi);
+    },
     dispose() {
       disposed = true;
       pause();
@@ -284,6 +331,8 @@ export function createHoloCard(container, options = {}) {
       container.removeEventListener("pointerup", handlers.onUp);
       container.removeEventListener("pointercancel", handlers.onUp);
       container.removeEventListener("lostpointercapture", handlers.onUp);
+      container.removeEventListener("wheel", handlers.onWheel);
+      container.removeEventListener("keydown", handlers.onKey);
       textures?.forEach((t) => t.dispose());
       geo.dispose();
       frontMat.dispose();

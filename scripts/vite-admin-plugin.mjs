@@ -50,10 +50,21 @@ export function adminApi() {
   const writeLibrary = (data) => writeFileSync(playersFile, JSON.stringify(data, null, 2) + "\n", "utf-8");
 
   async function styles() {
-    if (styleCache) return styleCache;
+    // Prefer the manifest that `build_cards.py` already wrote; fall back to
+    // asking Python only when the manifest is missing.
+    const manifest = join(root, "public", "cards", "manifest.json");
+    try {
+      const data = JSON.parse(readFileSync(manifest, "utf-8"));
+      if (Array.isArray(data.styles) && data.styles.length) {
+        styleCache = data.styles;
+        return styleCache;
+      }
+    } catch { /* fall through */ }
+    if (styleCache?.length) return styleCache;
     const { out } = await run("python", ["-c",
       "import json,sys;sys.path.insert(0,'scripts');import card_styles;print(json.dumps(card_styles.style_list(),ensure_ascii=False))"], root);
-    try { styleCache = JSON.parse(out.split("\n").pop()); } catch { styleCache = []; }
+    const last = out.split("\n").map((s) => s.trim()).filter(Boolean).pop() || "";
+    try { styleCache = JSON.parse(last); } catch { styleCache = []; }
     return styleCache;
   }
 
@@ -89,7 +100,7 @@ export function adminApi() {
             data.players[idx] = { ...data.players[idx], ...JSON.parse((await readBody(req)).toString("utf-8")), id: parts[1] };
             writeLibrary(data);
             const built = await rebuild([parts[1]]);
-            return send(200, { ok: true, log: built.log });
+            return send(200, { ok: built.ok, player: data.players[idx], log: built.log });
           }
           if (req.method === "POST" && parts[0] === "players" && parts.length === 1) {
             const body = JSON.parse((await readBody(req)).toString("utf-8"));

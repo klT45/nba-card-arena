@@ -211,6 +211,62 @@ function addPlayerAt(id, pos) {
   toast(`${p.name} 已进入 ${pos} 首发`);
 }
 
+function controlsHTML(prefix) {
+  const sliders = [
+    ["foil", "镭射强度", 0, 1.2, 0.01],
+    ["subjectScale", "主体缩放", 1, 1.7, 0.01],
+    ["subjectDepth", "主体深度", 0, 0.8, 0.01],
+    ["backgroundDepth", "背景深度", -0.65, 0, 0.01],
+  ].map(([name, label, min, max, step]) =>
+    `<label class="hc-slider"><span>${label}</span><input type="range" data-param="${name}" min="${min}" max="${max}" step="${step}"><output></output></label>`).join("");
+  return `<div class="holo-controls" id="${prefix}-controls" hidden>
+      <div class="hc-buttons">
+        <button type="button" data-holo="flip">翻看背面</button>
+        <button type="button" data-holo="auto">自动赏卡</button>
+        <button type="button" data-holo="reset">复位</button>
+        <button type="button" data-holo="save">保存图片</button>
+      </div>
+      ${sliders}
+      <p class="hc-hint">拖动旋转 · 滚轮缩放 · F 翻面 · R 复位 · 滑杆仅影响当前预览</p>
+    </div>`;
+}
+
+function bindHoloControls(prefix, inst) {
+  const panel = $(`#${prefix}-controls`);
+  if (!panel) return;
+  if (!inst) { panel.hidden = true; return; }
+  panel.hidden = false;
+  const sliders = $$("[data-param]", panel);
+  const syncSliders = () => {
+    const p = inst.getParams();
+    sliders.forEach((input) => {
+      input.value = p[input.dataset.param];
+      const out = input.parentElement.querySelector("output");
+      if (out) out.textContent = Number(input.value).toFixed(2);
+    });
+  };
+  syncSliders();
+  sliders.forEach((input) => {
+    input.oninput = () => {
+      inst.setParam(input.dataset.param, input.value);
+      const out = input.parentElement.querySelector("output");
+      if (out) out.textContent = Number(input.value).toFixed(2);
+    };
+  });
+  const flipBtn = $('[data-holo="flip"]', panel);
+  const autoBtn = $('[data-holo="auto"]', panel);
+  const sync = () => {
+    flipBtn.textContent = inst.flipped ? "回到正面" : "翻看背面";
+    autoBtn.textContent = inst.auto ? "暂停赏卡" : "自动赏卡";
+    autoBtn.classList.toggle("on", inst.auto);
+  };
+  flipBtn.onclick = () => { inst.flip(); sync(); };
+  autoBtn.onclick = () => { inst.setAuto(!inst.auto); sync(); };
+  $('[data-holo="reset"]', panel).onclick = () => { inst.reset(); syncSliders(); sync(); };
+  $('[data-holo="save"]', panel).onclick = () => inst.save();
+  sync();
+}
+
 /* --------------------------------------------------------------- detail ---- */
 async function openDetail(id) {
   const p = playerById(id);
@@ -223,7 +279,10 @@ async function openDetail(id) {
   ].map(([k, v]) => `<div class="info-row"><span>${k}</span><b>${esc(v)}</b></div>`).join("");
   $("#detail-content").innerHTML = `
     <div class="detail-layout">
-      <div class="detail-visual"><div class="holo-stage detail-holo" id="detail-holo"></div></div>
+      <div class="detail-visual">
+        <div class="holo-stage detail-holo" id="detail-holo"></div>
+        ${controlsHTML("detail")}
+      </div>
       <div class="detail-copy">
         <p class="kicker"><span></span>${p.rarity} · ${esc(styleName(p.style))}</p>
         <h2>${esc(p.name)}<i>${esc(p.title)}</i></h2>
@@ -236,7 +295,8 @@ async function openDetail(id) {
     </div>`;
   const dialog = $("#card-dialog");
   if (!dialog.open) dialog.showModal();
-  await mountHolo($("#detail-holo"), p, { auto: true });
+  const inst = await mountHolo($("#detail-holo"), p, { auto: true });
+  bindHoloControls("detail", inst);
 }
 function closeDetail() { unmountHolo($("#detail-holo")); }
 
@@ -260,11 +320,13 @@ function ripPack() {
           <div class="holo-stage draw-holo" id="draw-holo"></div>
           <h2>${esc(p.name)}</h2>
           <p class="draw-sub">${positionText(p)} · ${p.teamShort} · ${esc(styleName(p.style))}</p>
+          ${controlsHTML("draw")}
           ${pickerHTML(p)}
           <button class="skip" data-skip>暂不加入</button>
         </div>
       </div>`;
-    await mountHolo($("#draw-holo"), p, { auto: true });
+    const inst = await mountHolo($("#draw-holo"), p, { auto: true });
+    bindHoloControls("draw", inst);
   }, 520);
 }
 
