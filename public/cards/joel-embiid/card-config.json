@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Joel Embiid",
+  "subtitle": "THE PROCESS",
+  "collection": "CARD ARENA",
+  "edition": "No.21",
+  "description": "Philadelphia · C",
+  "assets": {
+    "subject": "/cards/joel-embiid/layers/subject.png",
+    "background": "/cards/joel-embiid/layers/background.png",
+    "lineart": "/cards/joel-embiid/layers/lineart.png",
+    "text": "/cards/joel-embiid/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

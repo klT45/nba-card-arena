@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: `${root}/index.html`,
+        gallery: `${root}/gallery.html`,
         admin: `${root}/admin.html`,
       },
     },

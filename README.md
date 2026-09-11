@@ -15,6 +15,25 @@ npm run dev             # http://127.0.0.1:5173 （同时提供卡库管理接�
 npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 ```
 
+## 卡池（14 位 · 覆盖五个位置）
+
+| 球员 | 位置 | 球队 | 卡面风格 |
+| --- | --- | --- | --- |
+| LeBron James | PG / SF | LAL | 幻光典藏 |
+| Stephen Curry | PG | GSW | 霓虹竞技场 |
+| Luka Doncic | PG / SG | LAL | 棱镜虹彩 |
+| Shai Gilgeous-Alexander | PG / SG | OKC | 棱镜虹彩 |
+| Tyrese Haliburton | PG / SG | IND | 棱镜虹彩 |
+| Devin Booker | SG / PG | PHX | 霓虹竞技场 |
+| Anthony Edwards | SG / SF | MIN | 霓虹竞技场 |
+| Kevin Durant | SF / PF | PHX | 水墨 |
+| Jayson Tatum | SF / PF | BOS | 鎏金典藏 |
+| Giannis Antetokounmpo | PF / C | MIL | 霓虹竞技场 |
+| Victor Wembanyama | PF / C | SAS | 棱镜虹彩 |
+| Anthony Davis | PF / C | DAL | 霓虹竞技场 |
+| Joel Embiid | C | PHI | 鎏金典藏 |
+| Nikola Jokic | C | DEN | 鎏金典藏 |
+
 ## 球员库（可扩展到二三十人）
 
 单一数据源：**`cards/library/players.json`**，每位球员一条记录；图片放在
@@ -75,7 +94,9 @@ cards/library/
 
 ## 功能
 
-- **展厅**：按位置、球队、卡面风格三重筛选；卡片拖拽只更新 CSS 变换，保持流畅。
+- **展厅（独立页面 / 新标签页）**：首页只保留一个展厅入口，点「打开展厅 ↗」会在**新标签页**打开
+  `gallery.html`，里面是完整的球星卡墙，支持按位置、球队、卡面风格三重筛选；在展厅里直接选位置加入首发，
+  回到竞技场标签页会自动同步阵容。
 - **实时镭射卡面**：详情弹窗、首页主卡、抽卡揭晓由 `src/holo.js` 实时渲染，复用技能的四层着色器。
 - **抽卡**：随机抽取 → 卡面揭晓 → 选择位置 → 确认加入（确认后自动关闭弹窗）→ 或「暂不加入」。
 - **阵容**：五个位置各限一人；多位置球星自由选择；同一球员不可重复上阵；显示已上阵人数。
@@ -88,8 +109,10 @@ cards/library/
 scripts/source_players.py   # （可选）从 Wikimedia Commons 检索候选照片并客观打分选优
 scripts/make_cutout.py      # 单张照片 → rembg 抠图
 scripts/make_cutouts.py     # 批量抠图（--force / --only）
+scripts/library_import.py   # 把选中的素材导入球员库并抓取 Commons 署名
 scripts/build_cards.py      # 依据球员库 + 风格生成四层素材、静态卡面与 manifest
 scripts/card_styles.py      # 五套卡面风格定义
+src/core.js                 # 两个页面共用的卡牌/阵容逻辑
 src/holo.js                 # 技能着色器的网页端实现（薄卡片网格，无需逐卡 Blender 导出）
 ```
 
@@ -119,9 +142,11 @@ nba-card-arena/
 │   ├── cards/<id>/           # 生成的卡面与图层（入库）
 │   └── legacy/lebron/        # 首张卡的 Three.js 3D 预览（静态托管）
 ├── scripts/                  # 素材管线 + 后台接口插件
-├── src/                      # 站点代码（main.js / holo.js / admin.js / style.css / admin.css）
+├── src/                      # 站点代码（core.js / main.js / gallery.js / holo.js / admin.js / *.css）
+├── index.html                # 竞技场：主卡 + 阵容 + 展厅入口
+├── gallery.html              # 球星卡展厅（新标签页打开）
 ├── admin.html                # 卡库管理后台
-└── index.html
+└── README.md
 ```
 
 ## 素材与权利声明（重要）

@@ -159,8 +159,8 @@
       "accent": "#ff6a13",
       "accent2": "#241456",
       "style": "ink",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
-      "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
+      "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0",
       "parameters": {
         "foil": 0.4,
         "subjectScale": 1.04,
@@ -233,7 +233,7 @@
       "accent": "#fec524",
       "accent2": "#0e2240",
       "style": "gold",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANikola_Jokic_%2851915399117%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
         "foil": 0.8,
@@ -271,7 +271,7 @@
       "accent": "#7fc4f2",
       "accent2": "#002b5e",
       "style": "prism",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51914012797).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALuka_Doncic_%2851914012797%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
         "foil": 0.95,
@@ -363,6 +363,194 @@
           "background": "/cards/victor-wembanyama/layers/background.png",
           "lineart": "/cards/victor-wembanyama/layers/lineart.png",
           "text": "/cards/victor-wembanyama/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "shai-gilgeous-alexander",
+      "name": "Shai Gilgeous-Alexander",
+      "number": "2",
+      "team": "Oklahoma City",
+      "teamShort": "OKC",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE SMOOTH",
+      "accent": "#007ac1",
+      "accent2": "#002d62",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93113.jpg",
+      "sourceCredit": "Sandro Halank, Wikimedia Commons / Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 0.95,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.22
+      },
+      "assets": {
+        "front": "/cards/shai-gilgeous-alexander/front.webp",
+        "thumb": "/cards/shai-gilgeous-alexander/thumb.webp",
+        "layers": {
+          "subject": "/cards/shai-gilgeous-alexander/layers/subject.png",
+          "background": "/cards/shai-gilgeous-alexander/layers/background.png",
+          "lineart": "/cards/shai-gilgeous-alexander/layers/lineart.png",
+          "text": "/cards/shai-gilgeous-alexander/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "anthony-edwards",
+      "name": "Anthony Edwards",
+      "number": "5",
+      "team": "Minnesota",
+      "teamShort": "MIN",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "ANT-MAN",
+      "accent": "#78be20",
+      "accent2": "#0c2340",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Edwards_Georgia_%28cropped%29.jpg",
+      "sourceCredit": "Gamecock Central / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.68,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.3,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/anthony-edwards/front.webp",
+        "thumb": "/cards/anthony-edwards/thumb.webp",
+        "layers": {
+          "subject": "/cards/anthony-edwards/layers/subject.png",
+          "background": "/cards/anthony-edwards/layers/background.png",
+          "lineart": "/cards/anthony-edwards/layers/lineart.png",
+          "text": "/cards/anthony-edwards/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "joel-embiid",
+      "name": "Joel Embiid",
+      "number": "21",
+      "team": "Philadelphia",
+      "teamShort": "PHI",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE PROCESS",
+      "accent": "#ed174c",
+      "accent2": "#006bb6",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJoel_Embiid_%2851913778247%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.8,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/joel-embiid/front.webp",
+        "thumb": "/cards/joel-embiid/thumb.webp",
+        "layers": {
+          "subject": "/cards/joel-embiid/layers/subject.png",
+          "background": "/cards/joel-embiid/layers/background.png",
+          "lineart": "/cards/joel-embiid/layers/lineart.png",
+          "text": "/cards/joel-embiid/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "anthony-davis",
+      "name": "Anthony Davis",
+      "number": "3",
+      "team": "Dallas",
+      "teamShort": "DAL",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE BROW",
+      "accent": "#2274c4",
+      "accent2": "#002b5e",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
+      "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 0.68,
+        "subjectScale": 1.04,
+        "subjectDepth": 0.3,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/anthony-davis/front.webp",
+        "thumb": "/cards/anthony-davis/thumb.webp",
+        "layers": {
+          "subject": "/cards/anthony-davis/layers/subject.png",
+          "background": "/cards/anthony-davis/layers/background.png",
+          "lineart": "/cards/anthony-davis/layers/lineart.png",
+          "text": "/cards/anthony-davis/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "tyrese-haliburton",
+      "name": "Tyrese Haliburton",
+      "number": "0",
+      "team": "Indiana",
+      "teamShort": "IND",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "ELITE",
+      "title": "THE ENGINE",
+      "accent": "#fdbb30",
+      "accent2": "#002d62",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATyrese_Haliburton.jpg",
+      "sourceCredit": "OSU Athletics / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.95,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.22
+      },
+      "assets": {
+        "front": "/cards/tyrese-haliburton/front.webp",
+        "thumb": "/cards/tyrese-haliburton/thumb.webp",
+        "layers": {
+          "subject": "/cards/tyrese-haliburton/layers/subject.png",
+          "background": "/cards/tyrese-haliburton/layers/background.png",
+          "lineart": "/cards/tyrese-haliburton/layers/lineart.png",
+          "text": "/cards/tyrese-haliburton/layers/text.png"
         }
       }
     }

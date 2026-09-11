@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090e" />
+    <meta name="description" content="NBA 球星卡展厅：按位置、球队与卡面风格筛选，实时镭射卡面。" />
+    <title>球星卡展厅 · NBA Card Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/gallery.css" />
+  </head>
+  <body class="gallery-page">
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="NBA Card Arena 首页">
+        <span class="brand-mark">CA</span>
+        <span><strong>CARD ARENA</strong><small>COLLECTION HALL</small></span>
+      </a>
+      <nav aria-label="展厅导航">
+        <span class="hall-count">卡池 <b id="gallery-total">--</b> 位</span>
+        <a href="/" class="nav-back">← 返回竞技场</a>
+      </nav>
+    </header>
+
+    <main class="hall">
+      <div class="hall-head">
+        <div>
+          <p class="kicker"><span></span> COLLECTION HALL</p>
+          <h1>球星卡展厅</h1>
+          <p class="hall-desc">按位置、球队与卡面风格筛选。点击任意卡片查看实时镭射卡面，选中位置即可加入首发阵容。</p>
+        </div>
+        <div class="lineup-bar" id="lineup-bar" aria-label="当前首发阵容"></div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filters" id="filters" role="group" aria-label="位置筛选">
+          <button class="active" data-position="ALL">全部</button>
+          <button data-position="PG">控卫</button>
+          <button data-position="SG">分卫</button>
+          <button data-position="SF">小前锋</button>
+          <button data-position="PF">大前锋</button>
+          <button data-position="C">中锋</button>
+        </div>
+        <div class="filter-selects">
+          <label>球队 <select id="team-filter"></select></label>
+          <label>风格 <select id="style-filter"></select></label>
+          <button class="filter-reset" id="reset-filters">重置</button>
+          <span class="result-count">显示 <b id="result-count">-</b></span>
+        </div>
+      </div>
+
+      <div class="card-grid" id="card-grid" aria-live="polite"></div>
+    </main>
+
+    <footer>
+      <div class="brand"><span class="brand-mark">CA</span><span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span></div>
+      <p>PERSONAL TECH DEMO · PLAYER IMAGERY CREDITED IN EACH CARD</p>
+      <a class="admin-link" href="/admin.html">卡库管理 ↗</a>
+    </footer>
+
+    <dialog id="card-dialog" class="card-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="detail-content"></div></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/gallery.js"></script>
+  </body>
+</html>

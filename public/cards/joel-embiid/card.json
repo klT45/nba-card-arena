@@ -1,0 +1,36 @@
+{
+  "id": "joel-embiid",
+  "name": "Joel Embiid",
+  "number": "21",
+  "team": "Philadelphia",
+  "teamShort": "PHI",
+  "positions": [
+    "C"
+  ],
+  "positionsZh": [
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE PROCESS",
+  "accent": "#ed174c",
+  "accent2": "#006bb6",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJoel_Embiid_%2851913778247%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/joel-embiid/front.webp",
+    "thumb": "/cards/joel-embiid/thumb.webp",
+    "layers": {
+      "subject": "/cards/joel-embiid/layers/subject.png",
+      "background": "/cards/joel-embiid/layers/background.png",
+      "lineart": "/cards/joel-embiid/layers/lineart.png",
+      "text": "/cards/joel-embiid/layers/text.png"
+    }
+  }
+}

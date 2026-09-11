@@ -141,3 +141,21 @@
 .hc-slider input[type="range"]{width:100%;accent-color:var(--lime)}
 .hc-slider output{font-variant-numeric:tabular-nums;color:#c9ced6;text-align:right}
 .hc-hint{margin:2px 0 0;font-size:10.5px;color:#6f7681;line-height:1.6}
+
+/* ==========================================================================
+   Gallery entry (the full hall now lives on its own page/tab).
+   ========================================================================== */
+.hall-entry{display:grid;grid-template-columns:1fr minmax(280px,.8fr);gap:40px;align-items:center;background:linear-gradient(120deg,#0c1017,#12170d);border-block:1px solid #232833}
+.hall-entry h2{font-family:var(--font-zh);font-size:clamp(46px,6vw,86px);line-height:1.05;margin:14px 0 16px}
+.entry-desc{max-width:580px;color:#9b9fa9;line-height:1.9;font-size:15px}
+.entry-desc b{color:var(--lime)}
+.entry-styles{font:700 12px var(--font-display);letter-spacing:.12em;color:#6f7681;margin:14px 0 0}
+.entry-actions{display:flex;gap:14px;align-items:center;margin-top:26px;flex-wrap:wrap}
+.entry-stack{position:relative;height:420px}
+.entry-card{position:absolute;width:min(230px,58%);aspect-ratio:1024/1493;left:50%;top:50%;border-radius:16px;background-size:cover;background-position:center;box-shadow:0 24px 60px #000c;transform:translate(-50%,-50%) rotate(var(--r,0deg)) translateX(var(--x,0px));transition:transform .6s cubic-bezier(.2,.75,.2,1)}
+.entry-card:nth-child(1){--r:-13deg;--x:-70px;opacity:.6}
+.entry-card:nth-child(2){--r:8deg;--x:70px;opacity:.8}
+.entry-card:nth-child(3){--r:-1deg;--x:0px;z-index:2}
+.entry-stack:hover .entry-card:nth-child(1){transform:translate(-50%,-50%) rotate(-18deg) translateX(-112px)}
+.entry-stack:hover .entry-card:nth-child(2){transform:translate(-50%,-50%) rotate(13deg) translateX(112px)}
+@media(max-width:900px){.hall-entry{grid-template-columns:1fr}.entry-stack{height:330px;order:-1}}

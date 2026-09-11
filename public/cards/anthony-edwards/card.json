@@ -1,0 +1,38 @@
+{
+  "id": "anthony-edwards",
+  "name": "Anthony Edwards",
+  "number": "5",
+  "team": "Minnesota",
+  "teamShort": "MIN",
+  "positions": [
+    "SG",
+    "SF"
+  ],
+  "positionsZh": [
+    "分卫",
+    "小前锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "ANT-MAN",
+  "accent": "#78be20",
+  "accent2": "#0c2340",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Edwards_Georgia_%28cropped%29.jpg",
+  "sourceCredit": "Gamecock Central / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/anthony-edwards/front.webp",
+    "thumb": "/cards/anthony-edwards/thumb.webp",
+    "layers": {
+      "subject": "/cards/anthony-edwards/layers/subject.png",
+      "background": "/cards/anthony-edwards/layers/background.png",
+      "lineart": "/cards/anthony-edwards/layers/lineart.png",
+      "text": "/cards/anthony-edwards/layers/text.png"
+    }
+  }
+}

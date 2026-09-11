@@ -1,0 +1,38 @@
+{
+  "id": "tyrese-haliburton",
+  "name": "Tyrese Haliburton",
+  "number": "0",
+  "team": "Indiana",
+  "teamShort": "IND",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "ELITE",
+  "title": "THE ENGINE",
+  "accent": "#fdbb30",
+  "accent2": "#002d62",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATyrese_Haliburton.jpg",
+  "sourceCredit": "OSU Athletics / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "assets": {
+    "front": "/cards/tyrese-haliburton/front.webp",
+    "thumb": "/cards/tyrese-haliburton/thumb.webp",
+    "layers": {
+      "subject": "/cards/tyrese-haliburton/layers/subject.png",
+      "background": "/cards/tyrese-haliburton/layers/background.png",
+      "lineart": "/cards/tyrese-haliburton/layers/lineart.png",
+      "text": "/cards/tyrese-haliburton/layers/text.png"
+    }
+  }
+}

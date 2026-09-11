@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Tyrese Haliburton",
+  "subtitle": "THE ENGINE",
+  "collection": "CARD ARENA",
+  "edition": "No.0",
+  "description": "Indiana · PG / SG",
+  "assets": {
+    "subject": "/cards/tyrese-haliburton/layers/subject.png",
+    "background": "/cards/tyrese-haliburton/layers/background.png",
+    "lineart": "/cards/tyrese-haliburton/layers/lineart.png",
+    "text": "/cards/tyrese-haliburton/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "anthony-davis",
+  "name": "Anthony Davis",
+  "number": "3",
+  "team": "Dallas",
+  "teamShort": "DAL",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE BROW",
+  "accent": "#2274c4",
+  "accent2": "#002b5e",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
+  "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/anthony-davis/front.webp",
+    "thumb": "/cards/anthony-davis/thumb.webp",
+    "layers": {
+      "subject": "/cards/anthony-davis/layers/subject.png",
+      "background": "/cards/anthony-davis/layers/background.png",
+      "lineart": "/cards/anthony-davis/layers/lineart.png",
+      "text": "/cards/anthony-davis/layers/text.png"
+    }
+  }
+}

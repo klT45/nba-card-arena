@@ -1,0 +1,38 @@
+{
+  "id": "shai-gilgeous-alexander",
+  "name": "Shai Gilgeous-Alexander",
+  "number": "2",
+  "team": "Oklahoma City",
+  "teamShort": "OKC",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE SMOOTH",
+  "accent": "#007ac1",
+  "accent2": "#002d62",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93113.jpg",
+  "sourceCredit": "Sandro Halank, Wikimedia Commons / Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "assets": {
+    "front": "/cards/shai-gilgeous-alexander/front.webp",
+    "thumb": "/cards/shai-gilgeous-alexander/thumb.webp",
+    "layers": {
+      "subject": "/cards/shai-gilgeous-alexander/layers/subject.png",
+      "background": "/cards/shai-gilgeous-alexander/layers/background.png",
+      "lineart": "/cards/shai-gilgeous-alexander/layers/lineart.png",
+      "text": "/cards/shai-gilgeous-alexander/layers/text.png"
+    }
+  }
+}

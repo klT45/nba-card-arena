@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Shai Gilgeous-Alexander",
+  "subtitle": "THE SMOOTH",
+  "collection": "CARD ARENA",
+  "edition": "No.2",
+  "description": "Oklahoma City · PG / SG",
+  "assets": {
+    "subject": "/cards/shai-gilgeous-alexander/layers/subject.png",
+    "background": "/cards/shai-gilgeous-alexander/layers/background.png",
+    "lineart": "/cards/shai-gilgeous-alexander/layers/lineart.png",
+    "text": "/cards/shai-gilgeous-alexander/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

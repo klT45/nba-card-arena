@@ -84,8 +84,8 @@
       "accent": "#ff6a13",
       "accent2": "#241456",
       "style": "ink",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_(5).jpg",
-      "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0"
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
+      "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0"
     },
     {
       "id": "giannis-antetokounmpo",
@@ -126,7 +126,7 @@
       "accent": "#fec524",
       "accent2": "#0e2240",
       "style": "gold",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikola_Jokic_(51914124577).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANikola_Jokic_%2851915399117%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
     },
     {
@@ -148,7 +148,7 @@
       "accent": "#7fc4f2",
       "accent2": "#002b5e",
       "style": "prism",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luka_Doncic_(51914012797).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALuka_Doncic_%2851914012797%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
     },
     {
@@ -194,6 +194,114 @@
       "style": "prism",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_San_Antonio_Spurs_2025_NBA_Cup.jpg",
       "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "shai-gilgeous-alexander",
+      "name": "Shai Gilgeous-Alexander",
+      "number": "2",
+      "team": "Oklahoma City",
+      "teamShort": "OKC",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE SMOOTH",
+      "accent": "#007ac1",
+      "accent2": "#002d62",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93113.jpg",
+      "sourceCredit": "Sandro Halank, Wikimedia Commons / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "anthony-edwards",
+      "name": "Anthony Edwards",
+      "number": "5",
+      "team": "Minnesota",
+      "teamShort": "MIN",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "ANT-MAN",
+      "accent": "#78be20",
+      "accent2": "#0c2340",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Edwards_Georgia_%28cropped%29.jpg",
+      "sourceCredit": "Gamecock Central / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "joel-embiid",
+      "name": "Joel Embiid",
+      "number": "21",
+      "team": "Philadelphia",
+      "teamShort": "PHI",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE PROCESS",
+      "accent": "#ed174c",
+      "accent2": "#006bb6",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJoel_Embiid_%2851913778247%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "anthony-davis",
+      "name": "Anthony Davis",
+      "number": "3",
+      "team": "Dallas",
+      "teamShort": "DAL",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE BROW",
+      "accent": "#2274c4",
+      "accent2": "#002b5e",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
+      "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "tyrese-haliburton",
+      "name": "Tyrese Haliburton",
+      "number": "0",
+      "team": "Indiana",
+      "teamShort": "IND",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "ELITE",
+      "title": "THE ENGINE",
+      "accent": "#fdbb30",
+      "accent2": "#002d62",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATyrese_Haliburton.jpg",
+      "sourceCredit": "OSU Athletics / Wikimedia Commons, CC BY 2.0"
     }
   ]
 }

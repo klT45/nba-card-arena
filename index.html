@@ -19,7 +19,7 @@
         <span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span>
       </a>
       <nav aria-label="主导航">
-        <a href="#gallery">展厅</a>
+        <a href="/gallery.html" target="_blank" rel="noreferrer">展厅 ↗</a>
         <a href="#lineup">阵容</a>
         <button class="nav-draw" data-action="draw">立即抽取 <span>01</span></button>
       </nav>
@@ -33,7 +33,7 @@
           <p class="hero-desc">九位球星，五个位置，五种卡面风格。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
           <div class="hero-actions">
             <button class="cta" data-action="draw">开启一包 <b>↗</b></button>
-            <a class="ghost" href="#gallery">进入展厅 <span>↓</span></a>
+            <a class="ghost" href="/gallery.html" target="_blank" rel="noreferrer">进入展厅 <span>↗</span></a>
           </div>
           <div class="series-stats">
             <div><strong id="card-count">09</strong><span>首发卡池</span></div>
@@ -59,26 +59,18 @@
         <div>LEBRON JAMES <i>◆</i> STEPHEN CURRY <i>◆</i> LUKA DONCIC <i>◆</i> KEVIN DURANT <i>◆</i> NIKOLA JOKIC <i>◆</i> GIANNIS ANTETOKOUNMPO <i>◆</i> JAYSON TATUM <i>◆</i> DEVIN BOOKER <i>◆</i> VICTOR WEMBANYAMA <i>◆</i> </div>
       </section>
 
-      <section class="gallery section" id="gallery">
-        <div class="section-head">
-          <div><p class="kicker"><span></span> COLLECTION HALL</p><h2>球星卡展厅</h2></div>
-          <p>按位置、球队和卡面风格筛选。点击卡片查看实时镭射卡面，拖动时仅更新 CSS 变换，不持续运行高开销后处理。</p>
-        </div>
-        <div class="filter-bar">
-          <div class="filters" id="filters" role="group" aria-label="位置筛选">
-            <button class="active" data-position="ALL">全部 <span>09</span></button>
-            <button data-position="PG">控卫</button>
-            <button data-position="SG">分卫</button>
-            <button data-position="SF">小前锋</button>
-            <button data-position="PF">大前锋</button>
-            <button data-position="C">中锋</button>
-          </div>
-          <div class="filter-selects">
-            <label>球队 <select id="team-filter"></select></label>
-            <label>风格 <select id="style-filter"></select></label>
+      <section class="hall-entry section" id="hall">
+        <div class="entry-copy">
+          <p class="kicker"><span></span> COLLECTION HALL</p>
+          <h2>球星卡展厅</h2>
+          <p class="entry-desc">全部 <b id="entry-count">--</b> 位球星的实时镭射卡面，可按位置、球队与卡面风格筛选，并直接挑选位置加入首发。展厅在<b>新标签页</b>中打开，方便与阵容页对照。</p>
+          <p class="entry-styles" id="entry-styles"></p>
+          <div class="entry-actions">
+            <a class="cta" href="/gallery.html" target="_blank" rel="noreferrer">打开展厅 <b>↗</b></a>
+            <a class="ghost" href="/admin.html">卡库管理 <span>↗</span></a>
           </div>
         </div>
-        <div class="card-grid" id="card-grid" aria-live="polite"></div>
+        <div class="entry-stack" id="entry-stack" aria-hidden="true"></div>
       </section>
 
       <section class="lineup section" id="lineup">
