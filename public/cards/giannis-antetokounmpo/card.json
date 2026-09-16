@@ -2,8 +2,8 @@
   "id": "giannis-antetokounmpo",
   "name": "Giannis Antetokounmpo",
   "number": "34",
-  "team": "Milwaukee",
-  "teamShort": "MIL",
+  "team": "Miami",
+  "teamShort": "MIA",
   "positions": [
     "PF",
     "C"
@@ -12,10 +12,10 @@
     "大前锋",
     "中锋"
   ],
-  "rarity": "MYTHIC",
+  "rarity": "ELITE",
   "title": "GREEK FREAK",
-  "accent": "#e8dcc0",
-  "accent2": "#0b3a1d",
+  "accent": "#f9a01b",
+  "accent2": "#98002e",
   "style": "arena",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51914060952).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",

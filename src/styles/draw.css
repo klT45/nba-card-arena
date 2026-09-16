@@ -1,0 +1,253 @@
+/* ==========================================================================
+   draw.css
+   The pack-tearing flow: pack, charge orb, burst, reveal, their keyframes,
+   and the reduced-motion override.
+   ========================================================================== */
+/* ---------------------------------------------------------- draw flow ----- */
+.draw-dialog { width: min(560px, 94vw); max-height: 94dvh; border: 0; background: transparent; overflow: visible; }
+/* `--rarity` is set on the stage by core.js once the winner is known, so the
+   whole room shifts colour per tier: green MYTHIC, ice-blue ELITE, violet
+   RARE. It defaults to the brand green for the pre-draw pack screen. */
+.draw-stage {
+  --rarity: var(--brand);
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* `min(540px, 88svh)`: a flat 540px floor beats `max-height` on any screen
+     shorter than 574px, so on a landscape phone the stage stayed 540px tall in
+     a 390px viewport and the dialog hung 162px off the bottom. The svh cap
+     keeps the floor below the ceiling; the reveal then scrolls inside instead. */
+  min-height: min(540px, 88svh);
+  max-height: 94dvh;
+  overflow-y: auto;
+  padding: 34px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--rarity) 16%, transparent) 0, transparent 62%),
+    radial-gradient(circle at 50% 40%, #232a12 0, #10140b 30%, #07090d 72%);
+  box-shadow: var(--shadow-lg);
+  transition: background .4s ease;
+}
+.draw-stage::before {
+  content: "";
+  position: absolute;
+  inset: 16%;
+  border: 1px solid var(--rarity);
+  border-radius: 50%;
+  box-shadow: 0 0 140px var(--rarity) inset;
+  opacity: .2;
+  animation: draw-pulse 2.4s ease-in-out infinite;
+}
+.draw-rays {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background: conic-gradient(from 0deg, transparent 0 7%, color-mix(in srgb, var(--rarity) 22%, transparent) 9%,
+    transparent 13% 24%, color-mix(in srgb, #fff 16%, transparent) 26%, transparent 30% 46%,
+    color-mix(in srgb, var(--rarity) 26%, transparent) 48%, transparent 53% 70%,
+    color-mix(in srgb, #fff 12%, transparent) 73%, transparent 78%);
+  animation: ray-spin 9s linear infinite;
+}
+/* Rays accelerate while the orb charges - the "something is coming" beat. */
+.draw-stage.charging .draw-rays { animation-duration: 2.4s; }
+.draw-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .45;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--rarity) 55%, #fff) 0 1.2px, transparent 2px),
+    radial-gradient(circle, #fff 0 1px, transparent 2px);
+  background-size: 83px 97px, 127px 113px;
+  background-position: 12px 20px, 55px 36px;
+  animation: particle-drift 6s linear infinite;
+}
+.pack {
+  position: relative;
+  z-index: 2;
+  width: 210px;
+  aspect-ratio: 1024 / 1493;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--brand);
+  background:
+    repeating-linear-gradient(135deg, rgba(201, 255, 61, .14) 0 12px, transparent 12px 24px),
+    linear-gradient(160deg, #161d0c, #0a0d06);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 0 70px rgba(201, 255, 61, .22), var(--shadow-lg);
+  transition: transform .25s var(--ease);
+}
+.pack span { font: 900 30px/1.05 var(--font-display); letter-spacing: .12em; }
+.pack small { display: block; margin-top: 16px; font: 700 11px/1 var(--font-display); letter-spacing: .3em; color: var(--brand); }
+.pack:hover { transform: translateY(-8px) rotate(-1.5deg); }
+.pack.ripping { animation: pack-rip .62s cubic-bezier(.6, -.1, .7, 1) forwards; }
+
+/* --- charge orb ---------------------------------------------------------
+   The suspense beat between tearing the pack and seeing the card. Three
+   stacked layers: a hot core, a ring collapsing inward, a ring pushing out.
+   Its colour is the tier tell - `--rarity` is already the winner's glow. */
+.draw-charge {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+}
+.draw-charge > * { grid-area: 1 / 1; display: block; border-radius: var(--r-full); }
+.draw-charge i {
+  width: 78px;
+  height: 78px;
+  background: radial-gradient(circle at 50% 44%, #fff 0 16%, var(--rarity) 44%, transparent 74%);
+  box-shadow: 0 0 90px var(--rarity), 0 0 200px color-mix(in srgb, var(--rarity) 60%, transparent);
+  animation: charge-core 1.15s ease-in-out infinite;
+}
+.draw-charge b {
+  width: 258px;
+  height: 258px;
+  border: 1.5px solid var(--rarity);
+  animation: charge-in 1.15s ease-in infinite;
+}
+.draw-charge u {
+  width: 118px;
+  height: 118px;
+  border: 1px solid var(--rarity);
+  animation: charge-out 1.15s ease-out infinite;
+}
+/* Final flash: the core blows past the frame and the room whites out. The core
+   bursts fast (.34s) while the white bloom behind it decays slowly (.5s, see
+   .draw-stage.flaring::after). The mismatch is deliberate: the bang is over
+   quickly, the light lingers, and the confetti keeps falling for the rest of
+   BURST_HOLD before the card lands. */
+.draw-charge.burst i { animation: charge-burst .34s cubic-bezier(.14, .9, .3, 1) forwards; }
+.draw-charge.burst b, .draw-charge.burst u { animation: none; opacity: 0; }
+.draw-stage.flaring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, .95),
+    color-mix(in srgb, var(--rarity) 45%, transparent) 30%, transparent 66%);
+  animation: flash .5s ease-out forwards;
+}
+@keyframes charge-core {
+  50% { transform: scale(1.26); filter: brightness(1.55); }
+}
+@keyframes charge-in {
+  0% { transform: scale(1); opacity: .55; }
+  100% { transform: scale(.32); opacity: 0; }
+}
+@keyframes charge-out {
+  0% { transform: scale(.4); opacity: .7; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes charge-burst {
+  0% { transform: scale(1); opacity: 1; filter: brightness(1); }
+  16% { transform: scale(1.55); opacity: 1; filter: brightness(4.2); }
+  100% { transform: scale(4.4); opacity: 0; filter: brightness(2.4); }
+}
+
+.draw-result { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
+.draw-holo { width: min(100%, 228px); margin-bottom: 12px; }
+.draw-rarity {
+  margin: 0 0 6px;
+  font: 800 11px/1 var(--font-display);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--rarity, var(--brand));
+}
+.draw-result h2 { margin: 0; font: 900 34px/1.05 var(--font-display); letter-spacing: .04em; text-transform: uppercase; text-align: center; }
+/* Letters are wrapped by splitLetters() in core.js and staggered in by GSAP. The
+   spans carry inline display:inline-block too, so this is a belt-and-braces
+   fallback for the per-word boxes. */
+.draw-result h2 span span { display: inline-block; }
+.draw-sub { margin: 8px 0 0; color: var(--text-3); font-size: 12.5px; letter-spacing: .08em; text-align: center; }
+.draw-note {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: 11.5px;
+  line-height: 1.6;
+  text-align: center;
+}
+.draw-result .picker, .draw-result .holo-controls { width: 100%; text-align: left; }
+.draw-result .holo-controls { margin-top: 16px; }
+.skip { margin-top: 12px; padding: 12px; color: var(--text-3); font: 700 12px/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase; transition: color .2s; }
+.skip:hover { color: var(--text); }
+
+/* Confetti canvas. It has to live *inside* .draw-stage: <dialog showModal()>
+   paints in the top layer, so the library's default fixed full-page canvas would
+   sit behind the modal and never be seen. */
+.draw-confetti { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; pointer-events: none; }
+
+/* Sparks fired outward from the centre when the pack bursts. */
+.draw-sparks { position: absolute; left: 50%; top: 38%; z-index: 3; pointer-events: none; }
+.draw-sparks i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px;
+  border-radius: var(--r-full);
+  background: var(--rarity, var(--brand));
+  box-shadow: 0 0 12px var(--rarity, var(--brand));
+  opacity: 0;
+  animation: spark-fly 1.05s var(--ease-out) var(--dl, 0ms) forwards;
+}
+.draw-stage.bursting::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 46%, rgba(255, 255, 255, .9), rgba(201, 255, 61, .3) 24%, transparent 58%);
+  animation: flash .5s ease-out forwards;
+}
+@keyframes spark-fly {
+  0% { opacity: 0; transform: translate(0, 0) scale(.4); }
+  18% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(.15); }
+}
+
+/* Reveal choreography: card flies in, a light burst fires, sparks fall. */
+.reveal { animation: reveal .9s var(--ease-out); }
+.draw-stage.reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, .95), rgba(201, 255, 61, .35) 26%, transparent 62%);
+  animation: flash .75s ease-out forwards;
+}
+.draw-result .draw-holo { animation: card-land 1s var(--ease-out) both; }
+@keyframes reveal { from { opacity: 0; } }
+@keyframes flash { from { opacity: 1; } to { opacity: 0; } }
+@keyframes card-land {
+  0% { transform: translateY(34px) scale(.72) rotate(-6deg); opacity: 0; filter: brightness(3); }
+  60% { opacity: 1; }
+  100% { transform: none; opacity: 1; filter: none; }
+}
+@keyframes pack-rip {
+  32% { transform: scale(1.1) rotate(-4deg); filter: brightness(1.9); }
+  100% { transform: scale(.32) rotate(24deg) translateY(-42px); opacity: 0; filter: blur(14px); }
+}
+@keyframes ray-spin { to { transform: rotate(360deg); } }
+@keyframes particle-drift { to { background-position: 12px 128px, 55px -78px; } }
+@keyframes draw-pulse { 50% { transform: scale(1.06); opacity: .5; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .draw-rays, .draw-particles, .draw-stage::before,
+  .draw-charge i, .draw-charge b, .draw-charge u { animation: none; }
+  .reveal, .draw-result .draw-holo, .draw-stage.reveal::after,
+  .draw-stage.flaring::after, .draw-charge.burst i { animation-duration: .01ms; }
+}
+

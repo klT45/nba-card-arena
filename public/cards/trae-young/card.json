@@ -1,0 +1,36 @@
+{
+  "id": "trae-young",
+  "name": "Trae Young",
+  "number": "11",
+  "team": "Washington",
+  "teamShort": "WAS",
+  "positions": [
+    "PG"
+  ],
+  "positionsZh": [
+    "控卫"
+  ],
+  "rarity": "COMMON",
+  "title": "ICE TRAE",
+  "accent": "#e31837",
+  "accent2": "#002b5c",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATrae_Young_%2851914814021%29_%28cropped%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/trae-young/front.webp",
+    "thumb": "/cards/trae-young/thumb.webp",
+    "layers": {
+      "subject": "/cards/trae-young/layers/subject.png",
+      "background": "/cards/trae-young/layers/background.png",
+      "lineart": "/cards/trae-young/layers/lineart.png",
+      "text": "/cards/trae-young/layers/text.png"
+    }
+  }
+}

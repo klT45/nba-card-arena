@@ -2,8 +2,9 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#07090e" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="description" content="抽取 NBA 球星闪卡，组建你的梦幻首发阵容。" />
     <title>NBA Card Arena · 球星卡竞技场</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,13 +31,13 @@
         <div class="hero-copy">
           <p class="kicker"><span></span> SERIES 01 · LEGENDS IN MOTION</p>
           <h1>抽出传奇<br /><i>组建首发。</i></h1>
-          <p class="hero-desc">九位球星，五个位置，五种卡面风格。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
+          <p class="hero-desc"><b id="hero-count">--</b> 位球星，五个位置，五种卡面风格。每次抽取都是阵容的另一种可能。收藏实时镭射卡面，根据球员位置排出你的终极五人组。</p>
           <div class="hero-actions">
             <button class="cta" data-action="draw">开启一包 <b>↗</b></button>
             <a class="ghost" href="/gallery.html" target="_blank" rel="noreferrer">进入展厅 <span>↗</span></a>
           </div>
           <div class="series-stats">
-            <div><strong id="card-count">09</strong><span>首发卡池</span></div>
+            <div><strong id="card-count">--</strong><span>首发卡池</span></div>
             <div><strong>05</strong><span>阵容席位</span></div>
             <div><strong id="style-count">05</strong><span>卡面风格</span></div>
           </div>
@@ -56,7 +57,20 @@
       </section>
 
       <section class="ticker" aria-label="球员滚动列表">
-        <div>LEBRON JAMES <i>◆</i> STEPHEN CURRY <i>◆</i> LUKA DONCIC <i>◆</i> KEVIN DURANT <i>◆</i> NIKOLA JOKIC <i>◆</i> GIANNIS ANTETOKOUNMPO <i>◆</i> JAYSON TATUM <i>◆</i> DEVIN BOOKER <i>◆</i> VICTOR WEMBANYAMA <i>◆</i> </div>
+        <!-- Filled from the manifest by main.js. It used to be nine names typed
+             out twice by hand, which silently went stale as the roster grew. -->
+        <div class="ticker-view"><div class="ticker-track" id="ticker-track"></div></div>
+        <!-- WCAG 2.2.2: an endless marquee that starts on its own has to be
+             pausable. The button is outside .ticker-view so the edge mask that
+             fades the text does not fade the control with it. -->
+        <button type="button" class="ticker-toggle" id="ticker-toggle"
+                aria-pressed="false" aria-label="暂停滚动名单">
+          <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+            <rect class="i-pause" x="2" y="1.5" width="3" height="9" rx="1" />
+            <rect class="i-pause" x="7" y="1.5" width="3" height="9" rx="1" />
+            <path class="i-play" d="M3 1.5 L10.5 6 L3 10.5 Z" />
+          </svg>
+        </button>
       </section>
 
       <section class="hall-entry section" id="hall">
@@ -102,8 +116,8 @@
 
     <footer><div class="brand"><span class="brand-mark">CA</span><span><strong>CARD ARENA</strong><small>BUILD YOUR FIVE</small></span></div><p>PERSONAL TECH DEMO · PLAYER IMAGERY CREDITED IN EACH CARD</p><a class="admin-link" href="/admin.html">卡库管理 ↗</a></footer>
 
-    <dialog id="card-dialog" class="card-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="detail-content"></div></dialog>
-    <dialog id="draw-dialog" class="draw-dialog"><button class="dialog-close" aria-label="关闭">×</button><div id="draw-content"></div></dialog>
+    <dialog id="card-dialog" class="card-dialog" aria-labelledby="detail-title"><button class="dialog-close" aria-label="关闭">×</button><div id="detail-content"></div></dialog>
+    <dialog id="draw-dialog" class="draw-dialog" aria-label="抽取球星卡"><button class="dialog-close" aria-label="关闭">×</button><div id="draw-content"></div></dialog>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

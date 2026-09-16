@@ -1,0 +1,157 @@
+/* ==========================================================================
+   dialogs.css
+   Dialog shell, the card detail layout, the position picker, and the
+   holographic controls panel.
+   ========================================================================== */
+/* ------------------------------------------------------------- dialogs ---- */
+dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+dialog::backdrop { background: rgba(3, 4, 8, .78); backdrop-filter: blur(10px); }
+dialog[open] { animation: dialog-in .32s var(--ease-out); }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.97); } }
+
+.dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line-2);
+  background: rgba(10, 13, 20, .8);
+  backdrop-filter: blur(10px);
+  color: var(--text-2);
+  font-size: 20px;
+  line-height: 1;
+  transition: color .2s, border-color .2s, transform .2s;
+}
+.dialog-close:hover { color: var(--brand); border-color: var(--brand); transform: rotate(90deg); }
+
+.card-dialog {
+  width: min(1120px, 94vw);
+  border-radius: var(--r-lg);
+  background: linear-gradient(165deg, var(--surface), #080b12 70%);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.detail-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr); }
+.detail-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 44px 34px;
+  background: radial-gradient(90% 70% at 50% 20%, rgba(201, 255, 61, .07), transparent 70%), #080b11;
+  border-right: 1px solid var(--line);
+}
+.detail-holo { width: min(100%, 330px); }
+.detail-copy { padding: 44px 42px; overflow-y: auto; max-height: 86vh; }
+.detail-copy .kicker { margin-bottom: 14px; color: var(--brand); }
+.detail-copy h2 {
+  margin: 0 0 18px;
+  font: 900 clamp(34px, 3.6vw, 52px)/1.05 var(--font-display);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.detail-copy h2 i {
+  display: block;
+  margin-top: 6px;
+  font: 700 clamp(16px, 1.6vw, 22px)/1.2 var(--font-display);
+  font-style: normal;
+  letter-spacing: .16em;
+  color: var(--text-3);
+}
+.position-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.position-chips span {
+  padding: 7px 13px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-full);
+  font: 700 12px/1 var(--font-display);
+  letter-spacing: .08em;
+  color: var(--text);
+  background: rgba(255, 255, 255, .03);
+}
+.info-grid { border-top: 1px solid var(--line); margin-bottom: 4px; }
+.info-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.info-row span { color: var(--text-3); }
+.info-row b { font-weight: 600; text-align: right; }
+.source-note { margin: 18px 0 0; font-size: 11px; line-height: 1.8; color: var(--text-3); }
+.source-note a { color: var(--brand); }
+.legacy-link { margin-top: 14px; width: 100%; }
+
+/* ------------------------------------------------------------- picker ----- */
+.picker { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+.picker-label { margin: 0 0 14px; font: 700 11px/1 var(--font-display); letter-spacing: .26em; color: var(--brand); }
+.pos-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.pos-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 104px;
+  padding: 11px 15px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, .025);
+  text-align: left;
+  transition: border-color .18s, background .18s, transform .18s, box-shadow .18s;
+}
+.pos-chip b { font: 900 19px/1 var(--font-display); letter-spacing: .04em; }
+.pos-chip span { font-size: 11px; color: var(--text-3); }
+.pos-chip i { font-size: 10px; font-style: normal; color: var(--danger); }
+.pos-chip:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--brand); }
+.pos-chip.selected { border-color: var(--brand); background: rgba(201, 255, 61, .12); box-shadow: 0 0 0 1px var(--brand); }
+.pos-chip:disabled { opacity: .35; cursor: not-allowed; }
+.picker-note { margin: 14px 0 16px; font-size: 12.5px; line-height: 1.75; color: var(--text-3); }
+
+/* ------------------------------------------------------- holo controls ---- */
+.holo-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 330px);
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+}
+.hc-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+/* The living-portrait toggle only exists on MYTHIC cards and has a longer label
+   than its neighbours, so give it a row of its own instead of letting the text
+   wrap mid-word when five buttons share 330px. */
+.hc-buttons button[data-holo="alive"] { flex: 1 0 100%; }
+.hc-buttons button {
+  flex: 1 1 auto;
+  /* Was a hard 78px floor, which made four buttons 336px wide inside a 298px
+     row - they were then clipped by the stage's `overflow-x: hidden`, so the
+     last one was simply unreachable on a phone. Letting them shrink below their
+     content and wrap keeps every button visible at any width. */
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-xs);
+  color: var(--text-2);
+  font: 700 12px/1 var(--font-display);
+  letter-spacing: .06em;
+  transition: color .18s, border-color .18s, background .18s;
+}
+.hc-buttons button:hover { color: var(--brand); border-color: var(--brand); }
+.hc-buttons button.on { color: var(--brand-ink); background: var(--brand); border-color: var(--brand); }
+.hc-slider { display: grid; grid-template-columns: 66px 1fr 40px; align-items: center; gap: 10px; font-size: 11.5px; color: var(--text-3); }
+.hc-slider input[type="range"] { width: 100%; height: 4px; accent-color: var(--brand); cursor: pointer; }
+.hc-slider output { font-variant-numeric: tabular-nums; color: var(--text-2); text-align: right; }
+.hc-hint { margin: 2px 0 0; font-size: 10.5px; line-height: 1.7; color: var(--text-3); }
+

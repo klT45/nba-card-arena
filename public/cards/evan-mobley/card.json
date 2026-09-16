@@ -1,0 +1,38 @@
+{
+  "id": "evan-mobley",
+  "name": "Evan Mobley",
+  "number": "4",
+  "team": "Cleveland",
+  "teamShort": "CLE",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "COMMON",
+  "title": "THE PROTECTOR",
+  "accent": "#860038",
+  "accent2": "#041e42",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEvan_Mobley_%2851914240557%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "assets": {
+    "front": "/cards/evan-mobley/front.webp",
+    "thumb": "/cards/evan-mobley/thumb.webp",
+    "layers": {
+      "subject": "/cards/evan-mobley/layers/subject.png",
+      "background": "/cards/evan-mobley/layers/background.png",
+      "lineart": "/cards/evan-mobley/layers/lineart.png",
+      "text": "/cards/evan-mobley/layers/text.png"
+    }
+  }
+}

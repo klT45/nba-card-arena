@@ -1,0 +1,38 @@
+{
+  "id": "cade-cunningham",
+  "name": "Cade Cunningham",
+  "number": "2",
+  "team": "Detroit",
+  "teamShort": "DET",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "COMMON",
+  "title": "MOTORCADE",
+  "accent": "#c8102e",
+  "accent2": "#1d42ba",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACade_Cunningham_%2851915113234%29_%28cropped%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/cade-cunningham/front.webp",
+    "thumb": "/cards/cade-cunningham/thumb.webp",
+    "layers": {
+      "subject": "/cards/cade-cunningham/layers/subject.png",
+      "background": "/cards/cade-cunningham/layers/background.png",
+      "lineart": "/cards/cade-cunningham/layers/lineart.png",
+      "text": "/cards/cade-cunningham/layers/text.png"
+    }
+  }
+}

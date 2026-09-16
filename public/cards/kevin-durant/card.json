@@ -2,8 +2,8 @@
   "id": "kevin-durant",
   "name": "Kevin Durant",
   "number": "35",
-  "team": "Phoenix",
-  "teamShort": "PHX",
+  "team": "Houston",
+  "teamShort": "HOU",
   "positions": [
     "SF",
     "PF"
@@ -14,8 +14,8 @@
   ],
   "rarity": "MYTHIC",
   "title": "SLIM REAPER",
-  "accent": "#ff6a13",
-  "accent2": "#241456",
+  "accent": "#ce1141",
+  "accent2": "#151515",
   "style": "ink",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
   "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0",

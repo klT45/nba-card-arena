@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "ink",
+  "title": "Rudy Gobert",
+  "subtitle": "THE STIFLE TOWER",
+  "collection": "CARD ARENA",
+  "edition": "No.27",
+  "description": "Minnesota · C",
+  "assets": {
+    "subject": "/cards/rudy-gobert/layers/subject.png",
+    "background": "/cards/rudy-gobert/layers/background.png",
+    "lineart": "/cards/rudy-gobert/layers/lineart.png",
+    "text": "/cards/rudy-gobert/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.4,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.26,
+    "backgroundDepth": -0.14
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

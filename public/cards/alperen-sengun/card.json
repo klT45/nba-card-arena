@@ -1,0 +1,38 @@
+{
+  "id": "alperen-sengun",
+  "name": "Alperen Sengun",
+  "number": "28",
+  "team": "Houston",
+  "teamShort": "HOU",
+  "positions": [
+    "C",
+    "PF"
+  ],
+  "positionsZh": [
+    "中锋",
+    "大前锋"
+  ],
+  "rarity": "COMMON",
+  "title": "ALPI",
+  "accent": "#ce1141",
+  "accent2": "#151515",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlperen_%C5%9Eeng%C3%BCn_23_T%C3%BCrkiye_20250823_%281%29.jpg",
+  "sourceCredit": "Zafer / Wikimedia Commons, CC BY 4.0",
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/alperen-sengun/front.webp",
+    "thumb": "/cards/alperen-sengun/thumb.webp",
+    "layers": {
+      "subject": "/cards/alperen-sengun/layers/subject.png",
+      "background": "/cards/alperen-sengun/layers/background.png",
+      "lineart": "/cards/alperen-sengun/layers/lineart.png",
+      "text": "/cards/alperen-sengun/layers/text.png"
+    }
+  }
+}

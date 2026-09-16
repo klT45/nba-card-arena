@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Evan Mobley",
+  "subtitle": "THE PROTECTOR",
+  "collection": "CARD ARENA",
+  "edition": "No.4",
+  "description": "Cleveland · PF / C",
+  "assets": {
+    "subject": "/cards/evan-mobley/layers/subject.png",
+    "background": "/cards/evan-mobley/layers/background.png",
+    "lineart": "/cards/evan-mobley/layers/lineart.png",
+    "text": "/cards/evan-mobley/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

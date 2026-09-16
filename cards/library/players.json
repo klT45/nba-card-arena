@@ -5,8 +5,8 @@
       "id": "lebron-james",
       "name": "LeBron James",
       "number": "23",
-      "team": "Los Angeles",
-      "teamShort": "LAL",
+      "team": "Philadelphia",
+      "teamShort": "PHI",
       "positions": [
         "PG",
         "SF"
@@ -17,8 +17,8 @@
       ],
       "rarity": "MYTHIC",
       "title": "THE CHOSEN ONE",
-      "accent": "#f6c547",
-      "accent2": "#2a1b5e",
+      "accent": "#ed174c",
+      "accent2": "#006bb6",
       "style": "atelier",
       "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
       "sourceCredit": "PNGDownload.io, CC BY-NC 4.0"
@@ -57,7 +57,7 @@
         "控卫",
         "分卫"
       ],
-      "rarity": "ELITE",
+      "rarity": "RARE",
       "title": "DESERT SNIPER",
       "accent": "#ffb81c",
       "accent2": "#3d1a63",
@@ -69,8 +69,8 @@
       "id": "kevin-durant",
       "name": "Kevin Durant",
       "number": "35",
-      "team": "Phoenix",
-      "teamShort": "PHX",
+      "team": "Houston",
+      "teamShort": "HOU",
       "positions": [
         "SF",
         "PF"
@@ -81,8 +81,8 @@
       ],
       "rarity": "MYTHIC",
       "title": "SLIM REAPER",
-      "accent": "#ff6a13",
-      "accent2": "#241456",
+      "accent": "#ce1141",
+      "accent2": "#151515",
       "style": "ink",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
       "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0"
@@ -91,8 +91,8 @@
       "id": "giannis-antetokounmpo",
       "name": "Giannis Antetokounmpo",
       "number": "34",
-      "team": "Milwaukee",
-      "teamShort": "MIL",
+      "team": "Miami",
+      "teamShort": "MIA",
       "positions": [
         "PF",
         "C"
@@ -101,10 +101,10 @@
         "大前锋",
         "中锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "ELITE",
       "title": "GREEK FREAK",
-      "accent": "#e8dcc0",
-      "accent2": "#0b3a1d",
+      "accent": "#f9a01b",
+      "accent2": "#98002e",
       "style": "arena",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51914060952).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
@@ -121,7 +121,7 @@
       "positionsZh": [
         "中锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "ELITE",
       "title": "THE JOKER",
       "accent": "#fec524",
       "accent2": "#0e2240",
@@ -143,7 +143,7 @@
         "控卫",
         "分卫"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "ELITE",
       "title": "THE MAESTRO",
       "accent": "#7fc4f2",
       "accent2": "#002b5e",
@@ -165,7 +165,7 @@
         "小前锋",
         "大前锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "ELITE",
       "title": "THE CLOSER",
       "accent": "#3ecf7a",
       "accent2": "#07321a",
@@ -187,7 +187,7 @@
         "大前锋",
         "中锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "RARE",
       "title": "THE ALIEN",
       "accent": "#cfd4da",
       "accent2": "#1b1e24",
@@ -209,7 +209,7 @@
         "控卫",
         "分卫"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "ELITE",
       "title": "THE SMOOTH",
       "accent": "#007ac1",
       "accent2": "#002d62",
@@ -231,7 +231,7 @@
         "分卫",
         "小前锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "RARE",
       "title": "ANT-MAN",
       "accent": "#78be20",
       "accent2": "#0c2340",
@@ -251,7 +251,7 @@
       "positionsZh": [
         "中锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "RARE",
       "title": "THE PROCESS",
       "accent": "#ed174c",
       "accent2": "#006bb6",
@@ -263,8 +263,8 @@
       "id": "anthony-davis",
       "name": "Anthony Davis",
       "number": "3",
-      "team": "Dallas",
-      "teamShort": "DAL",
+      "team": "Washington",
+      "teamShort": "WAS",
       "positions": [
         "PF",
         "C"
@@ -273,10 +273,10 @@
         "大前锋",
         "中锋"
       ],
-      "rarity": "MYTHIC",
+      "rarity": "RARE",
       "title": "THE BROW",
-      "accent": "#2274c4",
-      "accent2": "#002b5e",
+      "accent": "#e31837",
+      "accent2": "#002b5c",
       "style": "arena",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
       "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0"
@@ -295,13 +295,185 @@
         "控卫",
         "分卫"
       ],
-      "rarity": "ELITE",
+      "rarity": "RARE",
       "title": "THE ENGINE",
       "accent": "#fdbb30",
       "accent2": "#002d62",
       "style": "prism",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATyrese_Haliburton.jpg",
       "sourceCredit": "OSU Athletics / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "darius-garland",
+      "name": "Darius Garland",
+      "number": "10",
+      "team": "Los Angeles",
+      "teamShort": "LAC",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "COMMON",
+      "title": "BOOG",
+      "accent": "#c8102e",
+      "accent2": "#1d428a",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADarius_Garland_%2851914121367%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "trae-young",
+      "name": "Trae Young",
+      "number": "11",
+      "team": "Washington",
+      "teamShort": "WAS",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "COMMON",
+      "title": "ICE TRAE",
+      "accent": "#e31837",
+      "accent2": "#002b5c",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATrae_Young_%2851914814021%29_%28cropped%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "cade-cunningham",
+      "name": "Cade Cunningham",
+      "number": "2",
+      "team": "Detroit",
+      "teamShort": "DET",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "COMMON",
+      "title": "MOTORCADE",
+      "accent": "#c8102e",
+      "accent2": "#1d42ba",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACade_Cunningham_%2851915113234%29_%28cropped%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "josh-giddey",
+      "name": "Josh Giddey",
+      "number": "3",
+      "team": "Chicago",
+      "teamShort": "CHI",
+      "positions": [
+        "SG",
+        "PG"
+      ],
+      "positionsZh": [
+        "分卫",
+        "控卫"
+      ],
+      "rarity": "COMMON",
+      "title": "THE CONDUCTOR",
+      "accent": "#ce1141",
+      "accent2": "#0b0b0b",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJosh_Giddey_%282022_All-Star_Weekend%29_%28cropped%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "franz-wagner",
+      "name": "Franz Wagner",
+      "number": "22",
+      "team": "Orlando",
+      "teamShort": "ORL",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "COMMON",
+      "title": "THE WUNDERKIND",
+      "accent": "#0077c0",
+      "accent2": "#14304f",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFranz_Wagner_%28basketball%29.jpg",
+      "sourceCredit": "Sven Mandel / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "evan-mobley",
+      "name": "Evan Mobley",
+      "number": "4",
+      "team": "Cleveland",
+      "teamShort": "CLE",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "COMMON",
+      "title": "THE PROTECTOR",
+      "accent": "#860038",
+      "accent2": "#041e42",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEvan_Mobley_%2851914240557%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "alperen-sengun",
+      "name": "Alperen Sengun",
+      "number": "28",
+      "team": "Houston",
+      "teamShort": "HOU",
+      "positions": [
+        "C",
+        "PF"
+      ],
+      "positionsZh": [
+        "中锋",
+        "大前锋"
+      ],
+      "rarity": "COMMON",
+      "title": "ALPI",
+      "accent": "#ce1141",
+      "accent2": "#151515",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlperen_%C5%9Eeng%C3%BCn_23_T%C3%BCrkiye_20250823_%281%29.jpg",
+      "sourceCredit": "Zafer / Wikimedia Commons, CC BY 4.0"
+    },
+    {
+      "id": "rudy-gobert",
+      "name": "Rudy Gobert",
+      "number": "27",
+      "team": "Minnesota",
+      "teamShort": "MIN",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "COMMON",
+      "title": "THE STIFLE TOWER",
+      "accent": "#236192",
+      "accent2": "#0c2340",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARudy_Gobert_%2851914770053%29.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
     }
   ]
 }

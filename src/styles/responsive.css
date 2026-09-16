@@ -1,0 +1,85 @@
+/* ==========================================================================
+   responsive.css
+   Breakpoints. Deliberately last so a media query always wins over the
+   default rule it overrides, regardless of which file that rule lives in.
+   ========================================================================== */
+/* --------------------------------------------------------- responsive ----- */
+@media (max-width: 1180px) {
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { max-width: none; }
+  .hero-stack { order: -1; }
+  .hero-index { display: none; }
+  .court-wrap { grid-template-columns: 1fr; }
+  .court { min-height: 620px; }
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-visual { border-right: 0; border-bottom: 1px solid var(--line); }
+  /* Once the layout is one column the copy is ~770px tall, and the old
+     `max-height: none` here let it grow to that full height inside a dialog
+     that is capped at the viewport and set to `overflow: hidden`. The result was
+     that the "加入首发" button sat 800-1150px below the fold with no way to
+     scroll to it - unreachable on every device 980px or narrower, iPad mini
+     included. Hand the scrolling to the dialog instead, so the whole column
+     (visual + copy) scrolls as one. */
+  .card-dialog { overflow-x: hidden; overflow-y: auto; }
+  .detail-copy { max-height: none; overflow: visible; }
+  .hall-entry { grid-template-columns: 1fr; }
+  .entry-stack { order: -1; height: 360px; }
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .team-score { text-align: left; }
+  .hall-head { grid-template-columns: 1fr; }
+  .lineup-bar { justify-content: flex-start; }
+  /* The card stack is absolutely positioned around the centre with a fixed
+     -78/+78px fan, which is wider than the stack once hall-entry drops to one
+     column. Pull the fan in with the container instead of letting the rotated
+     corners poke past the viewport. */
+  .entry-card:nth-child(1) { --x: -58px; }
+  .entry-card:nth-child(2) { --x: 58px; }
+}
+@media (max-width: 720px) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 14px; }
+  .topbar nav a { display: none; }
+  .filter-bar { flex-direction: column; align-items: stretch; }
+  .filters { overflow-x: auto; }
+}
+@media (max-width: 560px) {
+  .topbar { height: calc(68px + var(--safe-top)); padding-inline: 16px; }
+  .nav-draw span { display: none; }
+  .hero { padding: 40px 18px 52px; }
+  .hero-holo { height: min(400px, 52vh); }
+  .section { padding: 76px 18px; }
+  .series-stats strong { font-size: 28px; }
+  .series-stats div { min-width: 92px; padding-right: 18px; }
+  .court { min-height: 500px; border-radius: 130px 130px var(--r-md) var(--r-md); }
+  .slot { width: 80px; height: 110px; }
+  .slot-sg { left: 18%; }
+  .slot-sf { left: 82%; }
+  .detail-copy { padding: 30px 22px; }
+  .detail-visual { padding: 30px 18px; }
+  .card-actions { flex-direction: column; }
+  .card-grid { gap: 26px 12px; }
+  footer { flex-direction: column; align-items: flex-start; }
+  /* 22 dots still have to fit one row here. Shrinking the dot keeps every
+     player reachable without wrapping the row on a normal phone; the wrap
+     from the base rule is the safety net for anything narrower. */
+  .hero-dots { gap: 3px; row-gap: 6px; }
+  .hero-dots button { width: 10px; height: 14px; }
+  .hero-dots i { width: 5px; height: 5px; }
+  .hero-dots button.active i { width: 14px; }
+  .entry-card { width: min(190px, 54%); }
+  .entry-card:nth-child(1) { --x: -40px; }
+  .entry-card:nth-child(2) { --x: 40px; }
+  /* Four buttons in a 298px row read better as a 2x2 block than as 3 + 1. */
+  .hc-buttons button { flex: 1 1 calc(50% - 4px); }
+}
+/* Landscape phones and any short window: the stage has no room for the 540px
+   floor or a 210px-wide pack, so scale the pack down rather than let the pack
+   screen open on a scrollbar. */
+@media (max-height: 560px) {
+  .draw-stage { padding: 22px; }
+  .pack { width: min(210px, 36vh); }
+  .pack span { font-size: 24px; }
+  .pack small { margin-top: 10px; }
+}

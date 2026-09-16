@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "atelier",
+  "title": "Josh Giddey",
+  "subtitle": "THE CONDUCTOR",
+  "collection": "CARD ARENA",
+  "edition": "No.3",
+  "description": "Chicago · SG / PG",
+  "assets": {
+    "subject": "/cards/josh-giddey/layers/subject.png",
+    "background": "/cards/josh-giddey/layers/background.png",
+    "lineart": "/cards/josh-giddey/layers/lineart.png",
+    "text": "/cards/josh-giddey/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.62,
+    "subjectScale": 1.03,
+    "subjectDepth": 0.28,
+    "backgroundDepth": -0.16
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

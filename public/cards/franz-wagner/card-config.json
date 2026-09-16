@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "arena",
+  "title": "Franz Wagner",
+  "subtitle": "THE WUNDERKIND",
+  "collection": "CARD ARENA",
+  "edition": "No.22",
+  "description": "Orlando · SF / PF",
+  "assets": {
+    "subject": "/cards/franz-wagner/layers/subject.png",
+    "background": "/cards/franz-wagner/layers/background.png",
+    "lineart": "/cards/franz-wagner/layers/lineart.png",
+    "text": "/cards/franz-wagner/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.68,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.3,
+    "backgroundDepth": -0.18
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

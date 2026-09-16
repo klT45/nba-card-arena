@@ -1,0 +1,36 @@
+{
+  "id": "rudy-gobert",
+  "name": "Rudy Gobert",
+  "number": "27",
+  "team": "Minnesota",
+  "teamShort": "MIN",
+  "positions": [
+    "C"
+  ],
+  "positionsZh": [
+    "中锋"
+  ],
+  "rarity": "COMMON",
+  "title": "THE STIFLE TOWER",
+  "accent": "#236192",
+  "accent2": "#0c2340",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARudy_Gobert_%2851914770053%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.4,
+    "subjectScale": 1.04,
+    "subjectDepth": 0.26,
+    "backgroundDepth": -0.14
+  },
+  "assets": {
+    "front": "/cards/rudy-gobert/front.webp",
+    "thumb": "/cards/rudy-gobert/thumb.webp",
+    "layers": {
+      "subject": "/cards/rudy-gobert/layers/subject.png",
+      "background": "/cards/rudy-gobert/layers/background.png",
+      "lineart": "/cards/rudy-gobert/layers/lineart.png",
+      "text": "/cards/rudy-gobert/layers/text.png"
+    }
+  }
+}

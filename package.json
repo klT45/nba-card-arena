@@ -3,17 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "source:players": "python scripts/source_players.py",
-    "cutouts": "python scripts/make_cutouts.py",
-    "build:cards": "python scripts/build_cards.py",
+    "source:players": "node scripts/pyrun.mjs scripts/source_players.py",
+    "cutouts": "node scripts/pyrun.mjs scripts/make_cutouts.py",
+    "build:cards": "node scripts/pyrun.mjs scripts/build_cards.py",
+    "contact-sheet": "node scripts/pyrun.mjs scripts/contact_sheet.py",
+    "pick:raw": "node scripts/pyrun.mjs scripts/pick_from_raw.py",
+    "retier": "node scripts/pyrun.mjs scripts/retier.py",
+    "probe:commons": "node scripts/pyrun.mjs scripts/probe_commons.py --slugs",
+    "doctor": "node scripts/doctor.mjs",
+    "draw:stats": "node scripts/draw-stats.cjs",
+    "draw:anim": "node scripts/draw-anim.cjs",
+    "shot:pages": "node scripts/shot-pages.cjs",
+    "shot:admin": "node scripts/shot-admin.cjs",
+    "shot:devices": "node scripts/shot-devices.cjs",
+    "shot:sheet": "node scripts/pyrun.mjs scripts/device_sheet.py",
+    "test:rarity": "node scripts/test-rarity-edit.cjs",
+    "test:exports": "node scripts/test-exports.cjs",
+    "test:tokens": "node scripts/test-tokens.cjs",
+    "test:lineup": "node scripts/test-lineup-integrity.cjs",
+    "test:controls": "node scripts/test-controls-sync.cjs",
+    "test:escaping": "node scripts/test-escaping.cjs",
+    "test:reduced": "node scripts/test-reduced-motion.cjs",
+    "test:admin": "node scripts/test-admin-api.cjs",
+    "test": "node scripts/test-escaping.cjs && node scripts/test-tokens.cjs",
+    "test:e2e": "node scripts/test-exports.cjs && node scripts/test-a11y.cjs && node scripts/test-holo-lifecycle.cjs && node scripts/test-lineup-integrity.cjs && node scripts/test-controls-sync.cjs && node scripts/test-reduced-motion.cjs && node scripts/test-admin-api.cjs && node scripts/test-rarity-edit.cjs && node scripts/draw-stats.cjs",
+    "visual": "node scripts/draw-anim.cjs && node scripts/shot-pages.cjs && node scripts/shot-admin.cjs && node scripts/shot-devices.cjs",
+    "check": "npm run test && npm run test:e2e && npm run visual",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:holo": "node scripts/test-holo-lifecycle.cjs",
+    "test:a11y": "node scripts/test-a11y.cjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "gsap": "^3.15.0",
     "three": "^0.180.0"
   }
 }

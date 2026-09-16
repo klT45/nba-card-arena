@@ -2,8 +2,8 @@
   "id": "anthony-davis",
   "name": "Anthony Davis",
   "number": "3",
-  "team": "Dallas",
-  "teamShort": "DAL",
+  "team": "Washington",
+  "teamShort": "WAS",
   "positions": [
     "PF",
     "C"
@@ -12,10 +12,10 @@
     "大前锋",
     "中锋"
   ],
-  "rarity": "MYTHIC",
+  "rarity": "RARE",
   "title": "THE BROW",
-  "accent": "#2274c4",
-  "accent2": "#002b5e",
+  "accent": "#e31837",
+  "accent2": "#002b5c",
   "style": "arena",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
   "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0",

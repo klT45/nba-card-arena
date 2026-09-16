@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Card Arena">
+  <defs>
+    <linearGradient id="f" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9ff3d"/>
+      <stop offset="0.5" stop-color="#7cc6f5"/>
+      <stop offset="1" stop-color="#cbb0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#07090e"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="11.5" fill="none" stroke="url(#f)" stroke-width="2.5" opacity=".75"/>
+  <g transform="translate(32 33) skewX(-8) translate(-32 -33)">
+    <text x="32" y="43" text-anchor="middle"
+          font-family="Bahnschrift, 'Arial Narrow', Arial, sans-serif"
+          font-size="31" font-weight="700" letter-spacing="1"
+          fill="url(#f)">CA</text>
+  </g>
+</svg>

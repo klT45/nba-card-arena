@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Cade Cunningham",
+  "subtitle": "MOTORCADE",
+  "collection": "CARD ARENA",
+  "edition": "No.2",
+  "description": "Detroit · PG / SG",
+  "assets": {
+    "subject": "/cards/cade-cunningham/layers/subject.png",
+    "background": "/cards/cade-cunningham/layers/background.png",
+    "lineart": "/cards/cade-cunningham/layers/lineart.png",
+    "text": "/cards/cade-cunningham/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Alperen Sengun",
+  "subtitle": "ALPI",
+  "collection": "CARD ARENA",
+  "edition": "No.28",
+  "description": "Houston · C / PF",
+  "assets": {
+    "subject": "/cards/alperen-sengun/layers/subject.png",
+    "background": "/cards/alperen-sengun/layers/background.png",
+    "lineart": "/cards/alperen-sengun/layers/lineart.png",
+    "text": "/cards/alperen-sengun/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.8,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

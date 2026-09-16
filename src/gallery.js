@@ -1,15 +1,15 @@
 /** Standalone gallery page (opened in its own tab from the arena). */
 import {
   $, $$, state, esc, loadManifest, renderLineup, setupTilts, galleryCardHTML,
-  visiblePlayers, bindCardActions, loadLineup,
+  visiblePlayers, bindCardActions, reloadLineup,
 } from "./core.js";
 
 function renderFilterOptions() {
   const teams = [...new Set(state.players.map((p) => p.teamShort))].sort();
   $("#team-filter").innerHTML = '<option value="ALL">全部球队</option>' +
-    teams.map((t) => `<option value="${t}">${t}</option>`).join("");
+    teams.map((t) => `<option value="${esc(t)}">${esc(t)}</option>`).join("");
   $("#style-filter").innerHTML = '<option value="ALL">全部风格</option>' +
-    state.styles.map((s) => `<option value="${s.id}">${esc(s.name)}</option>`).join("");
+    state.styles.map((s) => `<option value="${esc(s.id)}">${esc(s.name)}</option>`).join("");
 }
 
 function renderGrid() {
@@ -40,8 +40,7 @@ function bind() {
   };
   window.addEventListener("storage", (e) => {
     if (e.key !== "nba-card-lineup") return;
-    state.lineup = loadLineup();
-    renderLineup();
+    reloadLineup();
   });
 }
 

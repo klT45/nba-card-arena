@@ -1,0 +1,425 @@
+/* ==========================================================================
+   components.css
+   Arena sections: topbar, hero, ticker, hall entry, court and lineup board,
+   and the shared holo stage.
+   ========================================================================== */
+/* --------------------------------------------------------------- topbar --- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  /* Grows by the notch height so the bar stays visually 78px below it. The
+     shorthand comes first on purpose - it would wipe out padding-top. */
+  height: calc(78px + var(--safe-top));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 72px);
+  padding-top: var(--safe-top);
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 8, 13, .78);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+.brand { display: flex; align-items: center; gap: 13px; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(150deg, var(--brand), var(--brand-2));
+  color: var(--brand-ink);
+  font: 900 20px/1 var(--font-display);
+  letter-spacing: .02em;
+  box-shadow: 0 8px 22px -10px var(--brand-glow);
+}
+.brand strong { display: block; font: 800 19px/1 var(--font-display); letter-spacing: .12em; }
+.brand small { display: block; margin-top: 3px; font: 600 9.5px/1 var(--font-display); letter-spacing: .28em; color: var(--text-3); }
+
+.topbar nav { display: flex; align-items: center; gap: 8px; }
+.topbar nav a {
+  padding: 10px 14px;
+  border-radius: var(--r-xs);
+  font: 700 13px/1 var(--font-display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  transition: color .18s, background .18s;
+}
+.topbar nav a:hover { color: var(--text); background: rgba(255, 255, 255, .05); }
+.nav-draw {
+  margin-left: 10px;
+  padding: 13px 18px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  color: var(--brand-ink);
+  font: 800 13.5px/1 var(--font-display);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 26px -12px var(--brand-glow);
+  transition: transform .18s var(--ease), box-shadow .2s;
+}
+.nav-draw:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -14px var(--brand-glow); }
+.nav-draw span { margin-left: 22px; opacity: .55; font-variant-numeric: tabular-nums; }
+
+/* ----------------------------------------------------------------- hero --- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center;
+  gap: clamp(30px, 4vw, 70px);
+  padding: clamp(56px, 7vw, 96px) clamp(22px, 5vw, 78px) clamp(60px, 7vw, 104px);
+}
+.hero-copy { max-width: 620px; }
+.hero h1 {
+  font-family: var(--font-zh);
+  font-size: clamp(52px, 7.4vw, 108px);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -.01em;
+  margin: 0 0 24px;
+}
+.hero h1 i {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--brand) 0%, #eaffb0 55%, var(--brand-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-desc { max-width: 520px; margin: 0 0 34px; color: var(--text-2); font-size: 15px; line-height: 1.9; }
+.hero-desc b { color: var(--brand); font-weight: 700; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+.series-stats { display: flex; gap: 0; margin-top: 54px; border-top: 1px solid var(--line); padding-top: 26px; }
+.series-stats div { min-width: 118px; padding-right: 30px; }
+.series-stats strong { display: block; font: 900 34px/1 var(--font-display); letter-spacing: .02em; }
+.series-stats span { display: block; margin-top: 7px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); }
+
+.hero-stack { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+/* `pan-y` rather than `none`: the card fills most of a phone screen, so a
+   `touch-action: none` here made the page unscrollable whenever a finger landed
+   on it. Vertical drags now scroll the page and horizontal drags still spin the
+   card; on a mouse `touch-action` has no effect at all. */
+.hero-holo { height: min(560px, 62vh); width: auto; touch-action: pan-y; cursor: grab; }
+.hero-holo:active { cursor: grabbing; }
+.hero-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* Wide enough for the full 22-dot row to sit inside the card on desktop.
+     Below that the dots wrap instead of pushing the next arrow out. */
+  width: min(460px, 88vw);
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+}
+.hero-caption-name strong {
+  display: block;
+  font: 900 22px/1.1 var(--font-display);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hero-caption-name small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hero-nav { display: flex; align-items: center; gap: 10px; }
+.hero-nav > button {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-full);
+  font-size: 15px;
+  line-height: 1;
+  color: var(--text-2);
+  transition: border-color .18s, color .18s, background .18s;
+}
+.hero-nav > button:hover { border-color: var(--brand); color: var(--brand); background: rgba(201, 255, 61, .08); }
+/* The roster grew from 9 to 22 players and this row was still a single
+   unshrinkable line: 22 dots at 14px plus 6px gaps is 434px, which is wider
+   than the caption it lives in, so it shoved the next arrow 190px past the
+   right edge of the viewport. `min-width: 0` lets the flex item shrink and
+   `flex-wrap` gives it somewhere to go, so it can never push the nav out
+   again - at any width, with any number of players. */
+.hero-dots { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; row-gap: 7px; }
+.hero-dots button { width: 14px; height: 14px; display: grid; place-items: center; }
+.hero-dots i { width: 6px; height: 6px; border-radius: var(--r-full); background: #39414f; transition: all .25s var(--ease); }
+.hero-dots button.active i { background: var(--brand); width: 18px; border-radius: var(--r-full); }
+
+.hero-index {
+  position: absolute;
+  right: clamp(22px, 5vw, 78px);
+  bottom: 34px;
+  font: 900 76px/1 var(--font-display);
+  letter-spacing: .02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .12);
+  pointer-events: none;
+}
+.hero-index span { display: block; margin-top: 8px; font-size: 11px; letter-spacing: .3em; -webkit-text-stroke: 0; color: var(--text-3); }
+
+/* --------------------------------------------------------------- ticker --- */
+.ticker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-block: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(201, 255, 61, .05), transparent 40%, rgba(96, 132, 255, .06));
+  padding: 16px clamp(12px, 3vw, 28px);
+}
+/* The mask lives on the viewport, not the section: on the section it would also
+   fade the pause button at the right edge. */
+.ticker-view {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  font: 800 22px/1 var(--font-display);
+  letter-spacing: .14em;
+  color: var(--text-3);
+  animation: marquee 44s linear infinite;
+}
+/* WCAG 2.2.2 - pause control for the marquee. */
+.ticker-toggle {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease;
+}
+.ticker-toggle:hover { color: var(--text); border-color: var(--text-2); }
+.ticker-toggle svg { width: 11px; height: 11px; fill: currentColor; }
+.ticker-toggle .i-play { display: none; }
+.ticker-toggle[aria-pressed="true"] .i-pause { display: none; }
+.ticker-toggle[aria-pressed="true"] .i-play { display: block; }
+.ticker.paused .ticker-track { animation-play-state: paused; }
+.ticker i { color: var(--brand); font-style: normal; margin: 0 20px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------------------------------------------------------- hall entry --- */
+.hall-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: center;
+  border-block: 1px solid var(--line);
+  background:
+    radial-gradient(680px 420px at 8% 40%, rgba(201, 255, 61, .07), transparent 70%),
+    linear-gradient(120deg, var(--bg-2), #0c1119);
+}
+.hall-entry h2 { font-family: var(--font-zh); font-size: clamp(40px, 5.4vw, 80px); line-height: 1.08; margin: 0 0 18px; font-weight: 900; }
+.entry-desc { max-width: 560px; color: var(--text-2); line-height: 1.9; font-size: 15px; }
+.entry-desc b { color: var(--brand); font-weight: 700; }
+.entry-styles { margin: 16px 0 0; font: 700 12px var(--font-display); letter-spacing: .14em; color: var(--text-3); text-transform: uppercase; }
+.entry-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 30px; }
+
+.entry-stack { position: relative; height: 440px; }
+.entry-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(240px, 60%);
+  aspect-ratio: 1024 / 1493;
+  border-radius: var(--r-md);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-lg);
+  outline: 1px solid var(--line-2);
+  outline-offset: -1px;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg)) translateX(var(--x, 0px));
+  transition: transform .7s var(--ease-out);
+}
+.entry-card:nth-child(1) { --r: -13deg; --x: -78px; opacity: .55; }
+.entry-card:nth-child(2) { --r: 9deg; --x: 78px; opacity: .8; }
+.entry-card:nth-child(3) { --r: -1deg; --x: 0px; z-index: 2; }
+.entry-stack:hover .entry-card:nth-child(1) { transform: translate(-50%, -50%) rotate(-19deg) translateX(-124px); }
+.entry-stack:hover .entry-card:nth-child(2) { transform: translate(-50%, -50%) rotate(14deg) translateX(124px); }
+
+/* --------------------------------------------------------------- court ---- */
+.court-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: clamp(24px, 3vw, 48px); align-items: stretch; }
+.court {
+  position: relative;
+  min-height: 620px;
+  border-radius: 190px 190px var(--r-lg) var(--r-lg);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(201, 255, 61, .06), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .015) 0 46px, transparent 46px 92px),
+    linear-gradient(180deg, #0d121b, #080b11);
+  overflow: hidden;
+}
+.court-logo {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  font: 900 150px/1 var(--font-display);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .09);
+}
+.court-line { position: absolute; background: rgba(255, 255, 255, .08); }
+.center-line { left: 0; right: 0; top: 52%; height: 1px; }
+.court-circle {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 190px;
+  height: 190px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: var(--r-full);
+}
+.slot { position: absolute; width: 112px; height: 152px; transform: translate(-50%, -50%); border-radius: var(--r-sm); }
+.slot-pg { left: 50%; top: 84%; }
+.slot-sg { left: 15%; top: 68%; }
+.slot-sf { left: 85%; top: 68%; }
+.slot-pf { left: 26%; top: 30%; }
+.slot-c { left: 74%; top: 30%; }
+.slot::after {
+  content: attr(data-slot);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1.5px dashed rgba(255, 255, 255, .24);
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, .025);
+  font: 900 19px var(--font-display);
+  letter-spacing: .12em;
+  color: rgba(255, 255, 255, .38);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.slot:hover::after { border-color: var(--brand); color: var(--brand); background: rgba(201, 255, 61, .06); }
+.slot.filled::after { display: none; }
+.slot.filled { border: 0; }
+.slot-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--r-sm);
+  background-size: cover;
+  background-position: center 16%;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.slot-player span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 18px 8px 7px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .9));
+  font: 800 11px/1.2 var(--font-display);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.slot-remove {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-full);
+  background: var(--danger);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s;
+}
+.slot-remove:hover { transform: scale(1.12); }
+.slot.filled { border: 0; }
+
+.lineup-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: linear-gradient(170deg, var(--surface), var(--bg-2));
+  box-shadow: var(--shadow-md);
+}
+.panel-label { margin: 0 0 12px; font: 700 11px/1 var(--font-display); letter-spacing: .28em; color: var(--brand); }
+.lineup-panel h3 { margin: 0 0 12px; font-size: 26px; font-weight: 900; font-family: var(--font-zh); }
+.lineup-panel p { margin: 0 0 22px; color: var(--text-2); font-size: 13.5px; line-height: 1.85; }
+.position-key { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.position-key span {
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-full);
+  font: 700 11px/1 var(--font-display);
+  letter-spacing: .06em;
+  color: var(--text-2);
+}
+.lineup-panel .cta { margin-top: auto; }
+.reset-lineup {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  color: var(--text-3);
+  font: 700 12px/1 var(--font-display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: color .2s, border-color .2s;
+}
+.reset-lineup:hover { color: var(--danger); border-color: rgba(255, 112, 67, .5); }
+
+.team-score { text-align: right; }
+.team-score span { display: block; font: 700 11px/1 var(--font-display); letter-spacing: .28em; color: var(--text-3); }
+.team-score strong { display: block; margin-top: 6px; font: 900 46px/1 var(--font-display); color: var(--brand); font-variant-numeric: tabular-nums; }
+.team-score small { display: block; margin-top: 4px; font: 700 11px/1 var(--font-display); letter-spacing: .18em; color: var(--text-3); }
+
+/* --------------------------------------------------------- holo stages ---- */
+.holo-stage { position: relative; aspect-ratio: 1024 / 1493; touch-action: pan-y; }
+.holo-stage canvas { display: block; width: 100% !important; height: 100% !important; filter: drop-shadow(0 22px 42px rgba(0, 0, 0, .66)); }
+.holo-stage::after {
+  content: "";
+  position: absolute;
+  inset: 6% 2% -6%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--brand-glow), transparent 72%);
+  filter: blur(34px);
+  opacity: 0;
+  transition: opacity .6s;
+}
+.holo-stage.is-ready::after { opacity: 1; }
+/* MYTHIC cards carry a living portrait. This halo is a CSS hint only - the motion
+   itself lives in the shader - and it sits outside the card so it never fights
+   the foil. */
+.holo-stage.is-alive canvas {
+  filter: drop-shadow(0 22px 42px rgba(0, 0, 0, .66)) drop-shadow(0 0 24px rgba(201, 255, 61, .38));
+}
+.holo-stage.is-alive::after { opacity: 1; }
+.holo-fallback { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-md); }
+

@@ -2,8 +2,8 @@
   "id": "lebron-james",
   "name": "LeBron James",
   "number": "23",
-  "team": "Los Angeles",
-  "teamShort": "LAL",
+  "team": "Philadelphia",
+  "teamShort": "PHI",
   "positions": [
     "PG",
     "SF"
@@ -14,8 +14,8 @@
   ],
   "rarity": "MYTHIC",
   "title": "THE CHOSEN ONE",
-  "accent": "#f6c547",
-  "accent2": "#2a1b5e",
+  "accent": "#ed174c",
+  "accent2": "#006bb6",
   "style": "atelier",
   "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
   "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",

@@ -1,14 +1,14 @@
 /** Player-library admin. Talks to the dev-only /api endpoints injected by
  *  scripts/vite-admin-plugin.mjs, so it only works under `npm run dev`. */
-const POSITIONS = ["PG", "SG", "SF", "PF", "C"];
-const POSITION_ZH = { PG: "控卫", SG: "分卫", SF: "小前锋", PF: "大前锋", C: "中锋" };
-const RARITIES = ["MYTHIC", "ELITE"];
+import { $, $$, esc } from "./lib/dom.js";
+import { SLOTS, POSITION_ZH } from "./data/slots.js";
+import { RARITY_ORDER } from "./data/rarity.js";
 
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (s) => String(s ?? "").replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
 const bust = (url) => `${url}?t=${state.stamp}`;
 
+/** The admin holds its own roster copy (it talks to the dev API, not the built
+ *  manifest), so it cannot reuse the store's `styleName`, which reads the
+ *  page's `state`. The lookup itself is identical. */
 const state = { players: [], styles: [], selected: null, stamp: Date.now(), busy: false, hasFile: false };
 
 function log(msg) {
@@ -40,6 +40,17 @@ async function api(path, options = {}) {
   const res = await fetch(`/api/${path}`, options);
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+  // Several routes answer HTTP 200 with `{ ok: false }`: the library write
+  // succeeded but the art rebuild failed (PUT /players/:id, both rebuild
+  // routes, DELETE). `res.ok` is true in that case, so it needs its own check -
+  // without it a failed rebuild was reported as "已重建". Measured with an
+  // accent colour that build_cards.py rejects: HTTP 200, `data.ok` false.
+  if (data.ok === false) {
+    const err = new Error(data.error || data.log || "操作未完成");
+    err.rebuildFailed = true;
+    err.detail = data.log || "";
+    throw err;
+  }
   return data;
 }
 
@@ -71,7 +82,7 @@ function renderEditor() {
     $("#editor").innerHTML = '<p class="placeholder">从左侧选择一位球员，或点「新增球员」。</p>';
     return;
   }
-  const chips = POSITIONS.map((pos) => `
+  const chips = SLOTS.map((pos) => `
     <label class="pchip${p.positions.includes(pos) ? " on" : ""}">
       <input type="checkbox" name="positions" value="${pos}" ${p.positions.includes(pos) ? "checked" : ""} />
       <b>${pos}</b><span>${POSITION_ZH[pos]}</span>
@@ -101,7 +112,7 @@ function renderEditor() {
         ${field("球队", "team", p.team)}
         ${field("称号", "title", p.title)}
         <div class="row">
-          <label class="field"><span>稀有度</span><select name="rarity">${RARITIES.map((r) => `<option ${r === p.rarity ? "selected" : ""}>${r}</option>`).join("")}</select></label>
+          <label class="field"><span>稀有度</span><select name="rarity">${RARITY_ORDER.map((r) => `<option ${r === p.rarity ? "selected" : ""}>${r}</option>`).join("")}</select></label>
           <label class="field"><span>卡面风格</span><select name="style">${state.styles.map((s) => `<option value="${s.id}" ${s.id === p.style ? "selected" : ""}>${esc(s.name)}</option>`).join("")}</select></label>
         </div>
         <p class="hint" id="style-hint"></p>
@@ -170,22 +181,40 @@ function bindEditor(p) {
       notice(`已重建「${player?.name || p.name}」，风格：${styleName(player?.style || p.style)}。展厅刷新后即可看到。`, "ok");
     } catch (e) {
       showPreviewLoading(false);
-      notice(`保存失败：${e.message}`);
+      if (e.rebuildFailed) {
+        // The metadata did land - only the art did not. Say that, and re-read
+        // the library so the form shows what is actually on disk.
+        notice(`元数据已保存，但重建失败：${e.message}`, "warn");
+        if (e.detail) log(e.detail);
+        await load().catch(() => {});
+      } else {
+        notice(`保存失败：${e.message}`);
+      }
     } finally {
       setBusy(false);
     }
   };
 
   $("#delete").onclick = async () => {
-    if (!confirm(`删除 ${p.name}？会同时删除其素材目录。`)) return;
-    setBusy(true, "正在删除…");
+    if (!confirm(`删除 ${p.name}？会同时删除其素材目录，并重建 manifest（全部卡面会重新生成，约需一分钟）。`)) return;
+    setBusy(true, "正在删除并重建…");
     try {
       await api(`players/${p.id}`, { method: "DELETE" });
       state.selected = null;
       await load();
-      notice("已删除。", "ok");
-    } catch (e) { notice(`删除失败：${e.message}`); }
-    finally { setBusy(false); }
+      notice("已删除，公开页面已同步。", "ok");
+    } catch (e) {
+      // A failed rebuild after a successful delete still leaves the player gone
+      // from the library, so re-read rather than claiming nothing happened.
+      if (e.rebuildFailed) {
+        notice(`已删除，但重建失败：${e.message}`, "warn");
+        if (e.detail) log(e.detail);
+        state.selected = null;
+        await load().catch(() => {});
+      } else {
+        notice(`删除失败：${e.message}`);
+      }
+    } finally { setBusy(false); }
   };
 
   $("#rebuild-one").onclick = () => rebuild([p.id]);

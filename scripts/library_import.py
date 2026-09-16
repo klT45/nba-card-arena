@@ -50,6 +50,48 @@ NEW_PLAYERS = {
         "positions": ["PG", "SG"], "positionsZh": ["控卫", "分卫"], "rarity": "ELITE",
         "title": "THE ENGINE", "accent": "#fdbb30", "accent2": "#002d62", "style": "prism",
     },
+    # COMMON tier. Teams and jersey numbers verified against the 2026-27
+    # rosters; re-check before trusting them a season later.
+    "darius-garland": {
+        "name": "Darius Garland", "number": "10", "team": "Los Angeles", "teamShort": "LAC",
+        "positions": ["PG", "SG"], "positionsZh": ["控卫", "分卫"], "rarity": "COMMON",
+        "title": "BOOG", "accent": "#c8102e", "accent2": "#1d428a", "style": "prism",
+    },
+    "trae-young": {
+        "name": "Trae Young", "number": "11", "team": "Washington", "teamShort": "WAS",
+        "positions": ["PG"], "positionsZh": ["控卫"], "rarity": "COMMON",
+        "title": "ICE TRAE", "accent": "#e31837", "accent2": "#002b5c", "style": "arena",
+    },
+    "cade-cunningham": {
+        "name": "Cade Cunningham", "number": "2", "team": "Detroit", "teamShort": "DET",
+        "positions": ["PG", "SG"], "positionsZh": ["控卫", "分卫"], "rarity": "COMMON",
+        "title": "MOTORCADE", "accent": "#c8102e", "accent2": "#1d42ba", "style": "gold",
+    },
+    "josh-giddey": {
+        "name": "Josh Giddey", "number": "3", "team": "Chicago", "teamShort": "CHI",
+        "positions": ["SG", "PG"], "positionsZh": ["分卫", "控卫"], "rarity": "COMMON",
+        "title": "THE CONDUCTOR", "accent": "#ce1141", "accent2": "#0b0b0b", "style": "atelier",
+    },
+    "franz-wagner": {
+        "name": "Franz Wagner", "number": "22", "team": "Orlando", "teamShort": "ORL",
+        "positions": ["SF", "PF"], "positionsZh": ["小前锋", "大前锋"], "rarity": "COMMON",
+        "title": "THE WUNDERKIND", "accent": "#0077c0", "accent2": "#14304f", "style": "arena",
+    },
+    "evan-mobley": {
+        "name": "Evan Mobley", "number": "4", "team": "Cleveland", "teamShort": "CLE",
+        "positions": ["PF", "C"], "positionsZh": ["大前锋", "中锋"], "rarity": "COMMON",
+        "title": "THE PROTECTOR", "accent": "#860038", "accent2": "#041e42", "style": "prism",
+    },
+    "alperen-sengun": {
+        "name": "Alperen Sengun", "number": "28", "team": "Houston", "teamShort": "HOU",
+        "positions": ["C", "PF"], "positionsZh": ["中锋", "大前锋"], "rarity": "COMMON",
+        "title": "ALPI", "accent": "#ce1141", "accent2": "#151515", "style": "gold",
+    },
+    "rudy-gobert": {
+        "name": "Rudy Gobert", "number": "27", "team": "Minnesota", "teamShort": "MIN",
+        "positions": ["C"], "positionsZh": ["中锋"], "rarity": "COMMON",
+        "title": "THE STIFLE TOWER", "accent": "#236192", "accent2": "#0c2340", "style": "ink",
+    },
 }
 
 def strip_html(value: str) -> str:

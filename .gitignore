@@ -148,8 +148,16 @@ tools/
 *_raw.png
 lebron_raw.png
 
-# Raw third-party source photos and cutouts (local only; required by scripts/build_static_cards.py)
+# Raw third-party source photos and cutouts (local only)
 cards/_source/
 cards/_work/
 cards/library/*
 !cards/library/players.json
+
+# Visual / Playwright / tool caches
+output/
+.playwright-cli/
+.workbuddy-ai/
+scripts/__pycache__/
+*.pyc
+*.pyo

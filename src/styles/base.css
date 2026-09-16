@@ -1,0 +1,120 @@
+/* ==========================================================================
+   base.css
+   Document-level rules: the [hidden] guard, page background and ambient
+   light, shared typography, and the button family.
+   ========================================================================== */
+/* The UA rule `[hidden] { display: none }` loses to any author `display`
+   declaration, so elements toggled via `el.hidden` (.holo-controls is
+   `display: flex`) would never actually hide. Pin it explicitly. */
+[hidden] { display: none !important; }
+
+/* `overflow-x` belongs on the root, not on body. Clipping on body turns body
+   into a scroll container, and on mobile Chromium that inflates the layout
+   viewport to the body's content height - measured at 375x667 it reported
+   window.innerHeight = 1009 while the visual viewport was 667. Every `vh` and
+   every `margin: auto` on a fixed element then resolves against the wrong box,
+   which is what pushed the draw dialog 151px below the fold. On the root the
+   value propagates to the viewport, the layout viewport stays honest, and the
+   horizontal overflow is still clipped. */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Keep content clear of the notch when the phone is held sideways. Zero
+     everywhere else. */
+  padding-inline: var(--safe-left) var(--safe-right);
+}
+
+/* Ambient light: two soft team-coloured pools behind everything. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 620px at 12% -6%, rgba(201, 255, 61, .07), transparent 62%),
+    radial-gradient(760px 560px at 92% 4%, rgba(96, 132, 255, .09), transparent 64%),
+    linear-gradient(180deg, var(--bg-2), var(--bg) 46%);
+}
+
+::selection { background: var(--brand); color: var(--brand-ink); }
+
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #232a38; border-radius: var(--r-full); border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #313a4c; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: .03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------- type ---- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font: 700 12px/1 var(--font-display);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.kicker span { width: 26px; height: 2px; background: var(--brand); border-radius: 2px; }
+
+.section { padding: 108px clamp(22px, 5vw, 78px); }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 46px; }
+.section h2 { font-family: var(--font-zh); font-size: clamp(38px, 4.6vw, 66px); line-height: 1.1; letter-spacing: .01em; margin: 0; font-weight: 900; }
+
+/* --------------------------------------------------------------- button --- */
+.btn, .cta, .ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  font: 800 14px/1 var(--font-display);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform .18s var(--ease), background .2s, border-color .2s, color .2s, box-shadow .2s;
+}
+.btn:active, .cta:active, .ghost:active { transform: translateY(1px) scale(.99); }
+
+.cta {
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  color: var(--brand-ink);
+  box-shadow: 0 10px 30px -12px var(--brand-glow), inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+.cta:hover { box-shadow: 0 18px 40px -14px var(--brand-glow), inset 0 1px 0 rgba(255, 255, 255, .5); transform: translateY(-2px); }
+.cta b { font-size: 15px; }
+
+.ghost {
+  border-color: var(--line-2);
+  color: var(--text);
+  background: rgba(255, 255, 255, .02);
+}
+.ghost:hover { border-color: var(--brand); color: var(--brand); background: rgba(201, 255, 61, .06); }
+
+.cta.wide, .ghost.wide, .btn.wide { width: 100%; }
+.cta[disabled], .cta:disabled, .ghost[disabled] { opacity: .35; cursor: not-allowed; transform: none; box-shadow: none; }
+

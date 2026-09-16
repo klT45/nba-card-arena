@@ -1,0 +1,38 @@
+{
+  "id": "darius-garland",
+  "name": "Darius Garland",
+  "number": "10",
+  "team": "Los Angeles",
+  "teamShort": "LAC",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "COMMON",
+  "title": "BOOG",
+  "accent": "#c8102e",
+  "accent2": "#1d428a",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADarius_Garland_%2851914121367%29.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.95,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.22
+  },
+  "assets": {
+    "front": "/cards/darius-garland/front.webp",
+    "thumb": "/cards/darius-garland/thumb.webp",
+    "layers": {
+      "subject": "/cards/darius-garland/layers/subject.png",
+      "background": "/cards/darius-garland/layers/background.png",
+      "lineart": "/cards/darius-garland/layers/lineart.png",
+      "text": "/cards/darius-garland/layers/text.png"
+    }
+  }
+}
