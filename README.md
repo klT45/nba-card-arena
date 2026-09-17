@@ -4,7 +4,8 @@
 > 卡面遵循 `holo-card-studio` 技能的四层素材规范，网页端用其实时镭射着色器渲染：
 > 视差分层、彩虹镭射、扫光、星点、色彩分级。
 
-仓库：https://github.com/klT45/nba-card-arena
+仓库：https://github.com/klT45/nba-card-arena  
+在线体验（GitHub Pages）：https://klt45.github.io/nba-card-arena/
 
 ## 快速开始
 
