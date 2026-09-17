@@ -27,6 +27,15 @@ if (!mod) {
 
 function findChrome() {
   if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) return process.env.CHROME_PATH;
+  const standardPaths = [
+    "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    path.join(process.env.PROGRAMFILES || "C:\\Program Files", "Google\\Chrome\\Application\\chrome.exe"),
+  ];
+  for (const p of standardPaths) {
+    if (fs.existsSync(p)) return p;
+  }
   const root = path.join(process.env.LOCALAPPDATA || '', 'ms-playwright');
   try {
     const hit = fs.readdirSync(root)

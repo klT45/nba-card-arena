@@ -89,19 +89,16 @@ void main(){
    col+=foil*pow(max(0.,1.-abs(band-.5)*2.),16.)*inS*uAlive*.3;
  }
  vec4 text=texture2D(tText,uv);col=mix(col,text.rgb,text.a);
- gl_FragColor=vec4(pow(max(col,vec3(0.)),vec3(2.2)),1.);
- #include <tonemapping_fragment>
+ gl_FragColor=vec4(clamp(col,0.,1.),1.);
  #include <colorspace_fragment>
 }`;
 
 const EDGE = SHARED + `void main(){vec3 col=mix(vec3(.55,.34,.1),spectrum(wave(vUv)),.65+uFoil*.2);gl_FragColor=vec4(col*.8+.14,1.);
-#include <tonemapping_fragment>
 #include <colorspace_fragment>
 }`;
 
 const BACK = SHARED + `uniform sampler2D tBack;
-void main(){vec4 art=texture2D(tBack,vUv);vec2 p=vUv-.5;float filigree=.5+.5*sin(length(p*vec2(1.,1.5))*100.+noise(p*15.)*4.);vec3 col=mix(vec3(.025,.042,.064),vec3(.085,.092,.11),filigree*.35);float border=step(.465,max(abs(p.x),abs(p.y)));col=mix(col,spectrum(wave(vUv))*.55,border);col+=spectrum(wave(vUv))*uFoil*.08;col=mix(col,art.rgb,art.a);gl_FragColor=vec4(pow(col,vec3(2.2)),1.);
-#include <tonemapping_fragment>
+void main(){vec4 art=texture2D(tBack,vUv);vec2 p=vUv-.5;float filigree=.5+.5*sin(length(p*vec2(1.,1.5))*100.+noise(p*15.)*4.);vec3 col=mix(vec3(.025,.042,.064),vec3(.085,.092,.11),filigree*.35);float border=step(.465,max(abs(p.x),abs(p.y)));col=mix(col,spectrum(wave(vUv))*.55,border);col+=spectrum(wave(vUv))*uFoil*.08;col=mix(col,art.rgb,art.a);gl_FragColor=vec4(clamp(col,0.,1.),1.);
 #include <colorspace_fragment>
 }`;
 
@@ -358,8 +355,7 @@ export function createHoloCard(container, options = {}) {
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(curPR);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.12;
+    renderer.toneMapping = THREE.NoToneMapping;
     container.append(renderer.domElement);
 
     uniforms = {

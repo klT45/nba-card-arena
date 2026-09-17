@@ -369,25 +369,13 @@ def build_background(player: dict, style_id: str, subject_norm, photo_size, size
     bg = Image.alpha_composite(bg, _vignette(size, 0.80, 2.0))
 
     d = ImageDraw.Draw(bg, "RGBA")
-    # Header strip + hairline.
-    d.rectangle((0, 0, cw, int(ch * HEADER_H)), fill=(6, 8, 14, 214))
-    d.line((0, int(ch * HEADER_H), cw, int(ch * HEADER_H)), fill=(*accent, 190), width=3)
-    d.rectangle((0, int(ch * HEADER_H), int(cw * 0.22), int(ch * HEADER_H) + 5), fill=(*accent, 255))
-
-    # Oversized jersey number as a translucent outline watermark.
+    # Oversized jersey number as a translucent outline watermark in the background.
     num = str(player["number"])
     nf = display_font(int(ch * 0.235), "bold")
     d.text((cw - 52, int(ch * 0.100)), num, font=nf, anchor="ra", fill=(*accent, 54),
            stroke_width=3, stroke_fill=(*accent, 116))
     tf = display_font(int(ch * 0.046), "bold")
     tracked(d, (cw - 56, int(ch * 0.330)), player["teamShort"], tf, (*accent, 130), track=6, anchor="ra")
-
-    # Bottom plate: dark glass slab with a team-colour edge.
-    pt = int(ch * PLATE_TOP)
-    d.rectangle((0, pt, cw, ch), fill=(4, 6, 12, 226))
-    d.line((0, pt, cw, pt), fill=(*accent, 255), width=5)
-    d.rectangle((0, pt, 14, ch), fill=(*accent, 255))
-    d.line((0, pt + int(ch * 0.004), cw, pt + int(ch * 0.004)), fill=(255, 255, 255, 30), width=2)
     return bg
 
 
@@ -398,13 +386,25 @@ def build_text(player: dict, style_id: str, palette: dict) -> Image.Image:
     primary, accent, muted = palette["primary"], palette["accent"], palette["muted"]
     pad = 54
 
+    # 1. 顶部 Header 栏物理装裱层（固定在卡牌表面，避免 3D 视差错位）
+    hh = int(H * HEADER_H)
+    d.rectangle((0, 0, W, hh), fill=(6, 8, 14, 235))
+    d.line((0, hh, W, hh), fill=(*accent, 220), width=3)
+    d.rectangle((0, hh, int(W * 0.22), hh + 5), fill=(*accent, 255))
+
     hf = display_font(int(H * 0.032), "semi")
     tracked(d, (pad, int(H * HEADER_H * 0.52)), player["team"].upper(), hf, (*accent, 255),
             track=2.6, anchor="lm")
     tracked(d, (W - pad, int(H * HEADER_H * 0.52)), " / ".join(player["positions"]), hf,
             (*primary, 240), track=2.6, anchor="rm")
 
+    # 2. 底部 Bottom Plate 铭牌面板（固定在卡牌表面，牢固托载球员姓名与号码）
     pt = int(H * PLATE_TOP)
+    d.rectangle((0, pt, W, H), fill=(4, 6, 12, 242))
+    d.line((0, pt, W, pt), fill=(*accent, 255), width=5)
+    d.rectangle((0, pt, 14, H), fill=(*accent, 255))
+    d.line((0, pt + int(H * 0.004), W, pt + int(H * 0.004)), fill=(255, 255, 255, 45), width=2)
+
     inner = pad + 24
     num_text = f"No.{player['number']}"
     num_font = display_font(int(H * 0.050), "bold")

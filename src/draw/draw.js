@@ -293,6 +293,10 @@ export async function revealDraw(p, glow, allTaken) {
     });
   }
 
+  const drawStage = $("#draw-holo");
+  if (drawStage) {
+    drawStage.innerHTML = `<img class="holo-fallback" src="${encodeURI(p.assets.front)}" alt="${esc(p.name)} 卡面">`;
+  }
   const inst = await mountHolo($("#draw-holo"), p, { auto: false });
   inst?.reveal();
   bindHoloControls("draw", inst);

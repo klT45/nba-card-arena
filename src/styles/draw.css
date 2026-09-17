@@ -154,7 +154,11 @@
 }
 
 .draw-result { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
-.draw-holo { width: min(100%, 228px); margin-bottom: 12px; }
+.draw-holo {
+  width: min(100%, 256px);
+  margin-bottom: 14px;
+  filter: drop-shadow(0 20px 42px rgba(0, 0, 0, .75));
+}
 .draw-rarity {
   margin: 0 0 6px;
   font: 800 11px/1 var(--font-display);
