@@ -18,9 +18,9 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "parameters": {
-    "foil": 0.68,
-    "subjectScale": 1.04,
-    "subjectDepth": 0.3,
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
     "backgroundDepth": -0.18
   },
   "assets": {

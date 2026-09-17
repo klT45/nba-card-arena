@@ -1,0 +1,36 @@
+{
+  "id": "shaquille-oneal",
+  "name": "Shaquille O'Neal",
+  "number": "34",
+  "team": "Los Angeles",
+  "teamShort": "LAL",
+  "positions": [
+    "C"
+  ],
+  "positionsZh": [
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "DIESEL",
+  "accent": "#ffaa00",
+  "accent2": "#552583",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shaquille_O%27Neal_Free_Throw.jpg",
+  "sourceCredit": "Wikimedia Commons, Public Domain",
+  "parameters": {
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/shaquille-oneal/front.webp",
+    "thumb": "/cards/shaquille-oneal/thumb.webp",
+    "layers": {
+      "subject": "/cards/shaquille-oneal/layers/subject.png",
+      "background": "/cards/shaquille-oneal/layers/background.png",
+      "lineart": "/cards/shaquille-oneal/layers/lineart.png",
+      "text": "/cards/shaquille-oneal/layers/text.png"
+    }
+  }
+}

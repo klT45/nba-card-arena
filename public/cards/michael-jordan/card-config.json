@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "atelier",
+  "title": "Michael Jordan",
+  "subtitle": "HIS AIRNESS",
+  "collection": "CARD ARENA",
+  "edition": "No.23",
+  "description": "Chicago · SG / SF",
+  "assets": {
+    "subject": "/cards/michael-jordan/layers/subject.png",
+    "background": "/cards/michael-jordan/layers/background.png",
+    "lineart": "/cards/michael-jordan/layers/lineart.png",
+    "text": "/cards/michael-jordan/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

@@ -20,10 +20,10 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALuka_Doncic_%2851914012797%29.jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "parameters": {
-    "foil": 0.95,
+    "foil": 1.0,
     "subjectScale": 1.05,
-    "subjectDepth": 0.36,
-    "backgroundDepth": -0.22
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
   },
   "assets": {
     "front": "/cards/luka-doncic/front.webp",

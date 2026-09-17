@@ -20,9 +20,9 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
   "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0",
   "parameters": {
-    "foil": 0.68,
-    "subjectScale": 1.04,
-    "subjectDepth": 0.3,
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
     "backgroundDepth": -0.18
   },
   "assets": {

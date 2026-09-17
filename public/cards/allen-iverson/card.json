@@ -1,0 +1,38 @@
+{
+  "id": "allen-iverson",
+  "name": "Allen Iverson",
+  "number": "3",
+  "team": "Philadelphia",
+  "teamShort": "PHI",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE ANSWER",
+  "accent": "#006bb6",
+  "accent2": "#ed174c",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Allen_Iverson_Detroit_Pistons.jpg",
+  "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+  "parameters": {
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/allen-iverson/front.webp",
+    "thumb": "/cards/allen-iverson/thumb.webp",
+    "layers": {
+      "subject": "/cards/allen-iverson/layers/subject.png",
+      "background": "/cards/allen-iverson/layers/background.png",
+      "lineart": "/cards/allen-iverson/layers/lineart.png",
+      "text": "/cards/allen-iverson/layers/text.png"
+    }
+  }
+}

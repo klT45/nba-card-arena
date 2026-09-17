@@ -1,0 +1,38 @@
+{
+  "id": "michael-jordan",
+  "name": "Michael Jordan",
+  "number": "23",
+  "team": "Chicago",
+  "teamShort": "CHI",
+  "positions": [
+    "SG",
+    "SF"
+  ],
+  "positionsZh": [
+    "分卫",
+    "小前锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "HIS AIRNESS",
+  "accent": "#ce1141",
+  "accent2": "#000000",
+  "style": "atelier",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steve_Lipfosky_--_Michael_Jordan_(1997).jpg",
+  "sourceCredit": "Steve Lipfosky / Wikimedia Commons, CC BY-SA 3.0",
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "assets": {
+    "front": "/cards/michael-jordan/front.webp",
+    "thumb": "/cards/michael-jordan/thumb.webp",
+    "layers": {
+      "subject": "/cards/michael-jordan/layers/subject.png",
+      "background": "/cards/michael-jordan/layers/background.png",
+      "lineart": "/cards/michael-jordan/layers/lineart.png",
+      "text": "/cards/michael-jordan/layers/text.png"
+    }
+  }
+}

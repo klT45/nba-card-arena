@@ -20,10 +20,10 @@
   "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
   "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",
   "parameters": {
-    "foil": 0.62,
-    "subjectScale": 1.03,
-    "subjectDepth": 0.28,
-    "backgroundDepth": -0.16
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
   },
   "assets": {
     "front": "/cards/lebron-james/front.webp",

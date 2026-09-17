@@ -20,10 +20,10 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93113.jpg",
   "sourceCredit": "Sandro Halank, Wikimedia Commons / Wikimedia Commons, CC BY-SA 4.0",
   "parameters": {
-    "foil": 0.95,
+    "foil": 1.0,
     "subjectScale": 1.05,
-    "subjectDepth": 0.36,
-    "backgroundDepth": -0.22
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
   },
   "assets": {
     "front": "/cards/shai-gilgeous-alexander/front.webp",

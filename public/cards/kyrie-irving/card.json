@@ -1,0 +1,38 @@
+{
+  "id": "kyrie-irving",
+  "name": "Kyrie Irving",
+  "number": "11",
+  "team": "Dallas",
+  "teamShort": "DAL",
+  "positions": [
+    "PG",
+    "SG"
+  ],
+  "positionsZh": [
+    "控卫",
+    "分卫"
+  ],
+  "rarity": "ELITE",
+  "title": "ANKLE TAKER",
+  "accent": "#00538c",
+  "accent2": "#002b5e",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyrie_Irving_-_51831823383.jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/kyrie-irving/front.webp",
+    "thumb": "/cards/kyrie-irving/thumb.webp",
+    "layers": {
+      "subject": "/cards/kyrie-irving/layers/subject.png",
+      "background": "/cards/kyrie-irving/layers/background.png",
+      "lineart": "/cards/kyrie-irving/layers/lineart.png",
+      "text": "/cards/kyrie-irving/layers/text.png"
+    }
+  }
+}

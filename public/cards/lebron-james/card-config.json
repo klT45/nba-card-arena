@@ -14,10 +14,10 @@
     "model": ""
   },
   "parameters": {
-    "foil": 0.62,
-    "subjectScale": 1.03,
-    "subjectDepth": 0.28,
-    "backgroundDepth": -0.16
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
   },
   "safeArea": {
     "scale": 1.0,

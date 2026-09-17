@@ -14,7 +14,7 @@
     "model": ""
   },
   "parameters": {
-    "foil": 0.8,
+    "foil": 0.88,
     "subjectScale": 1.05,
     "subjectDepth": 0.34,
     "backgroundDepth": -0.2

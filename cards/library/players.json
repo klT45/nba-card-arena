@@ -474,6 +474,114 @@
       "style": "ink",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARudy_Gobert_%2851914770053%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "michael-jordan",
+      "name": "Michael Jordan",
+      "number": "23",
+      "team": "Chicago",
+      "teamShort": "CHI",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "HIS AIRNESS",
+      "accent": "#ce1141",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steve_Lipfosky_--_Michael_Jordan_(1997).jpg",
+      "sourceCredit": "Steve Lipfosky / Wikimedia Commons, CC BY-SA 3.0"
+    },
+    {
+      "id": "kobe-bryant",
+      "name": "Kobe Bryant",
+      "number": "24",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "BLACK MAMBA",
+      "accent": "#fdb927",
+      "accent2": "#552583",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kobe_Bryant_2012_USA_team.jpg",
+      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "shaquille-oneal",
+      "name": "Shaquille O'Neal",
+      "number": "34",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "DIESEL",
+      "accent": "#ffaa00",
+      "accent2": "#552583",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shaquille_O%27Neal_Free_Throw.jpg",
+      "sourceCredit": "Wikimedia Commons, Public Domain"
+    },
+    {
+      "id": "allen-iverson",
+      "name": "Allen Iverson",
+      "number": "3",
+      "team": "Philadelphia",
+      "teamShort": "PHI",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE ANSWER",
+      "accent": "#006bb6",
+      "accent2": "#ed174c",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Allen_Iverson_Detroit_Pistons.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0"
+    },
+    {
+      "id": "kyrie-irving",
+      "name": "Kyrie Irving",
+      "number": "11",
+      "team": "Dallas",
+      "teamShort": "DAL",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "ELITE",
+      "title": "ANKLE TAKER",
+      "accent": "#00538c",
+      "accent2": "#002b5e",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyrie_Irving_-_51831823383.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
     }
   ]
 }

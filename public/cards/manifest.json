@@ -2,29 +2,29 @@
   "version": 3,
   "styles": [
     {
-      "id": "arena",
-      "name": "霓虹竞技场",
-      "desc": "深色球场渐变 + 光柱 + 团队色霓虹"
-    },
-    {
       "id": "atelier",
-      "name": "幻光典藏",
-      "desc": "技能默认：墨蓝底 + 古金描边 + 菱纹"
-    },
-    {
-      "id": "gold",
-      "name": "鎏金典藏",
-      "desc": "金属拉丝金 + 高亮金边"
-    },
-    {
-      "id": "ink",
-      "name": "水墨",
-      "desc": "宣纸米白 + 墨晕 + 朱红印章"
+      "name": "暗物质 · Dark Matter",
+      "desc": "2K顶级神卡：黑曜宇宙深空 + 暗紫电离星云 + 银河电浆光弧"
     },
     {
       "id": "prism",
-      "name": "棱镜虹彩",
-      "desc": "高饱和多色渐变 + 强虹光"
+      "name": "银河欧泊 · Galaxy Opal",
+      "desc": "2K宝石神卡：极光母贝晶体 + 晶钻晶格折射 + 晶莹棱面"
+    },
+    {
+      "id": "arena",
+      "name": "炼狱风暴 · Inferno",
+      "desc": "2K狂暴进攻：火山熔岩地裂 + 炽红高温热浪 + 升腾火星"
+    },
+    {
+      "id": "gold",
+      "name": "无敌至臻 · Invincible",
+      "desc": "2K满评天花板：名人堂纯金拉丝 + 耀世晶体金芒 + 纯金高亮框"
+    },
+    {
+      "id": "ink",
+      "name": "赛博错位 · Glitched",
+      "desc": "2K错位卡系列：深空碳纤 + RGB色散位移 + 电子故障扫描线"
     }
   ],
   "players": [
@@ -50,10 +50,10 @@
       "sourceUrl": "https://pngdownload.io/png-image/lebron-james-in-lakers-jersey-nba-superstar-transparent-png-image/",
       "sourceCredit": "PNGDownload.io, CC BY-NC 4.0",
       "parameters": {
-        "foil": 0.62,
-        "subjectScale": 1.03,
-        "subjectDepth": 0.28,
-        "backgroundDepth": -0.16
+        "foil": 1.15,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.24
       },
       "assets": {
         "front": "/cards/lebron-james/front.webp",
@@ -86,9 +86,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steph_Curry_(51915376334).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -124,9 +124,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Devin_Booker_(51916268559).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -162,10 +162,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
       "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0",
       "parameters": {
-        "foil": 0.4,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.26,
-        "backgroundDepth": -0.14
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
       },
       "assets": {
         "front": "/cards/kevin-durant/front.webp",
@@ -200,9 +200,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giannis_Antetokounmpo_(51914060952).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -236,7 +236,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANikola_Jokic_%2851915399117%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.8,
+        "foil": 0.88,
         "subjectScale": 1.05,
         "subjectDepth": 0.34,
         "backgroundDepth": -0.2
@@ -274,10 +274,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALuka_Doncic_%2851914012797%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/luka-doncic/front.webp",
@@ -312,7 +312,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jason_Tatum_(51914776391).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.8,
+        "foil": 0.88,
         "subjectScale": 1.05,
         "subjectDepth": 0.34,
         "backgroundDepth": -0.2
@@ -350,10 +350,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Wembanyama_San_Antonio_Spurs_2025_NBA_Cup.jpg",
       "sourceCredit": "Wikimedia Commons, CC BY-SA 4.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/victor-wembanyama/front.webp",
@@ -388,10 +388,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93113.jpg",
       "sourceCredit": "Sandro Halank, Wikimedia Commons / Wikimedia Commons, CC BY-SA 4.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/shai-gilgeous-alexander/front.webp",
@@ -426,9 +426,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Edwards_Georgia_%28cropped%29.jpg",
       "sourceCredit": "Gamecock Central / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -462,7 +462,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJoel_Embiid_%2851913778247%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.8,
+        "foil": 0.88,
         "subjectScale": 1.05,
         "subjectDepth": 0.34,
         "backgroundDepth": -0.2
@@ -500,9 +500,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAnthony_Davis%2C_Olympic_Games_2024.jpg",
       "sourceCredit": "Clément Bardot / Wikimedia Commons, CC BY-SA 4.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -538,10 +538,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATyrese_Haliburton.jpg",
       "sourceCredit": "OSU Athletics / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/tyrese-haliburton/front.webp",
@@ -576,10 +576,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADarius_Garland_%2851914121367%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/darius-garland/front.webp",
@@ -612,9 +612,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATrae_Young_%2851914814021%29_%28cropped%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -650,7 +650,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACade_Cunningham_%2851915113234%29_%28cropped%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.8,
+        "foil": 0.88,
         "subjectScale": 1.05,
         "subjectDepth": 0.34,
         "backgroundDepth": -0.2
@@ -688,10 +688,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJosh_Giddey_%282022_All-Star_Weekend%29_%28cropped%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.62,
-        "subjectScale": 1.03,
-        "subjectDepth": 0.28,
-        "backgroundDepth": -0.16
+        "foil": 1.15,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.24
       },
       "assets": {
         "front": "/cards/josh-giddey/front.webp",
@@ -726,9 +726,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFranz_Wagner_%28basketball%29.jpg",
       "sourceCredit": "Sven Mandel / Wikimedia Commons, CC BY-SA 4.0",
       "parameters": {
-        "foil": 0.68,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.3,
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
         "backgroundDepth": -0.18
       },
       "assets": {
@@ -764,10 +764,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEvan_Mobley_%2851914240557%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.95,
+        "foil": 1.0,
         "subjectScale": 1.05,
-        "subjectDepth": 0.36,
-        "backgroundDepth": -0.22
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
       },
       "assets": {
         "front": "/cards/evan-mobley/front.webp",
@@ -802,7 +802,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlperen_%C5%9Eeng%C3%BCn_23_T%C3%BCrkiye_20250823_%281%29.jpg",
       "sourceCredit": "Zafer / Wikimedia Commons, CC BY 4.0",
       "parameters": {
-        "foil": 0.8,
+        "foil": 0.88,
         "subjectScale": 1.05,
         "subjectDepth": 0.34,
         "backgroundDepth": -0.2
@@ -838,10 +838,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARudy_Gobert_%2851914770053%29.jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
       "parameters": {
-        "foil": 0.4,
-        "subjectScale": 1.04,
-        "subjectDepth": 0.26,
-        "backgroundDepth": -0.14
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
       },
       "assets": {
         "front": "/cards/rudy-gobert/front.webp",
@@ -851,6 +851,194 @@
           "background": "/cards/rudy-gobert/layers/background.png",
           "lineart": "/cards/rudy-gobert/layers/lineart.png",
           "text": "/cards/rudy-gobert/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "michael-jordan",
+      "name": "Michael Jordan",
+      "number": "23",
+      "team": "Chicago",
+      "teamShort": "CHI",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "HIS AIRNESS",
+      "accent": "#ce1141",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steve_Lipfosky_--_Michael_Jordan_(1997).jpg",
+      "sourceCredit": "Steve Lipfosky / Wikimedia Commons, CC BY-SA 3.0",
+      "parameters": {
+        "foil": 1.15,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.24
+      },
+      "assets": {
+        "front": "/cards/michael-jordan/front.webp",
+        "thumb": "/cards/michael-jordan/thumb.webp",
+        "layers": {
+          "subject": "/cards/michael-jordan/layers/subject.png",
+          "background": "/cards/michael-jordan/layers/background.png",
+          "lineart": "/cards/michael-jordan/layers/lineart.png",
+          "text": "/cards/michael-jordan/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "kobe-bryant",
+      "name": "Kobe Bryant",
+      "number": "24",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "BLACK MAMBA",
+      "accent": "#fdb927",
+      "accent2": "#552583",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kobe_Bryant_2012_USA_team.jpg",
+      "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 1.0,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/kobe-bryant/front.webp",
+        "thumb": "/cards/kobe-bryant/thumb.webp",
+        "layers": {
+          "subject": "/cards/kobe-bryant/layers/subject.png",
+          "background": "/cards/kobe-bryant/layers/background.png",
+          "lineart": "/cards/kobe-bryant/layers/lineart.png",
+          "text": "/cards/kobe-bryant/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "shaquille-oneal",
+      "name": "Shaquille O'Neal",
+      "number": "34",
+      "team": "Los Angeles",
+      "teamShort": "LAL",
+      "positions": [
+        "C"
+      ],
+      "positionsZh": [
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "DIESEL",
+      "accent": "#ffaa00",
+      "accent2": "#552583",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shaquille_O%27Neal_Free_Throw.jpg",
+      "sourceCredit": "Wikimedia Commons, Public Domain",
+      "parameters": {
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/shaquille-oneal/front.webp",
+        "thumb": "/cards/shaquille-oneal/thumb.webp",
+        "layers": {
+          "subject": "/cards/shaquille-oneal/layers/subject.png",
+          "background": "/cards/shaquille-oneal/layers/background.png",
+          "lineart": "/cards/shaquille-oneal/layers/lineart.png",
+          "text": "/cards/shaquille-oneal/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "allen-iverson",
+      "name": "Allen Iverson",
+      "number": "3",
+      "team": "Philadelphia",
+      "teamShort": "PHI",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE ANSWER",
+      "accent": "#006bb6",
+      "accent2": "#ed174c",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Allen_Iverson_Detroit_Pistons.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+      "parameters": {
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/allen-iverson/front.webp",
+        "thumb": "/cards/allen-iverson/thumb.webp",
+        "layers": {
+          "subject": "/cards/allen-iverson/layers/subject.png",
+          "background": "/cards/allen-iverson/layers/background.png",
+          "lineart": "/cards/allen-iverson/layers/lineart.png",
+          "text": "/cards/allen-iverson/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "kyrie-irving",
+      "name": "Kyrie Irving",
+      "number": "11",
+      "team": "Dallas",
+      "teamShort": "DAL",
+      "positions": [
+        "PG",
+        "SG"
+      ],
+      "positionsZh": [
+        "控卫",
+        "分卫"
+      ],
+      "rarity": "ELITE",
+      "title": "ANKLE TAKER",
+      "accent": "#00538c",
+      "accent2": "#002b5e",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyrie_Irving_-_51831823383.jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/kyrie-irving/front.webp",
+        "thumb": "/cards/kyrie-irving/thumb.webp",
+        "layers": {
+          "subject": "/cards/kyrie-irving/layers/subject.png",
+          "background": "/cards/kyrie-irving/layers/background.png",
+          "lineart": "/cards/kyrie-irving/layers/lineart.png",
+          "text": "/cards/kyrie-irving/layers/text.png"
         }
       }
     }

@@ -48,32 +48,37 @@ npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 
 `lineart.png` 由主体 alpha 的 Canny 边缘生成，供着色器描边使用。
 
-## 卡池（22 位 · 4 档稀有度 · 覆盖五个位置）
+## 卡池（27 位 · 4 档稀有度 · 覆盖五个位置）
 
 | 稀有度 | 球员 | 位置 | 球队 | 卡面风格 |
 | --- | --- | --- | --- | --- |
-| MYTHIC | LeBron James | PG / SF | PHI | 幻光典藏 |
-| MYTHIC | Stephen Curry | PG | GSW | 霓虹竞技场 |
-| MYTHIC | Kevin Durant | SF / PF | HOU | 水墨 |
-| ELITE | Giannis Antetokounmpo | PF / C | MIA | 霓虹竞技场 |
-| ELITE | Nikola Jokic | C | DEN | 鎏金典藏 |
-| ELITE | Luka Doncic | PG / SG | LAL | 棱镜虹彩 |
-| ELITE | Jayson Tatum | SF / PF | BOS | 鎏金典藏 |
-| ELITE | Shai Gilgeous-Alexander | PG / SG | OKC | 棱镜虹彩 |
-| RARE | Devin Booker | PG / SG | PHX | 霓虹竞技场 |
-| RARE | Victor Wembanyama | PF / C | SAS | 棱镜虹彩 |
-| RARE | Anthony Edwards | SG / SF | MIN | 霓虹竞技场 |
-| RARE | Joel Embiid | C | PHI | 鎏金典藏 |
-| RARE | Anthony Davis | PF / C | WAS | 霓虹竞技场 |
-| RARE | Tyrese Haliburton | PG / SG | IND | 棱镜虹彩 |
-| COMMON | Darius Garland | PG / SG | LAC | 棱镜虹彩 |
-| COMMON | Trae Young | PG | WAS | 霓虹竞技场 |
-| COMMON | Cade Cunningham | PG / SG | DET | 鎏金典藏 |
-| COMMON | Josh Giddey | SG / PG | CHI | 幻光典藏 |
-| COMMON | Franz Wagner | SF / PF | ORL | 霓虹竞技场 |
-| COMMON | Evan Mobley | PF / C | CLE | 棱镜虹彩 |
-| COMMON | Alperen Sengun | C / PF | HOU | 鎏金典藏 |
-| COMMON | Rudy Gobert | C | MIN | 水墨 |
+| MYTHIC | LeBron James | PG / SF | PHI | 暗物质 · Dark Matter |
+| MYTHIC | Stephen Curry | PG | GSW | 炼狱风暴 · Inferno |
+| MYTHIC | Kevin Durant | SF / PF | HOU | 赛博错位 · Glitched |
+| MYTHIC | Michael Jordan | SG / SF | CHI | 暗物质 · Dark Matter |
+| MYTHIC | Kobe Bryant | SG / SF | LAL | 银河欧泊 · Galaxy Opal |
+| MYTHIC | Shaquille O'Neal | C | LAL | 炼狱风暴 · Inferno |
+| MYTHIC | Allen Iverson | PG / SG | PHI | 赛博错位 · Glitched |
+| ELITE | Giannis Antetokounmpo | PF / C | MIA | 炼狱风暴 · Inferno |
+| ELITE | Nikola Jokic | C | DEN | 无敌至臻 · Invincible |
+| ELITE | Luka Doncic | PG / SG | LAL | 银河欧泊 · Galaxy Opal |
+| ELITE | Jayson Tatum | SF / PF | BOS | 无敌至臻 · Invincible |
+| ELITE | Shai Gilgeous-Alexander | PG / SG | OKC | 银河欧泊 · Galaxy Opal |
+| ELITE | Kyrie Irving | PG / SG | DAL | 赛博错位 · Glitched |
+| RARE | Devin Booker | PG / SG | PHX | 炼狱风暴 · Inferno |
+| RARE | Victor Wembanyama | PF / C | SAS | 银河欧泊 · Galaxy Opal |
+| RARE | Anthony Edwards | SG / SF | MIN | 炼狱风暴 · Inferno |
+| RARE | Joel Embiid | C | PHI | 无敌至臻 · Invincible |
+| RARE | Anthony Davis | PF / C | WAS | 炼狱风暴 · Inferno |
+| RARE | Tyrese Haliburton | PG / SG | IND | 银河欧泊 · Galaxy Opal |
+| COMMON | Darius Garland | PG / SG | LAC | 银河欧泊 · Galaxy Opal |
+| COMMON | Trae Young | PG | WAS | 炼狱风暴 · Inferno |
+| COMMON | Cade Cunningham | PG / SG | DET | 无敌至臻 · Invincible |
+| COMMON | Josh Giddey | SG / PG | CHI | 暗物质 · Dark Matter |
+| COMMON | Franz Wagner | SF / PF | ORL | 炼狱风暴 · Inferno |
+| COMMON | Evan Mobley | PF / C | CLE | 银河欧泊 · Galaxy Opal |
+| COMMON | Alperen Sengun | C / PF | HOU | 无敌至臻 · Invincible |
+| COMMON | Rudy Gobert | C | MIN | 赛博错位 · Glitched |
 
 ## 抽卡规则
 
@@ -81,16 +86,16 @@ npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 
 1. **不会抽到已在首发阵容里的球员。** 抽之前先把 `state.lineup` 里的 id 排除掉，
    所以连抽会持续给出新面孔，而不是反复抽到同一个人。
-   如果五个位置都已满（22 人全上阵），池子回退成整池，卡面下方会提示
+   如果五个位置都已满，池子回退成整池，卡面下方会提示
    「首发五人已满，本抽不再排除已上阵球员」。
 2. **按稀有度加权。** 权重写在 `RARITY_WEIGHT`：
 
-   | 档位 | 含义 | 人数 | 权重 | 单档概率 | 人均概率 |
-   | --- | --- | --- | --- | --- | --- |
-   | MYTHIC | 神话级 | 3 | 2 | 约 5% | 约 1.7% |
-   | ELITE | 精英级 | 5 | 3 | 约 13% | 约 2.6% |
-   | RARE | 稀有级 | 6 | 5 | 约 26% | 约 4.3% |
-   | COMMON | 普通级 | 8 | 8 | 约 56% | 约 7.0% |
+   | 档位 | 含义 | 人数 | 权重 |
+   | --- | --- | --- | --- |
+   | MYTHIC | 神话级 | 7 | 2 |
+   | ELITE | 精英级 | 6 | 3 |
+   | RARE | 稀有级 | 6 | 5 |
+   | COMMON | 普通级 | 8 | 8 |
 
    权重是整数、每次抽取按当前池重新归一化，所以排除掉已上阵球员后曲线不会走样。
    COMMON 是最底档，RARE 在它之上——这样命名才跟卡牌游戏通行的
@@ -574,18 +579,18 @@ export CARD_ARENA_PYTHON=/path/to/python
 
 滑杆改动只影响当前浏览，不写回球员库；要改这张卡的默认观感，请在后台改它的**风格**并保存。
 
-## 卡面风格（5 套，可逐卡选择）
+## 卡面风格（NBA 2K MyTEAM 经典 5 套，可逐卡选择）
 
-风格由 `scripts/card_styles.py` 定义，同时决定背景配方、文字配色和着色器参数
+风格由 `scripts/card_styles.py` 定义，参考 NBA 2K 梦幻球队经典卡面设计语言，同时决定背景配方、文字配色和着色器参数
 （foil 强度、视差缩放/深度）：
 
-| id | 名称 | 说明 |
+| id | 2K 系列名称 | 风格说明 |
 | --- | --- | --- |
-| `arena` | 霓虹竞技场 | 深色球场渐变 + 光柱 + 团队色霓虹 |
-| `atelier` | 幻光典藏 | 技能默认：墨蓝底 + 古金描边 + 菱纹 |
-| `gold` | 鎏金典藏 | 金属拉丝金 + 高亮金边 |
-| `ink` | 水墨 | 宣纸米白 + 墨晕 + 朱红印章 |
-| `prism` | 棱镜虹彩 | 高饱和多色渐变 + 强虹光 |
+| `atelier` | 暗物质 · Dark Matter | 2K顶级神卡：黑曜宇宙深空 + 暗紫电离星云 + 银河电浆光弧 |
+| `prism` | 银河欧泊 · Galaxy Opal | 2K宝石神卡：极光母贝晶体 + 晶钻晶格折射 + 晶莹棱面 |
+| `arena` | 炼狱风暴 · Inferno | 2K狂暴进攻：火山熔岩地裂 + 炽红高温热浪 + 升腾火星 |
+| `gold` | 无敌至臻 · Invincible | 2K满评天花板：名人堂纯金拉丝 + 耀世晶体金芒 + 纯金高亮框 |
+| `ink` | 赛博错位 · Glitched | 2K错位卡系列：深空碳纤 + RGB色散位移 + 电子故障扫��线 |
 
 在后台把某位球员的「卡面风格」改掉、保存即可重出该卡；也可以直接改 `players.json` 的 `style`。
 

@@ -47,6 +47,8 @@
 // Usage: node scripts/test-holo-lifecycle.cjs      (requires `npm run dev`)
 
 const { chromium, EXE, BASE } = require('./_pw.cjs');
+const fs = require('node:fs');
+const path = require('node:path');
 
 let failed = 0;
 const check = (name, ok, detail) => {
@@ -173,13 +175,16 @@ const openAndDraw = async (p) => {
   });
   const nbRejections = await np.evaluate(() => window.__rejections);
 
+  const manifestPath = path.join(__dirname, '..', 'public', 'cards', 'manifest.json');
+  const expectedCount = JSON.parse(fs.readFileSync(manifestPath, 'utf8')).players.length;
+
   check('无 WebGL 环境确实没有 WebGL', degraded.webgl === false, `webgl2=${degraded.webgl}`);
   check('无 WebGL 时降级到静态卡面图', degraded.fallback && degraded.fallbackLoaded,
     JSON.stringify({ fallback: degraded.fallback, loaded: degraded.fallbackLoaded }));
   check('无 WebGL 时不误报成资源缺失', degraded.caption && degraded.caption !== '加载失败',
     `caption="${degraded.caption}"`);
   check('无 WebGL 时页面其余部分照常构建',
-    degraded.heroCount === '22' && degraded.dots === 22,
+    degraded.heroCount === String(expectedCount) && degraded.dots === expectedCount,
     JSON.stringify({ heroCount: degraded.heroCount, dots: degraded.dots }));
 
   // The other two mount sites get a null instance back too, and neither guards

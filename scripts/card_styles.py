@@ -14,44 +14,44 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 STYLES: dict[str, dict] = {
-    "arena": {
-        "name": "霓虹竞技场",
-        "desc": "深色球场渐变 + 光柱 + 团队色霓虹",
-        "foil": 0.68, "subjectScale": 1.04, "subjectDepth": 0.30, "backgroundDepth": -0.18,
-        "text": {"primary": (255, 255, 255), "accent": "player", "muted": (214, 219, 228)},
-        "panel": (7, 10, 19, 228), "header": (7, 10, 19, 206), "outline_w": 3,
-    },
     "atelier": {
-        "name": "幻光典藏",
-        "desc": "技能默认：墨蓝底 + 古金描边 + 菱纹",
-        "foil": 0.62, "subjectScale": 1.03, "subjectDepth": 0.28, "backgroundDepth": -0.16,
-        "text": {"primary": (255, 241, 206), "accent": (244, 208, 135), "muted": (198, 188, 166)},
-        "panel": (9, 13, 22, 232), "header": (9, 13, 22, 210), "outline_w": 3,
-    },
-    "gold": {
-        "name": "鎏金典藏",
-        "desc": "金属拉丝金 + 高亮金边",
-        "foil": 0.8, "subjectScale": 1.05, "subjectDepth": 0.34, "backgroundDepth": -0.2,
-        "text": {"primary": (255, 238, 196), "accent": (255, 206, 92), "muted": (228, 204, 150)},
-        "panel": (18, 12, 3, 234), "header": (18, 12, 3, 212), "outline_w": 4,
-    },
-    "ink": {
-        "name": "水墨",
-        "desc": "宣纸米白 + 墨晕 + 朱红印章",
-        "foil": 0.4, "subjectScale": 1.04, "subjectDepth": 0.26, "backgroundDepth": -0.14,
-        "text": {"primary": (243, 238, 228), "accent": (198, 62, 52), "muted": (176, 170, 158)},
-        "panel": (24, 22, 20, 236), "header": (24, 22, 20, 214), "outline_w": 3,
+        "name": "暗物质 · Dark Matter",
+        "desc": "2K顶级神卡：黑曜宇宙深空 + 暗紫电离星云 + 银河电浆光弧",
+        "foil": 1.15, "subjectScale": 1.05, "subjectDepth": 0.36, "backgroundDepth": -0.24,
+        "text": {"primary": (255, 255, 255), "accent": (220, 120, 255), "muted": (195, 175, 235)},
+        "panel": (12, 6, 28, 238), "header": (10, 5, 22, 220), "outline_w": 4,
     },
     "prism": {
-        "name": "棱镜虹彩",
-        "desc": "高饱和多色渐变 + 强虹光",
-        "foil": 0.95, "subjectScale": 1.05, "subjectDepth": 0.36, "backgroundDepth": -0.22,
-        "text": {"primary": (255, 255, 255), "accent": "player", "muted": (226, 231, 242)},
-        "panel": (10, 12, 22, 230), "header": (10, 12, 22, 208), "outline_w": 3,
+        "name": "银河欧泊 · Galaxy Opal",
+        "desc": "2K宝石神卡：极光母贝晶体 + 晶钻晶格折射 + 晶莹棱面",
+        "foil": 1.00, "subjectScale": 1.05, "subjectDepth": 0.34, "backgroundDepth": -0.20,
+        "text": {"primary": (242, 255, 255), "accent": (0, 255, 220), "muted": (165, 235, 240)},
+        "panel": (6, 22, 32, 236), "header": (5, 18, 28, 215), "outline_w": 3,
+    },
+    "arena": {
+        "name": "炼狱风暴 · Inferno",
+        "desc": "2K狂暴进攻：火山熔岩地裂 + 炽红高温热浪 + 升腾火星",
+        "foil": 0.90, "subjectScale": 1.05, "subjectDepth": 0.32, "backgroundDepth": -0.18,
+        "text": {"primary": (255, 246, 232), "accent": (255, 95, 25), "muted": (255, 178, 110)},
+        "panel": (24, 6, 2, 240), "header": (18, 5, 2, 218), "outline_w": 4,
+    },
+    "gold": {
+        "name": "无敌至臻 · Invincible",
+        "desc": "2K满评天花板：名人堂纯金拉丝 + 耀世晶体金芒 + 纯金高亮框",
+        "foil": 0.88, "subjectScale": 1.05, "subjectDepth": 0.34, "backgroundDepth": -0.20,
+        "text": {"primary": (255, 240, 205), "accent": (255, 208, 95), "muted": (228, 204, 150)},
+        "panel": (20, 14, 4, 236), "header": (18, 12, 3, 215), "outline_w": 4,
+    },
+    "ink": {
+        "name": "赛博错位 · Glitched",
+        "desc": "2K错位卡系列：深空碳纤 + RGB色散位移 + 电子故障扫描线",
+        "foil": 0.94, "subjectScale": 1.05, "subjectDepth": 0.32, "backgroundDepth": -0.18,
+        "text": {"primary": (255, 255, 255), "accent": (0, 245, 255), "muted": (255, 115, 185)},
+        "panel": (8, 10, 18, 238), "header": (6, 8, 16, 218), "outline_w": 3,
     },
 }
 
-STYLE_ORDER = ["arena", "atelier", "gold", "ink", "prism"]
+STYLE_ORDER = ["atelier", "prism", "arena", "gold", "ink"]
 
 
 def style_list() -> list[dict]:
@@ -160,57 +160,98 @@ def render_background(p: dict, style_id: str, subject_bbox, size, font_factory) 
     im = Image.new("RGBA", (W, H), (*accent2, 255))
 
     if style_id == "ink":
-        _vgrad(im, (244, 238, 226), (214, 205, 190))
-        wash = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        wd = ImageDraw.Draw(wash, "RGBA")
-        for _ in range(9):
-            x, y = int(rng.integers(-100, W)), int(rng.integers(0, H))
-            rx, ry = int(rng.integers(120, 380)), int(rng.integers(90, 280))
-            wd.ellipse((x - rx, y - ry, x + rx, y + ry), fill=(38, 40, 48, int(rng.integers(10, 26))))
-        im = Image.alpha_composite(im, wash.filter(ImageFilter.GaussianBlur(60)))
+        # 赛博错位 (Glitched · 2K): 深空碳纤 + RGB 色散位移 + 电子故障扫描线
+        _vgrad(im, (8, 10, 20), (3, 4, 8))
+        # 赛博霓虹青与电光粉双色光晕
+        im = _glow(im, (0, 240, 255), 55, 120, box=(-W * 0.2, H * 0.15, W * 0.7, H * 0.75))
+        im = _glow(im, (255, 0, 128), 50, 120, box=(W * 0.3, H * 0.25, W * 1.2, H * 0.85))
+        # 故障横向色块与扫描线切片
+        glitch = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        gd = ImageDraw.Draw(glitch, "RGBA")
+        for _ in range(35):
+            gy = int(rng.integers(60, H - 100))
+            gh = int(rng.integers(2, 14))
+            gx = int(rng.integers(-40, W - 100))
+            gw = int(rng.integers(80, 360))
+            col = (0, 245, 255, int(rng.integers(40, 110))) if rng.random() > 0.5 else (255, 0, 140, int(rng.integers(40, 110)))
+            gd.rectangle((gx, gy, gx + gw, gy + gh), fill=col)
+        # 细微扫描线
+        for y in range(80, H - 80, 6):
+            gd.line((0, y, W, y), fill=(255, 255, 255, 14), width=1)
+        im = Image.alpha_composite(im, glitch)
+        # 几何切角科技边框
         d = ImageDraw.Draw(im, "RGBA")
-        for y in range(120, H, 96):
-            d.line((0, y, W, y), fill=(60, 58, 54, 12), width=2)
-        d.rounded_rectangle((46, 46, W - 46, H - 46), radius=14, outline=(40, 38, 36, 150), width=3)
-        d.rectangle((W - 210, 150, W - 130, 246), outline=(176, 52, 44, 220), width=7)
-        _watermark(im, p, font_factory, (40, 38, 36), 22)
+        d.polygon([(46, 70), (70, 46), (W - 70, 46), (W - 46, 70), (W - 46, H - 70), (W - 70, H - 46), (70, H - 46), (46, H - 70)], outline=(0, 245, 255, 120), width=2)
+        _watermark(im, p, font_factory, (0, 245, 255), 24)
+
     elif style_id == "gold":
-        _vgrad(im, (74, 52, 10), (16, 11, 3))
-        im = _glow(im, (255, 206, 92), 60, 150)
+        # 无敌至臻 (Invincible · 2K): 名人堂顶级黑金 + 金属拉丝 + 耀世晶体金芒
+        _vgrad(im, (54, 40, 10), (14, 10, 3))
+        im = _glow(im, (255, 210, 95), 65, 140)
         streaks = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         sd = ImageDraw.Draw(streaks, "RGBA")
-        for _ in range(140):
+        for _ in range(160):
             y = int(rng.integers(0, H))
-            sd.line((0, y, W, y), fill=(255, 226, 150, int(rng.integers(6, 26))), width=int(rng.integers(1, 3)))
+            sd.line((0, y, W, y), fill=(255, 230, 160, int(rng.integers(8, 30))), width=int(rng.integers(1, 3)))
         im = Image.alpha_composite(im, streaks.filter(ImageFilter.GaussianBlur(2)))
-        im = _rays(im, 14, 30)
-        _arcs(im, (255, 206, 92), 120, 12)
-        _watermark(im, p, font_factory, (255, 214, 120), 26)
-    elif style_id == "prism":
-        _diag_grad(im, [(10, 14, 32), (34, 20, 78), (10, 74, 96), (86, 22, 74), (12, 16, 34)])
-        im = _glow(im, (255, 255, 255), 46, 170, box=(-W * 0.2, H * 0.05, W * 1.2, H * 0.9))
-        im = _rays(im, 16, 22)
-        im = _bokeh(im, [(255, 120, 190), (120, 220, 255), (255, 220, 130)], rng, 150)
-        _arcs(im, (255, 255, 255), 70, 8)
-        _watermark(im, p, font_factory, (255, 255, 255), 26)
-    elif style_id == "atelier":
-        _vgrad(im, (14, 22, 42), (5, 7, 13))
-        im = _glow(im, (244, 208, 135), 40, 160, box=(-W * 0.25, H * 0.06, W * 1.25, H * 0.94))
-        im = _bokeh(im, [(244, 208, 135), (255, 255, 255)], rng, 120)
+        im = _rays(im, 18, 28)
+        _arcs(im, (255, 210, 95), 140, 12)
         d = ImageDraw.Draw(im, "RGBA")
-        d.rounded_rectangle((44, 44, W - 44, H - 44), radius=26, outline=(244, 208, 135, 120), width=3)
-        d.rounded_rectangle((62, 62, W - 62, H - 62), radius=18, outline=(244, 208, 135, 60), width=1)
+        d.rounded_rectangle((48, 48, W - 48, H - 48), radius=24, outline=(255, 215, 110, 160), width=3)
+        d.rounded_rectangle((60, 60, W - 60, H - 60), radius=16, outline=(255, 255, 255, 60), width=1)
+        _watermark(im, p, font_factory, (255, 215, 110), 28)
+
+    elif style_id == "prism":
+        # 银河欧泊 (Galaxy Opal · 2K): 极光母贝晶体 + 晶钻晶格折射 + 晶莹棱面
+        _diag_grad(im, [(6, 24, 38), (18, 54, 76), (10, 80, 88), (48, 24, 72), (8, 20, 34)])
+        im = _glow(im, (0, 255, 220), 55, 150, box=(-W * 0.25, H * 0.06, W * 1.25, H * 0.9))
+        im = _glow(im, (255, 130, 220), 45, 130, box=(W * 0.1, H * 0.2, W * 0.9, H * 0.7))
+        # 晶体晶格折射线
+        facets = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        fd = ImageDraw.Draw(facets, "RGBA")
+        for i in range(-3, 8):
+            fd.line((i * W * 0.25, 0, i * W * 0.25 + W * 0.4, H), fill=(255, 255, 255, 22), width=2)
+            fd.line((W - i * W * 0.25, 0, W - i * W * 0.25 - W * 0.4, H), fill=(0, 255, 220, 20), width=2)
+        im = Image.alpha_composite(im, facets)
+        im = _bokeh(im, [(0, 255, 220), (255, 140, 230), (255, 255, 255), (120, 220, 255)], rng, 160)
+        _arcs(im, (0, 255, 220), 85, 10)
+        _watermark(im, p, font_factory, (0, 255, 220), 28)
+
+    elif style_id == "atelier":
+        # 暗物质 (Dark Matter · 2K): 黑曜宇宙深空 + 暗紫电离星云 + 银河电浆光弧
+        _vgrad(im, (12, 5, 26), (3, 1, 8))
+        im = _glow(im, (170, 50, 255), 75, 150, box=(-W * 0.3, H * 0.08, W * 1.3, H * 0.85))
+        im = _glow(im, (50, 180, 255), 45, 110, box=(W * 0.15, H * 0.25, W * 0.85, H * 0.65))
+        # 宇宙深空星尘
+        im = _bokeh(im, [(220, 120, 255), (100, 200, 255), (255, 255, 255), (180, 90, 240)], rng, 220)
+        # 离子电浆放射光柱
+        im = _rays(im, 16, 24)
+        # 暗物质切角菱形与双轨暗紫外框
+        d = ImageDraw.Draw(im, "RGBA")
+        d.rounded_rectangle((44, 44, W - 44, H - 44), radius=28, outline=(220, 120, 255, 140), width=3)
+        d.rounded_rectangle((62, 62, W - 62, H - 62), radius=18, outline=(100, 200, 255, 70), width=1)
         cx, cy = W // 2, int(H * 0.42)
-        for rad in (300, 250):
-            d.regular_polygon((cx, cy, rad), 4, rotation=0, outline=(244, 208, 135, 40))
-        _watermark(im, p, font_factory, (244, 208, 135), 22)
-    else:  # arena
-        _vgrad(im, accent2, (6, 8, 14))
-        im = _glow(im, accent, 58, 150)
-        im = _rays(im, 11, 26)
-        im = _bokeh(im, [accent, (255, 255, 255)], rng, 170)
-        _arcs(im, accent, 95, 11)
-        _watermark(im, p, font_factory, accent, 30)
+        for rad in (310, 260):
+            d.regular_polygon((cx, cy, rad), 4, rotation=0, outline=(220, 120, 255, 45))
+        _watermark(im, p, font_factory, (220, 120, 255), 26)
+
+    else:  # arena -> 炼狱风暴 (Inferno · 2K): 火山熔岩地裂 + 炽红高温热浪 + 升腾火星
+        _vgrad(im, (32, 8, 3), (10, 3, 2))
+        im = _glow(im, (255, 75, 15), 70, 140, box=(-W * 0.2, H * 0.1, W * 1.2, H * 0.9))
+        im = _glow(im, (255, 180, 20), 45, 100, box=(W * 0.1, H * 0.3, W * 0.9, H * 0.8))
+        # 升腾火星余烬 (Ember particles)
+        embers = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ed = ImageDraw.Draw(embers, "RGBA")
+        for _ in range(160):
+            ex = int(rng.integers(20, W - 20))
+            ey = int(rng.integers(100, H))
+            er = int(rng.integers(2, 8))
+            ecol = (255, 220, 100) if rng.random() > 0.4 else (255, 90, 20)
+            ed.ellipse((ex - er, ey - er, ex + er, ey + er), fill=(*ecol, int(rng.integers(35, 100))))
+        im = Image.alpha_composite(im, embers.filter(ImageFilter.GaussianBlur(3)))
+        im = _rays(im, 14, 25)
+        _arcs(im, (255, 90, 20), 110, 12)
+        _watermark(im, p, font_factory, (255, 90, 20), 30)
 
     # shared: header strip + bottom name panel + subject drop shadow
     d = ImageDraw.Draw(im, "RGBA")

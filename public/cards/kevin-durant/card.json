@@ -20,10 +20,10 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKevin_Durant_4.jpg",
   "sourceCredit": "Keith Allison from Owings Mills, USA / Wikimedia Commons, CC BY-SA 2.0",
   "parameters": {
-    "foil": 0.4,
-    "subjectScale": 1.04,
-    "subjectDepth": 0.26,
-    "backgroundDepth": -0.14
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
   },
   "assets": {
     "front": "/cards/kevin-durant/front.webp",

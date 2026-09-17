@@ -20,10 +20,10 @@
   "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJosh_Giddey_%282022_All-Star_Weekend%29_%28cropped%29.jpg",
   "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
   "parameters": {
-    "foil": 0.62,
-    "subjectScale": 1.03,
-    "subjectDepth": 0.28,
-    "backgroundDepth": -0.16
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
   },
   "assets": {
     "front": "/cards/josh-giddey/front.webp",
