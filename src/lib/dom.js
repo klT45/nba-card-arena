@@ -29,6 +29,18 @@ export function safeUrl(u) {
   return /^https?:\/\//i.test(s) ? s : "#";
 }
 
+/**
+ * Resolves an absolute path against Vite's configured base URL,
+ * ensuring static assets and internal links work seamlessly under GitHub Pages subpaths.
+ */
+export function assetUrl(path) {
+  if (!path || /^(https?:)?\/\//.test(path) || path.startsWith("data:")) return path;
+  const base = import.meta.env?.BASE_URL || "/";
+  const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return cleanBase + cleanPath;
+}
+
 /** Transient status message. Silently no-ops on pages without a #toast. */
 export function toast(message, kind = "ok") {
   const el = $("#toast");

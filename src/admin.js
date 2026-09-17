@@ -1,10 +1,10 @@
 /** Player-library admin. Talks to the dev-only /api endpoints injected by
  *  scripts/vite-admin-plugin.mjs, so it only works under `npm run dev`. */
-import { $, $$, esc } from "./lib/dom.js";
+import { $, $$, esc, assetUrl } from "./lib/dom.js";
 import { SLOTS, POSITION_ZH } from "./data/slots.js";
 import { RARITY_ORDER } from "./data/rarity.js";
 
-const bust = (url) => `${url}?t=${state.stamp}`;
+const bust = (url) => `${assetUrl(url)}?t=${state.stamp}`;
 
 /** The admin holds its own roster copy (it talks to the dev API, not the built
  *  manifest), so it cannot reuse the store's `styleName`, which reads the

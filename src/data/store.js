@@ -6,6 +6,8 @@
  * layer, and the only genuinely reactive thing in the app is the lineup, which
  * `storage` events already cover across tabs.
  */
+import { assetUrl } from "../lib/dom.js";
+
 const LINEUP_KEY = "nba-card-lineup";
 
 /** Never move this below `state`: `state.lineup` calls it during initialisation,
@@ -76,11 +78,28 @@ export function pruneLineup() {
 }
 
 export async function loadManifest() {
-  const data = await fetch("/cards/manifest.json").then((r) => {
+  const data = await fetch(assetUrl("/cards/manifest.json")).then((r) => {
     if (!r.ok) throw Error("球星卡清单加载失败");
     return r.json();
   });
-  state.players = data.players || [];
+  state.players = (data.players || []).map((p) => {
+    if (!p.assets) return p;
+    return {
+      ...p,
+      assets: {
+        front: assetUrl(p.assets.front),
+        thumb: assetUrl(p.assets.thumb),
+        layers: p.assets.layers
+          ? {
+              subject: assetUrl(p.assets.layers.subject),
+              background: assetUrl(p.assets.layers.background),
+              lineart: assetUrl(p.assets.layers.lineart),
+              text: assetUrl(p.assets.layers.text),
+            }
+          : p.assets.layers,
+      },
+    };
+  });
   state.styles = data.styles || [];
   // Runs before anything renders, and before bindCardActions() wires up clicks.
   pruneLineup();

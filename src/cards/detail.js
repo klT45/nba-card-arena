@@ -2,7 +2,7 @@
  * Card detail dialog (arena + gallery share it). Builds the copy column, mounts
  * the live card, and hands the control panel its instance.
  */
-import { $, esc, safeUrl } from "../lib/dom.js";
+import { $, esc, safeUrl, assetUrl } from "../lib/dom.js";
 import { playerById, positionText, styleName } from "../data/store.js";
 import { mountHolo, unmountHolo } from "./mount.js";
 import { bindHoloControls, controlsHTML } from "./holo-controls.js";
@@ -29,7 +29,7 @@ export async function openDetail(id) {
         <div class="position-chips">${p.positions.map((x, i) => `<span>${esc(x)} ${esc(p.positionsZh[i] ?? "")}</span>`).join("")}</div>
         <div class="info-grid">${info}</div>
         ${pickerHTML(p)}
-        ${p.id === "lebron-james" ? '<a class="ghost legacy-link" href="/legacy/lebron/" target="_blank" rel="noreferrer">打开完整 3D 卡 ↗</a>' : ""}
+        ${p.id === "lebron-james" ? `<a class="ghost legacy-link" href="${safeUrl(assetUrl("/legacy/lebron/"))}" target="_blank" rel="noreferrer">打开完整 3D 卡 ↗</a>` : ""}
         <p class="source-note">图片：${esc(p.sourceCredit || "—")}<br><a href="${esc(safeUrl(p.sourceUrl))}" target="_blank" rel="noreferrer">查看素材来源</a></p>
       </div>
     </div>`;

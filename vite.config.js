@@ -3,8 +3,11 @@ import { defineConfig } from "vite";
 import { adminApi } from "./scripts/vite-admin-plugin.mjs";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
+const rawBase = process.env.BASE_URL || (process.env.GITHUB_ACTIONS === "true" ? "/nba-card-arena/" : "/");
+const base = rawBase === "./" ? "./" : (rawBase.startsWith("/") ? rawBase : `/${rawBase}`).replace(/\/?$/, "/");
 
 export default defineConfig({
+  base,
   plugins: [adminApi()],
   server: { host: "127.0.0.1", port: 5173 },
   preview: { host: "127.0.0.1", port: 4174 },
