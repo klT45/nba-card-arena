@@ -79,7 +79,7 @@
    screen open on a scrollbar. */
 @media (max-height: 560px) {
   .draw-stage { padding: 22px; }
-  .pack { width: min(210px, 36vh); }
-  .pack span { font-size: 24px; }
-  .pack small { margin-top: 10px; }
+  .pack { width: min(210px, 42vh); }
+  .pack-title { font-size: 24px; }
+  .pack-inner small { margin-top: 4px; }
 }

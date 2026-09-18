@@ -218,6 +218,26 @@ export function openDraw() {
   if (pack && !prefersReducedMotion()) {
     track(gsap.to(pack, { y: -9, duration: 1.5, yoyo: true, repeat: -1, ease: "sine.inOut" }));
   }
+
+  // Support both clicking and swiping across the tear strip to rip
+  let touchStartX = 0;
+  let touchStartY = 0;
+  pack?.addEventListener("touchstart", (e) => {
+    if (e.touches && e.touches.length) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+  pack?.addEventListener("touchend", (e) => {
+    if (e.changedTouches && e.changedTouches.length) {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
+        ripPack();
+      }
+    }
+  }, { passive: true });
+
   pack?.addEventListener("click", () => ripPack(), { once: true });
 }
 
@@ -236,6 +256,24 @@ export function ripPack() {
 
   const { player: p, allTaken } = drawCandidate();
   if (!p) return;
+
+  // Preload all assets in the background during the 2.5s rip & charge animation,
+  // so textures are already in browser memory when the card lands (0ms reveal lag).
+  if (p.assets) {
+    const urls = [
+      p.assets.front,
+      p.assets.thumb,
+      p.assets.layers?.subject,
+      p.assets.layers?.background,
+      p.assets.layers?.text,
+      p.assets.layers?.lineart,
+    ].filter(Boolean);
+    urls.forEach((u) => {
+      const img = new Image();
+      img.src = u;
+    });
+  }
+
   const rarity = rarityOf(p);
   const glow = glowOf(p);
   const reduced = prefersReducedMotion();
@@ -339,6 +377,12 @@ export async function revealDraw(p, glow, allTaken) {
   const drawStage = $("#draw-holo");
   if (drawStage) {
     drawStage.innerHTML = `<img class="holo-fallback" src="${encodeURI(p.assets.front)}" alt="${esc(p.name)} 卡面">`;
+    if (!prefersReducedMotion()) {
+      track(gsap.fromTo(drawStage,
+        { scale: 0.35, y: -90, opacity: 0, filter: "brightness(3)" },
+        { scale: 1, y: 0, opacity: 1, filter: "brightness(1)", duration: 0.65, ease: "back.out(1.4)" }
+      ));
+    }
   }
   const inst = await mountHolo($("#draw-holo"), p, { auto: false });
   inst?.reveal();
