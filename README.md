@@ -811,5 +811,13 @@ nba-card-arena/
 - 除 LeBron 外，全部球员照片来自 **Wikimedia Commons**，以 **CC BY 2.0 / CC BY-SA 4.0** 授权，
   已在 `public/cards/manifest.json` 的 `sourceUrl` / `sourceCredit` 逐张署名；原始照片不入库。
 - LeBron 主体图来自 pngdownload.io（**CC BY-NC 4.0：署名、非商业**），原始文件不入库。
+- 音效（`public/audio/*.mp3`）来自 **Mixkit**（Mixkit License：可免费商用、无需署名），
+  包含撕包、充能、爆破、揭晓、球场欢呼、蜂鸣器、刷网与界面点击八种；`src/lib/sound.js`
+  内置 Web Audio 合成音作为加载失败时的完整回退。
+- 球场木地板纹理 `src/assets/court-floor.webp` 来自 **ambientCG**（WoodFloor051，**CC0**），
+  已调色压暗。
+- 抽卡舞台背景 `src/assets/arena-bg.webp` 来自 Wikimedia Commons
+  《[Mall of Asia Arena 2023 FIBA World Cup](https://commons.wikimedia.org/wiki/File:Mall_of_Asia_Arena_2023_FIBA_World_Cup.jpg)》
+  （作者 Salmonpepperrice，**CC BY 4.0**），已裁切压暗调色。
 - 球员肖像权、NBA / 球队商标归各自权利人所有。本仓库仅作**技术演示与个人学习**，不得用于商业发行。
 - 代码部分 MIT（见 LICENSE）。

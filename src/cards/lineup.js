@@ -6,6 +6,7 @@
 import { $, esc, toast } from "../lib/dom.js";
 import { SLOTS } from "../data/slots.js";
 import { loadLineup, playerById, pruneLineup, saveLineup, state } from "../data/store.js";
+import { playSwishSound, playBuzzerSound } from "../lib/sound.js";
 
 /**
  * Re-reads the persisted lineup and re-renders it. Both pages listen for the
@@ -90,6 +91,11 @@ export function addPlayerAt(id, pos) {
   state.lineup[pos] = id;
   saveLineup();
   renderLineup();
+  playSwishSound();
   toast(`${p.name} 已进入 ${pos} 首发`);
+  // The buzzer sounds once the fifth slot lands - the team is complete.
+  if (SLOTS.every((s) => state.lineup[s])) {
+    setTimeout(playBuzzerSound, 650);
+  }
   return true;
 }

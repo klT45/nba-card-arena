@@ -268,10 +268,13 @@
   min-height: 620px;
   border-radius: 190px 190px var(--r-lg) var(--r-lg);
   border: 1px solid var(--line);
+  /* Hardwood floor texture (ambientCG WoodFloor051, CC0) under the navy night
+     tint and the painted court lines. */
   background:
     radial-gradient(120% 80% at 50% 0%, rgba(201, 255, 61, .06), transparent 60%),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, .015) 0 46px, transparent 46px 92px),
-    linear-gradient(180deg, #0d121b, #080b11);
+    linear-gradient(180deg, rgba(13, 18, 27, .84), rgba(8, 11, 17, .92)),
+    url("../assets/court-floor.webp") center / 340px repeat;
   overflow: hidden;
 }
 .court-logo {

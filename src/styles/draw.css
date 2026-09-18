@@ -20,10 +20,24 @@
   margin: 0;
   padding: 0;
   display: grid;
+  /* The arena photo made the stage's shrink-to-fit width visible: without an
+     explicit track the auto column collapsed to the pack's max-content. */
+  grid-template-columns: 100%;
   place-items: center;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 1000;
+}
+/* Film-grain wash over the whole stage; sits under the interactive layer. */
+.draw-dialog[open]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: url("../assets/grain.webp") repeat;
+  background-size: 256px;
+  opacity: .55;
 }
 .draw-dialog::backdrop {
   background: rgba(0, 0, 0, 0.92);
@@ -54,9 +68,14 @@
 /* `--rarity` is set on the stage by core.js once the winner is known, so the
    whole room shifts colour per tier: green MYTHIC, ice-blue ELITE, violet
    RARE. It defaults to the brand green for the pre-draw pack screen. */
+/* The dialog's `place-items: center` makes #draw-content shrink-to-fit; the
+   arena backdrop made that visible as a narrow photo column. Full width for
+   every draw state. */
+#draw-content { width: 100%; }
 .draw-stage {
   --rarity: var(--brand);
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,9 +84,12 @@
   min-height: 100dvh;
   padding: 40px 20px;
   overflow-x: hidden;
+  /* Real arena backdrop (Mall of Asia Arena, Wikimedia Commons, CC BY 4.0)
+     graded to the site's navy night, under the rarity glow gradients. */
   background:
     radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--rarity) 24%, transparent) 0, transparent 65%),
-    radial-gradient(circle at 50% 45%, #181f0d 0, #0c1007 35%, #040508 75%);
+    radial-gradient(circle at 50% 45%, rgba(24, 31, 13, .62) 0, rgba(12, 16, 7, .74) 35%, rgba(4, 5, 8, .88) 75%),
+    url("../assets/arena-bg.webp") center / cover no-repeat;
   box-shadow: none;
   transition: background .4s ease;
 }

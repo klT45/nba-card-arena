@@ -11,6 +11,7 @@ import { addPlayerAt, renderLineup } from "./cards/lineup.js";
 import { closeDetail, openDetail } from "./cards/detail.js";
 import { unmountHolo } from "./cards/mount.js";
 import { killDraw, openDraw } from "./draw/draw.js";
+import { playClickSound, preloadSamples } from "./lib/sound.js";
 
 export function closeDialog(dialog) {
   if (!dialog) return;
@@ -52,12 +53,12 @@ export function bindCardActions() {
       closeDialog(confirm.closest("dialog"));
       return;
     }
-    if (redraw) { openDraw(); return; }
+    if (redraw) { playClickSound(); openDraw(); return; }
     if (skip) { closeDialog(skip.closest("dialog")); return; }
     if (detail) { openDetail(detail.dataset.detail); return; }
     if (add) { openDetail(add.dataset.add); return; }
     if (remove) { delete state.lineup[remove.dataset.remove]; saveLineup(); renderLineup(); return; }
-    if (draw) { openDraw(); return; }
+    if (draw) { playClickSound(); preloadSamples(["tear", "charge", "burst", "reveal", "crowd"]); openDraw(); return; }
   });
 
   $$("dialog").forEach((d) => {
