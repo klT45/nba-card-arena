@@ -1,0 +1,38 @@
+{
+  "id": "dwyane-wade",
+  "name": "Dwyane Wade",
+  "number": "3",
+  "team": "Miami",
+  "teamShort": "MIA",
+  "positions": [
+    "SG",
+    "PG"
+  ],
+  "positionsZh": [
+    "分卫",
+    "控卫"
+  ],
+  "rarity": "MYTHIC",
+  "title": "FLASH",
+  "accent": "#98002e",
+  "accent2": "#f9a01b",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dwyane_Wade_2012.jpg",
+  "sourceCredit": "Public domain / Wikimedia Commons",
+  "parameters": {
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/dwyane-wade/front.webp",
+    "thumb": "/cards/dwyane-wade/thumb.webp",
+    "layers": {
+      "subject": "/cards/dwyane-wade/layers/subject.png",
+      "background": "/cards/dwyane-wade/layers/background.png",
+      "lineart": "/cards/dwyane-wade/layers/lineart.png",
+      "text": "/cards/dwyane-wade/layers/text.png"
+    }
+  }
+}

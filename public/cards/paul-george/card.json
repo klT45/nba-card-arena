@@ -1,0 +1,38 @@
+{
+  "id": "paul-george",
+  "name": "Paul George",
+  "number": "8",
+  "team": "Philadelphia",
+  "teamShort": "PHI",
+  "positions": [
+    "SF",
+    "SG"
+  ],
+  "positionsZh": [
+    "小前锋",
+    "分卫"
+  ],
+  "rarity": "RARE",
+  "title": "PG-13",
+  "accent": "#006bb6",
+  "accent2": "#ed174c",
+  "style": "prism",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_paul_george_2026_(cropped)_(cropped).jpg",
+  "sourceCredit": "All-Pro Reels / Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 1.0,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/paul-george/front.webp",
+    "thumb": "/cards/paul-george/thumb.webp",
+    "layers": {
+      "subject": "/cards/paul-george/layers/subject.png",
+      "background": "/cards/paul-george/layers/background.png",
+      "lineart": "/cards/paul-george/layers/lineart.png",
+      "text": "/cards/paul-george/layers/text.png"
+    }
+  }
+}

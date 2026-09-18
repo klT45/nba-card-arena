@@ -64,27 +64,139 @@
   background-position: 12px 20px, 55px 36px;
   animation: particle-drift 6s linear infinite;
 }
+/* --- sound toggle -------------------------------------------------------- */
+.draw-sound-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+}
+.btn-sound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line);
+  background: rgba(10, 14, 20, 0.7);
+  color: var(--text-3);
+  cursor: pointer;
+  transition: all .2s;
+  padding: 0;
+}
+.btn-sound:hover, .btn-sound.on {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: rgba(201, 255, 61, 0.12);
+}
+
 .pack {
   position: relative;
   z-index: 2;
-  width: 210px;
+  width: 228px;
   aspect-ratio: 1024 / 1493;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: var(--r-md);
-  border: 1.5px solid var(--brand);
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
   background:
-    repeating-linear-gradient(135deg, rgba(201, 255, 61, .14) 0 12px, transparent 12px 24px),
-    linear-gradient(160deg, #161d0c, #0a0d06);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, transparent 40%, rgba(255, 255, 255, 0.12) 60%, transparent 100%),
+    repeating-linear-gradient(45deg, rgba(201, 255, 61, 0.05) 0 4px, transparent 4px 8px),
+    linear-gradient(170deg, #1f2710 0%, #12180a 45%, #080a06 100%);
   color: var(--text);
-  text-align: center;
-  box-shadow: 0 0 70px rgba(201, 255, 61, .22), var(--shadow-lg);
-  transition: transform .25s var(--ease);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.75), 0 0 65px rgba(201, 255, 61, 0.22);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
 }
-.pack span { font: 900 30px/1.05 var(--font-display); letter-spacing: .12em; }
-.pack small { display: block; margin-top: 16px; font: 700 11px/1 var(--font-display); letter-spacing: .3em; color: var(--brand); }
-.pack:hover { transform: translateY(-8px) rotate(-1.5deg); }
-.pack.ripping { animation: pack-rip .62s cubic-bezier(.6, -.1, .7, 1) forwards; }
+.pack:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 90px rgba(201, 255, 61, 0.35);
+}
+.pack-crimp {
+  width: 100%;
+  height: 20px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0 2px, rgba(255, 255, 255, 0.25) 2px 4px),
+    linear-gradient(180deg, #2b3518, #18200d);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+.pack-crimp-bottom {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+.pack-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px 14px;
+  gap: 7px;
+}
+.pack-edition {
+  font: 800 10px/1 var(--font-display);
+  letter-spacing: .22em;
+  color: var(--brand);
+}
+.pack-title {
+  font: 900 34px/0.95 var(--font-display);
+  letter-spacing: .08em;
+  color: #fff;
+  text-shadow: 0 4px 18px rgba(201, 255, 61, 0.4);
+}
+.pack-foil-bar {
+  font: 700 9px/1 var(--font-display);
+  letter-spacing: .2em;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 0;
+  width: 85%;
+}
+.pack-tear-line {
+  margin: 8px 0;
+  width: 100%;
+  padding: 5px 0;
+  background: linear-gradient(90deg, transparent, rgba(201, 255, 61, 0.22), transparent);
+  border-top: 1.5px dashed rgba(201, 255, 61, 0.6);
+  border-bottom: 1.5px dashed rgba(201, 255, 61, 0.6);
+  font: 900 10.5px/1 var(--font-display);
+  letter-spacing: .18em;
+  color: var(--brand);
+  animation: tear-pulse 1.8s ease-in-out infinite;
+}
+.pack-inner small {
+  font: 700 11px/1 var(--font-zh);
+  color: #aeb4bf;
+  letter-spacing: .08em;
+}
+@keyframes tear-pulse {
+  0%, 100% { opacity: 0.85; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.35); }
+}
+.pack-shimmer {
+  position: absolute;
+  inset: -100%;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.26) 48%, rgba(201, 255, 61, 0.32) 52%, transparent 60%);
+  animation: pack-shimmer-sweep 5s infinite;
+}
+@keyframes pack-shimmer-sweep {
+  0% { transform: translateX(-60%) translateY(-60%); }
+  35%, 100% { transform: translateX(60%) translateY(60%); }
+}
+.pack.ripping {
+  animation: pack-rip .55s cubic-bezier(.5, 0, .8, 1) forwards;
+}
+@keyframes pack-rip {
+  0% { transform: scale(1); filter: brightness(1); }
+  30% { transform: scale(1.08) rotate(-3deg); filter: brightness(2.2); }
+  100% { transform: scale(0.6) rotate(16deg) translateY(-80px); opacity: 0; filter: blur(12px) brightness(4); }
+}
 
 /* --- charge orb ---------------------------------------------------------
    The suspense beat between tearing the pack and seeing the card. Three

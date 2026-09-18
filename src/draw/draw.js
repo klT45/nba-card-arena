@@ -16,6 +16,14 @@ import { positionText, state, styleName } from "../data/store.js";
 import { mountHolo } from "../cards/mount.js";
 import { bindHoloControls, controlsHTML } from "../cards/holo-controls.js";
 import { pickerHTML } from "../cards/lineup.js";
+import {
+  playTearSound,
+  playChargeSound,
+  playBurstSound,
+  playRevealChime,
+  isSoundEnabled,
+  toggleSound,
+} from "../lib/sound.js";
 
 /* Higher tiers hold the suspense a beat longer before the card drops. */
 export const CHARGE_MS = { COMMON: 750, RARE: 900, ELITE: 1150, MYTHIC: 1400 };
@@ -168,15 +176,43 @@ export function openDraw() {
   if (!dialog) return;
   const content = $("#draw-content");
   killDraw();
+  const soundOn = isSoundEnabled();
   content.innerHTML = `
     <div class="draw-stage">
+      <div class="draw-sound-toggle">
+        <button type="button" class="btn-sound${soundOn ? " on" : ""}" id="draw-sound-btn" aria-label="${soundOn ? "关闭音效" : "开启音效"}">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+        </button>
+      </div>
       <div class="draw-rays" aria-hidden="true"></div>
       <div class="draw-particles" aria-hidden="true"></div>
       <button class="pack" type="button" aria-label="撕开卡包">
-        <span>CARD<br>ARENA</span><small>点击撕开</small>
+        <div class="pack-crimp pack-crimp-top" aria-hidden="true"></div>
+        <div class="pack-inner">
+          <span class="pack-edition">SERIES 01 · 2K MYTEAM</span>
+          <span class="pack-title">CARD<br>ARENA</span>
+          <span class="pack-foil-bar">★ HOLOGRAPHIC PACK ★</span>
+          <div class="pack-tear-line" aria-hidden="true">
+            <span>PULL TO TEAR ▶▶▶</span>
+          </div>
+          <small>点击撕开卡包</small>
+        </div>
+        <div class="pack-crimp pack-crimp-bottom" aria-hidden="true"></div>
+        <div class="pack-shimmer" aria-hidden="true"></div>
       </button>
     </div>`;
   if (!dialog.open) dialog.showModal();
+
+  const soundBtn = $("#draw-sound-btn", content);
+  soundBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const next = toggleSound();
+    soundBtn.classList.toggle("on", next);
+    soundBtn.setAttribute("aria-label", next ? "关闭音效" : "开启音效");
+  });
+
   const pack = $(".pack", content);
   // A gentle idle bob while the pack waits, so the dialog is never dead air.
   if (pack && !prefersReducedMotion()) {
@@ -208,16 +244,19 @@ export function ripPack() {
   const tl = gsap.timeline({ onComplete: () => { drawTl = null; } });
   drawTl = tl;
 
-  // Beat 1 - tear the pack.
+  // Beat 1 - tear the pack with tearing sound.
   tl.call(() => {
+    playTearSound();
     gsap.killTweensOf(pack);
     pack.classList.add("ripping");
     stage.classList.add("bursting");
   });
   tl.to({}, { duration: reduced ? 0.06 : 0.43 });
 
-  // Beat 2 - suspense. Higher tiers hold longer.
+  // Beat 2 - suspense. Higher tiers hold longer with rising energy charge audio.
   tl.call(() => {
+    const chargeDuration = (reduced ? 120 : CHARGE_MS[rarity] ?? 1000) / 1000;
+    playChargeSound(chargeDuration, rarity);
     content.innerHTML = `
       <div class="draw-stage charging" style="--rarity:${glow}">
         <div class="draw-rays" aria-hidden="true"></div>
@@ -228,8 +267,9 @@ export function ripPack() {
   });
   tl.to({}, { duration: (reduced ? 120 : CHARGE_MS[rarity] ?? 1000) / 1000 });
 
-  // Beat 3 - the orb blows out, confetti fires, the room shakes.
+  // Beat 3 - the orb blows out, confetti fires, the room shakes, heavy impact boom.
   tl.call(() => {
+    playBurstSound(rarity);
     const live = $(".draw-stage", content);
     $(".draw-charge", content)?.classList.add("burst");
     live?.classList.add("flaring");
@@ -238,8 +278,11 @@ export function ripPack() {
   });
   tl.to({}, { duration: reduced ? 0 : (BURST_HOLD[rarity] ?? 0.34) });
 
-  // Beat 4 - the card lands.
-  tl.call(() => revealDraw(p, glow, allTaken));
+  // Beat 4 - the card lands with victory fanfare chime.
+  tl.call(() => {
+    playRevealChime(rarity);
+    revealDraw(p, glow, allTaken);
+  });
 }
 
 export async function revealDraw(p, glow, allTaken) {

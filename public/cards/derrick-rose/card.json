@@ -1,0 +1,36 @@
+{
+  "id": "derrick-rose",
+  "name": "Derrick Rose",
+  "number": "1",
+  "team": "Chicago",
+  "teamShort": "CHI",
+  "positions": [
+    "PG"
+  ],
+  "positionsZh": [
+    "控卫"
+  ],
+  "rarity": "ELITE",
+  "title": "WINDY CITY ASSASSIN",
+  "accent": "#ce1141",
+  "accent2": "#000000",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:20140814_World_Basketball_Festival_Derrick_Rose.JPG",
+  "sourceCredit": "Clement Bardot / Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/derrick-rose/front.webp",
+    "thumb": "/cards/derrick-rose/thumb.webp",
+    "layers": {
+      "subject": "/cards/derrick-rose/layers/subject.png",
+      "background": "/cards/derrick-rose/layers/background.png",
+      "lineart": "/cards/derrick-rose/layers/lineart.png",
+      "text": "/cards/derrick-rose/layers/text.png"
+    }
+  }
+}

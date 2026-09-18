@@ -1,0 +1,38 @@
+{
+  "id": "jimmy-butler",
+  "name": "Jimmy Butler",
+  "number": "22",
+  "team": "Miami",
+  "teamShort": "MIA",
+  "positions": [
+    "SF",
+    "SG"
+  ],
+  "positionsZh": [
+    "小前锋",
+    "分卫"
+  ],
+  "rarity": "ELITE",
+  "title": "JIMMY BUCKETS",
+  "accent": "#f9a01b",
+  "accent2": "#98002e",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jimmy_Butler.jpg",
+  "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+  "parameters": {
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/jimmy-butler/front.webp",
+    "thumb": "/cards/jimmy-butler/thumb.webp",
+    "layers": {
+      "subject": "/cards/jimmy-butler/layers/subject.png",
+      "background": "/cards/jimmy-butler/layers/background.png",
+      "lineart": "/cards/jimmy-butler/layers/lineart.png",
+      "text": "/cards/jimmy-butler/layers/text.png"
+    }
+  }
+}

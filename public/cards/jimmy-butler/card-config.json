@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "arena",
+  "title": "Jimmy Butler",
+  "subtitle": "JIMMY BUCKETS",
+  "collection": "CARD ARENA",
+  "edition": "No.22",
+  "description": "Miami · SF / SG",
+  "assets": {
+    "subject": "/cards/jimmy-butler/layers/subject.png",
+    "background": "/cards/jimmy-butler/layers/background.png",
+    "lineart": "/cards/jimmy-butler/layers/lineart.png",
+    "text": "/cards/jimmy-butler/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

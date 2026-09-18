@@ -1,0 +1,38 @@
+{
+  "id": "dirk-nowitzki",
+  "name": "Dirk Nowitzki",
+  "number": "41",
+  "team": "Dallas",
+  "teamShort": "DAL",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "DIRK DIGGLER",
+  "accent": "#00538c",
+  "accent2": "#b8c4ca",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dirk_Nowitzki_2011_08_28_Deutschland_vs._Mazedonien.jpg",
+  "sourceCredit": "Armin Kübelbeck / Wikimedia Commons, CC BY-SA 3.0",
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/dirk-nowitzki/front.webp",
+    "thumb": "/cards/dirk-nowitzki/thumb.webp",
+    "layers": {
+      "subject": "/cards/dirk-nowitzki/layers/subject.png",
+      "background": "/cards/dirk-nowitzki/layers/background.png",
+      "lineart": "/cards/dirk-nowitzki/layers/lineart.png",
+      "text": "/cards/dirk-nowitzki/layers/text.png"
+    }
+  }
+}

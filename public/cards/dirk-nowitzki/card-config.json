@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Dirk Nowitzki",
+  "subtitle": "DIRK DIGGLER",
+  "collection": "CARD ARENA",
+  "edition": "No.41",
+  "description": "Dallas · PF / C",
+  "assets": {
+    "subject": "/cards/dirk-nowitzki/layers/subject.png",
+    "background": "/cards/dirk-nowitzki/layers/background.png",
+    "lineart": "/cards/dirk-nowitzki/layers/lineart.png",
+    "text": "/cards/dirk-nowitzki/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

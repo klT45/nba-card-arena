@@ -49,7 +49,7 @@ npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 
 `lineart.png` 由主体 alpha 的 Canny 边缘生成，供着色器描边使用。
 
-## 卡池（27 位 · 4 档稀有度 · 覆盖五个位置）
+## 卡池（32 位 · 4 档稀有度 · 覆盖五个位置）
 
 | 稀有度 | 球员 | 位置 | 球队 | 卡面风格 |
 | --- | --- | --- | --- | --- |
@@ -60,18 +60,23 @@ npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 | MYTHIC | Kobe Bryant | SG / SF | LAL | 银河欧泊 · Galaxy Opal |
 | MYTHIC | Shaquille O'Neal | C | LAL | 炼狱风暴 · Inferno |
 | MYTHIC | Allen Iverson | PG / SG | PHI | 赛博错位 · Glitched |
+| MYTHIC | Dwyane Wade | SG / PG | MIA | 炼狱风暴 · Inferno |
+| MYTHIC | Dirk Nowitzki | PF / C | DAL | 无敌至臻 · Invincible |
 | ELITE | Giannis Antetokounmpo | PF / C | MIA | 炼狱风暴 · Inferno |
 | ELITE | Nikola Jokic | C | DEN | 无敌至臻 · Invincible |
 | ELITE | Luka Doncic | PG / SG | LAL | 银河欧泊 · Galaxy Opal |
 | ELITE | Jayson Tatum | SF / PF | BOS | 无敌至臻 · Invincible |
 | ELITE | Shai Gilgeous-Alexander | PG / SG | OKC | 银河欧泊 · Galaxy Opal |
 | ELITE | Kyrie Irving | PG / SG | DAL | 赛博错位 · Glitched |
+| ELITE | Derrick Rose | PG | CHI | 赛博错位 · Glitched |
+| ELITE | Jimmy Butler | SF / SG | MIA | 炼狱风暴 · Inferno |
 | RARE | Devin Booker | PG / SG | PHX | 炼狱风暴 · Inferno |
 | RARE | Victor Wembanyama | PF / C | SAS | 银河欧泊 · Galaxy Opal |
 | RARE | Anthony Edwards | SG / SF | MIN | 炼狱风暴 · Inferno |
 | RARE | Joel Embiid | C | PHI | 无敌至臻 · Invincible |
 | RARE | Anthony Davis | PF / C | WAS | 炼狱风暴 · Inferno |
 | RARE | Tyrese Haliburton | PG / SG | IND | 银河欧泊 · Galaxy Opal |
+| RARE | Paul George | SF / SG | PHI | 银河欧泊 · Galaxy Opal |
 | COMMON | Darius Garland | PG / SG | LAC | 银河欧泊 · Galaxy Opal |
 | COMMON | Trae Young | PG | WAS | 炼狱风暴 · Inferno |
 | COMMON | Cade Cunningham | PG / SG | DET | 无敌至臻 · Invincible |
