@@ -1,0 +1,36 @@
+{
+  "id": "chris-paul",
+  "name": "Chris Paul",
+  "number": "3",
+  "team": "San Antonio",
+  "teamShort": "SAS",
+  "positions": [
+    "PG"
+  ],
+  "positionsZh": [
+    "控卫"
+  ],
+  "rarity": "RARE",
+  "title": "POINT GOD",
+  "accent": "#c4ced4",
+  "accent2": "#000000",
+  "style": "atelier",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Paul_(51914946966).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "assets": {
+    "front": "/cards/chris-paul/front.webp",
+    "thumb": "/cards/chris-paul/thumb.webp",
+    "layers": {
+      "subject": "/cards/chris-paul/layers/subject.png",
+      "background": "/cards/chris-paul/layers/background.png",
+      "lineart": "/cards/chris-paul/layers/lineart.png",
+      "text": "/cards/chris-paul/layers/text.png"
+    }
+  }
+}

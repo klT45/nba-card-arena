@@ -690,6 +690,110 @@
       "style": "prism",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_paul_george_2026_(cropped)_(cropped).jpg",
       "sourceCredit": "All-Pro Reels / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "damian-lillard",
+      "name": "Damian Lillard",
+      "number": "0",
+      "team": "Milwaukee",
+      "teamShort": "MIL",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "DAME TIME",
+      "accent": "#00471b",
+      "accent2": "#eee1c6",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Damian_Lillard_(51658705299).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "ja-morant",
+      "name": "Ja Morant",
+      "number": "12",
+      "team": "Memphis",
+      "teamShort": "MEM",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "AIR CZAR",
+      "accent": "#5d76a9",
+      "accent2": "#12173f",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ja_Morant_(51913713967).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "vince-carter",
+      "name": "Vince Carter",
+      "number": "15",
+      "team": "Toronto",
+      "teamShort": "TOR",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "HALF MAN HALF AMAZING",
+      "accent": "#ce1141",
+      "accent2": "#753bbd",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vince_Carter_(cropped).jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "carmelo-anthony",
+      "name": "Carmelo Anthony",
+      "number": "7",
+      "team": "New York",
+      "teamShort": "NYK",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "ELITE",
+      "title": "SWEET MELO",
+      "accent": "#f58426",
+      "accent2": "#006bb6",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carmelo_Anthony_USA2012_(2).jpg",
+      "sourceCredit": "Christopher Johnson / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "chris-paul",
+      "name": "Chris Paul",
+      "number": "3",
+      "team": "San Antonio",
+      "teamShort": "SAS",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "RARE",
+      "title": "POINT GOD",
+      "accent": "#c4ced4",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Paul_(51914946966).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
     }
   ]
 }

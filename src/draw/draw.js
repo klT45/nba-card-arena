@@ -54,6 +54,7 @@ export const BURST_COLORS = {
 let drawTl = null;
 let drawTweens = [];
 let burst = null;
+let pendingCandidate = null;
 
 export function killDraw() {
   drawTl?.kill();
@@ -62,6 +63,7 @@ export function killDraw() {
   drawTweens = [];
   burst?.reset?.();
   burst = null;
+  pendingCandidate = null;
 }
 const track = (tween) => { drawTweens.push(tween); return tween; };
 
@@ -74,6 +76,22 @@ function mountConfetti(stage) {
   canvas.className = "draw-confetti";
   stage.append(canvas);
   return confetti.create(canvas, { resize: true, useWorker: false });
+}
+
+function preloadPlayerAssets(p) {
+  if (!p || !p.assets) return;
+  const urls = [
+    p.assets.front,
+    p.assets.thumb,
+    p.assets.layers?.subject,
+    p.assets.layers?.background,
+    p.assets.layers?.text,
+    p.assets.layers?.lineart,
+  ].filter(Boolean);
+  urls.forEach((u) => {
+    const img = new Image();
+    img.src = u;
+  });
 }
 
 function fireBurst(rarity) {
@@ -176,6 +194,12 @@ export function openDraw() {
   if (!dialog) return;
   const content = $("#draw-content");
   killDraw();
+  // 打开卡包瞬间即在后台预加载候选球员的所有卡面图层与 WebP，确保揭晓时 0ms 闪电直出
+  pendingCandidate = drawCandidate();
+  if (pendingCandidate?.player) {
+    preloadPlayerAssets(pendingCandidate.player);
+  }
+
   const soundOn = isSoundEnabled();
   content.innerHTML = `
     <div class="draw-stage">
@@ -254,25 +278,11 @@ export function ripPack() {
   const pack = $(".pack", content);
   if (!stage || !pack) return;
 
-  const { player: p, allTaken } = drawCandidate();
+  const { player: p, allTaken } = pendingCandidate || drawCandidate();
+  pendingCandidate = null;
   if (!p) return;
 
-  // Preload all assets in the background during the 2.5s rip & charge animation,
-  // so textures are already in browser memory when the card lands (0ms reveal lag).
-  if (p.assets) {
-    const urls = [
-      p.assets.front,
-      p.assets.thumb,
-      p.assets.layers?.subject,
-      p.assets.layers?.background,
-      p.assets.layers?.text,
-      p.assets.layers?.lineart,
-    ].filter(Boolean);
-    urls.forEach((u) => {
-      const img = new Image();
-      img.src = u;
-    });
-  }
+  preloadPlayerAssets(p);
 
   const rarity = rarityOf(p);
   const glow = glowOf(p);
@@ -339,14 +349,19 @@ export async function revealDraw(p, glow, allTaken) {
       <div class="draw-particles" aria-hidden="true"></div>
       <div class="draw-sparks" aria-hidden="true">${sparksHTML()}</div>
       <div class="draw-result">
-        <div class="holo-stage draw-holo" id="draw-holo"></div>
+        <div class="holo-stage draw-holo" id="draw-holo">
+          <img class="holo-fallback" src="${encodeURI(p.assets.front)}" alt="${esc(p.name)} 卡面">
+        </div>
         <p class="draw-rarity">${esc(p.rarity)} · ${esc(styleName(p.style))}</p>
         <h2>${esc(p.name)}</h2>
         <p class="draw-sub">${esc(positionText(p))} · ${esc(p.teamShort)}</p>
         ${note}
         ${controlsHTML("draw", p)}
         ${pickerHTML(p)}
-        <button class="skip" data-skip>暂不加入</button>
+        <div class="draw-foot-actions">
+          <button type="button" class="btn-redraw" data-redraw>⚡ 再抽一包</button>
+          <button type="button" class="skip" data-skip>暂不加入</button>
+        </div>
       </div>
     </div>`;
   if (falling) $(".draw-stage", content)?.append(falling);
@@ -368,21 +383,18 @@ export async function revealDraw(p, glow, allTaken) {
       }));
     }
     if (at(".draw-sub")) track(gsap.from(at(".draw-sub"), { opacity: 0, y: 10, duration: 0.34, delay: copyAt }));
-    [".draw-note", ".picker", ".skip"].forEach((sel) => {
+    [".draw-note", ".picker", ".draw-foot-actions"].forEach((sel) => {
       const el = at(sel);
       if (el) track(gsap.from(el, { opacity: 0, y: 16, duration: 0.42, delay: copyAt + 0.1 }));
     });
   }
 
   const drawStage = $("#draw-holo");
-  if (drawStage) {
-    drawStage.innerHTML = `<img class="holo-fallback" src="${encodeURI(p.assets.front)}" alt="${esc(p.name)} 卡面">`;
-    if (!prefersReducedMotion()) {
-      track(gsap.fromTo(drawStage,
-        { scale: 0.35, y: -90, opacity: 0, filter: "brightness(3)" },
-        { scale: 1, y: 0, opacity: 1, filter: "brightness(1)", duration: 0.65, ease: "back.out(1.4)" }
-      ));
-    }
+  if (drawStage && !prefersReducedMotion()) {
+    track(gsap.fromTo(drawStage,
+      { scale: 0.35, y: -90, opacity: 0, filter: "brightness(3)" },
+      { scale: 1, y: 0, opacity: 1, filter: "brightness(1)", duration: 0.65, ease: "back.out(1.4)" }
+    ));
   }
   const inst = await mountHolo($("#draw-holo"), p, { auto: false });
   inst?.reveal();

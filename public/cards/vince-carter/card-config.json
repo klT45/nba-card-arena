@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Vince Carter",
+  "subtitle": "HALF MAN HALF AMAZING",
+  "collection": "CARD ARENA",
+  "edition": "No.15",
+  "description": "Toronto · SG / SF",
+  "assets": {
+    "subject": "/cards/vince-carter/layers/subject.png",
+    "background": "/cards/vince-carter/layers/background.png",
+    "lineart": "/cards/vince-carter/layers/lineart.png",
+    "text": "/cards/vince-carter/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 1.0,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

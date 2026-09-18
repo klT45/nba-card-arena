@@ -1,0 +1,38 @@
+{
+  "id": "carmelo-anthony",
+  "name": "Carmelo Anthony",
+  "number": "7",
+  "team": "New York",
+  "teamShort": "NYK",
+  "positions": [
+    "SF",
+    "PF"
+  ],
+  "positionsZh": [
+    "小前锋",
+    "大前锋"
+  ],
+  "rarity": "ELITE",
+  "title": "SWEET MELO",
+  "accent": "#f58426",
+  "accent2": "#006bb6",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carmelo_Anthony_USA2012_(2).jpg",
+  "sourceCredit": "Christopher Johnson / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/carmelo-anthony/front.webp",
+    "thumb": "/cards/carmelo-anthony/thumb.webp",
+    "layers": {
+      "subject": "/cards/carmelo-anthony/layers/subject.png",
+      "background": "/cards/carmelo-anthony/layers/background.png",
+      "lineart": "/cards/carmelo-anthony/layers/lineart.png",
+      "text": "/cards/carmelo-anthony/layers/text.png"
+    }
+  }
+}

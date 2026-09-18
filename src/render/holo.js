@@ -348,6 +348,10 @@ export function createHoloCard(container, options = {}) {
     // still reads as "live" without anything actually travelling.
     uniforms.uAlive.value = aliveWanted(next) ? (reduced ? ALIVE_REDUCED : 1) : 0;
     container.classList.toggle("is-alive", uniforms.uAlive.value > 0.01);
+    if (renderer && renderer.domElement) {
+      renderer.render(scene, camera);
+      renderer.domElement.style.opacity = "1";
+    }
   }
 
   function init() {
@@ -356,6 +360,8 @@ export function createHoloCard(container, options = {}) {
     renderer.setPixelRatio(curPR);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.NoToneMapping;
+    renderer.domElement.style.opacity = "0";
+    renderer.domElement.style.transition = "opacity 0.28s ease-out";
     container.append(renderer.domElement);
 
     uniforms = {

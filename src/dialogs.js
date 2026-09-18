@@ -30,6 +30,7 @@ export function bindCardActions() {
     const chip = t.closest(".pos-chip");
     const heroDot = t.closest("[data-hero]");
     const skip = t.closest("[data-skip]");
+    const redraw = t.closest("[data-redraw]");
     const draw = t.closest('[data-action="draw"]');
 
     if (heroDot) {
@@ -51,6 +52,7 @@ export function bindCardActions() {
       closeDialog(confirm.closest("dialog"));
       return;
     }
+    if (redraw) { openDraw(); return; }
     if (skip) { closeDialog(skip.closest("dialog")); return; }
     if (detail) { openDetail(detail.dataset.detail); return; }
     if (add) { openDetail(add.dataset.add); return; }

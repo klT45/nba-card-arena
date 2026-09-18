@@ -1,0 +1,36 @@
+{
+  "id": "ja-morant",
+  "name": "Ja Morant",
+  "number": "12",
+  "team": "Memphis",
+  "teamShort": "MEM",
+  "positions": [
+    "PG"
+  ],
+  "positionsZh": [
+    "控卫"
+  ],
+  "rarity": "ELITE",
+  "title": "AIR CZAR",
+  "accent": "#5d76a9",
+  "accent2": "#12173f",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ja_Morant_(51913713967).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/ja-morant/front.webp",
+    "thumb": "/cards/ja-morant/thumb.webp",
+    "layers": {
+      "subject": "/cards/ja-morant/layers/subject.png",
+      "background": "/cards/ja-morant/layers/background.png",
+      "lineart": "/cards/ja-morant/layers/lineart.png",
+      "text": "/cards/ja-morant/layers/text.png"
+    }
+  }
+}

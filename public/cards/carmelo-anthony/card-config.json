@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Carmelo Anthony",
+  "subtitle": "SWEET MELO",
+  "collection": "CARD ARENA",
+  "edition": "No.7",
+  "description": "New York · SF / PF",
+  "assets": {
+    "subject": "/cards/carmelo-anthony/layers/subject.png",
+    "background": "/cards/carmelo-anthony/layers/background.png",
+    "lineart": "/cards/carmelo-anthony/layers/lineart.png",
+    "text": "/cards/carmelo-anthony/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

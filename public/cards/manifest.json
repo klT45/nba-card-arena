@@ -1229,6 +1229,190 @@
           "text": "/cards/paul-george/layers/text.png"
         }
       }
+    },
+    {
+      "id": "damian-lillard",
+      "name": "Damian Lillard",
+      "number": "0",
+      "team": "Milwaukee",
+      "teamShort": "MIL",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "DAME TIME",
+      "accent": "#00471b",
+      "accent2": "#eee1c6",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Damian_Lillard_(51658705299).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/damian-lillard/front.webp",
+        "thumb": "/cards/damian-lillard/thumb.webp",
+        "layers": {
+          "subject": "/cards/damian-lillard/layers/subject.png",
+          "background": "/cards/damian-lillard/layers/background.png",
+          "lineart": "/cards/damian-lillard/layers/lineart.png",
+          "text": "/cards/damian-lillard/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "ja-morant",
+      "name": "Ja Morant",
+      "number": "12",
+      "team": "Memphis",
+      "teamShort": "MEM",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "AIR CZAR",
+      "accent": "#5d76a9",
+      "accent2": "#12173f",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ja_Morant_(51913713967).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/ja-morant/front.webp",
+        "thumb": "/cards/ja-morant/thumb.webp",
+        "layers": {
+          "subject": "/cards/ja-morant/layers/subject.png",
+          "background": "/cards/ja-morant/layers/background.png",
+          "lineart": "/cards/ja-morant/layers/lineart.png",
+          "text": "/cards/ja-morant/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "vince-carter",
+      "name": "Vince Carter",
+      "number": "15",
+      "team": "Toronto",
+      "teamShort": "TOR",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "HALF MAN HALF AMAZING",
+      "accent": "#ce1141",
+      "accent2": "#753bbd",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vince_Carter_(cropped).jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 1.0,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/vince-carter/front.webp",
+        "thumb": "/cards/vince-carter/thumb.webp",
+        "layers": {
+          "subject": "/cards/vince-carter/layers/subject.png",
+          "background": "/cards/vince-carter/layers/background.png",
+          "lineart": "/cards/vince-carter/layers/lineart.png",
+          "text": "/cards/vince-carter/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "carmelo-anthony",
+      "name": "Carmelo Anthony",
+      "number": "7",
+      "team": "New York",
+      "teamShort": "NYK",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "ELITE",
+      "title": "SWEET MELO",
+      "accent": "#f58426",
+      "accent2": "#006bb6",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carmelo_Anthony_USA2012_(2).jpg",
+      "sourceCredit": "Christopher Johnson / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.88,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/carmelo-anthony/front.webp",
+        "thumb": "/cards/carmelo-anthony/thumb.webp",
+        "layers": {
+          "subject": "/cards/carmelo-anthony/layers/subject.png",
+          "background": "/cards/carmelo-anthony/layers/background.png",
+          "lineart": "/cards/carmelo-anthony/layers/lineart.png",
+          "text": "/cards/carmelo-anthony/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "chris-paul",
+      "name": "Chris Paul",
+      "number": "3",
+      "team": "San Antonio",
+      "teamShort": "SAS",
+      "positions": [
+        "PG"
+      ],
+      "positionsZh": [
+        "控卫"
+      ],
+      "rarity": "RARE",
+      "title": "POINT GOD",
+      "accent": "#c4ced4",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Paul_(51914946966).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 1.15,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.24
+      },
+      "assets": {
+        "front": "/cards/chris-paul/front.webp",
+        "thumb": "/cards/chris-paul/thumb.webp",
+        "layers": {
+          "subject": "/cards/chris-paul/layers/subject.png",
+          "background": "/cards/chris-paul/layers/background.png",
+          "lineart": "/cards/chris-paul/layers/lineart.png",
+          "text": "/cards/chris-paul/layers/text.png"
+        }
+      }
     }
   ]
 }

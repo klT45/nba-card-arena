@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "atelier",
+  "title": "Chris Paul",
+  "subtitle": "POINT GOD",
+  "collection": "CARD ARENA",
+  "edition": "No.3",
+  "description": "San Antonio · PG",
+  "assets": {
+    "subject": "/cards/chris-paul/layers/subject.png",
+    "background": "/cards/chris-paul/layers/background.png",
+    "lineart": "/cards/chris-paul/layers/lineart.png",
+    "text": "/cards/chris-paul/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

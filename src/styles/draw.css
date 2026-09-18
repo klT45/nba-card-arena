@@ -348,7 +348,49 @@
 }
 .draw-result .picker, .draw-result .holo-controls { width: 100%; text-align: left; }
 .draw-result .holo-controls { margin-top: 16px; }
-.skip { margin-top: 12px; padding: 12px; color: var(--text-3); font: 700 12px/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase; transition: color .2s; }
+.draw-foot-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 14px;
+}
+.btn-redraw {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(201, 255, 61, 0.16), rgba(201, 255, 61, 0.04));
+  border: 1px solid var(--brand);
+  border-radius: var(--r-full);
+  color: var(--brand);
+  font: 800 12.5px/1 var(--font-display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .2s var(--ease), background .2s, box-shadow .2s;
+}
+.btn-redraw:hover {
+  background: linear-gradient(135deg, rgba(201, 255, 61, 0.28), rgba(201, 255, 61, 0.1));
+  box-shadow: 0 0 20px rgba(201, 255, 61, 0.35);
+  transform: translateY(-2px);
+}
+.btn-redraw:active {
+  transform: translateY(0);
+}
+.skip {
+  padding: 10px 16px;
+  color: var(--text-3);
+  font: 700 12px/1 var(--font-display);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: color .2s;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
 .skip:hover { color: var(--text); }
 
 /* Confetti canvas. It has to live *inside* .draw-stage: <dialog showModal()>
