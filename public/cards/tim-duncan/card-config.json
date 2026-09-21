@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "gold",
+  "title": "Tim Duncan",
+  "subtitle": "THE BIG FUNDAMENTAL",
+  "collection": "CARD ARENA",
+  "edition": "No.21",
+  "description": "San Antonio · PF / C",
+  "assets": {
+    "subject": "/cards/tim-duncan/layers/subject.png",
+    "background": "/cards/tim-duncan/layers/background.png",
+    "lineart": "/cards/tim-duncan/layers/lineart.png",
+    "text": "/cards/tim-duncan/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

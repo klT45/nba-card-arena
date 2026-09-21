@@ -1413,6 +1413,196 @@
           "text": "/cards/chris-paul/layers/text.png"
         }
       }
+    },
+    {
+      "id": "james-harden",
+      "name": "James Harden",
+      "number": "13",
+      "team": "Brooklyn",
+      "teamShort": "BKN",
+      "positions": [
+        "SG",
+        "PG"
+      ],
+      "positionsZh": [
+        "分卫",
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "THE BEARD",
+      "accent": "#000000",
+      "accent2": "#707372",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Harden_-_51831879443_(cropped).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.94,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/james-harden/front.webp",
+        "thumb": "/cards/james-harden/thumb.webp",
+        "layers": {
+          "subject": "/cards/james-harden/layers/subject.png",
+          "background": "/cards/james-harden/layers/background.png",
+          "lineart": "/cards/james-harden/layers/lineart.png",
+          "text": "/cards/james-harden/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "kawhi-leonard",
+      "name": "Kawhi Leonard",
+      "number": "2",
+      "team": "Toronto",
+      "teamShort": "TOR",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE CLAW",
+      "accent": "#ce1141",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_kawhi_leonard_2019_nba_finals_(cropped).jpg",
+      "sourceCredit": "All-Pro Reels / Wikimedia Commons, CC BY-SA 4.0",
+      "parameters": {
+        "foil": 1.15,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.36,
+        "backgroundDepth": -0.24
+      },
+      "assets": {
+        "front": "/cards/kawhi-leonard/front.webp",
+        "thumb": "/cards/kawhi-leonard/thumb.webp",
+        "layers": {
+          "subject": "/cards/kawhi-leonard/layers/subject.png",
+          "background": "/cards/kawhi-leonard/layers/background.png",
+          "lineart": "/cards/kawhi-leonard/layers/lineart.png",
+          "text": "/cards/kawhi-leonard/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "tim-duncan",
+      "name": "Tim Duncan",
+      "number": "21",
+      "team": "San Antonio",
+      "teamShort": "SAS",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE BIG FUNDAMENTAL",
+      "accent": "#c4ced4",
+      "accent2": "#000000",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Duncan_free_throw.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY 2.0",
+      "parameters": {
+        "foil": 0.88,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/tim-duncan/front.webp",
+        "thumb": "/cards/tim-duncan/thumb.webp",
+        "layers": {
+          "subject": "/cards/tim-duncan/layers/subject.png",
+          "background": "/cards/tim-duncan/layers/background.png",
+          "lineart": "/cards/tim-duncan/layers/lineart.png",
+          "text": "/cards/tim-duncan/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "kevin-garnett",
+      "name": "Kevin Garnett",
+      "number": "5",
+      "team": "Boston",
+      "teamShort": "BOS",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "ELITE",
+      "title": "THE BIG TICKET",
+      "accent": "#007a33",
+      "accent2": "#ba9653",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Garnett_in_Green.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+      "parameters": {
+        "foil": 0.9,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.32,
+        "backgroundDepth": -0.18
+      },
+      "assets": {
+        "front": "/cards/kevin-garnett/front.webp",
+        "thumb": "/cards/kevin-garnett/thumb.webp",
+        "layers": {
+          "subject": "/cards/kevin-garnett/layers/subject.png",
+          "background": "/cards/kevin-garnett/layers/background.png",
+          "lineart": "/cards/kevin-garnett/layers/lineart.png",
+          "text": "/cards/kevin-garnett/layers/text.png"
+        }
+      }
+    },
+    {
+      "id": "klay-thompson",
+      "name": "Klay Thompson",
+      "number": "11",
+      "team": "Golden State",
+      "teamShort": "GSW",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "RARE",
+      "title": "SPLASH BROTHER",
+      "accent": "#1d428a",
+      "accent2": "#ffc72c",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Klay_Thompson_vs._Jared_Dudley_(cropped).jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+      "parameters": {
+        "foil": 1.0,
+        "subjectScale": 1.05,
+        "subjectDepth": 0.34,
+        "backgroundDepth": -0.2
+      },
+      "assets": {
+        "front": "/cards/klay-thompson/front.webp",
+        "thumb": "/cards/klay-thompson/thumb.webp",
+        "layers": {
+          "subject": "/cards/klay-thompson/layers/subject.png",
+          "background": "/cards/klay-thompson/layers/background.png",
+          "lineart": "/cards/klay-thompson/layers/lineart.png",
+          "text": "/cards/klay-thompson/layers/text.png"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "id": "kawhi-leonard",
+  "name": "Kawhi Leonard",
+  "number": "2",
+  "team": "Toronto",
+  "teamShort": "TOR",
+  "positions": [
+    "SF",
+    "PF"
+  ],
+  "positionsZh": [
+    "小前锋",
+    "大前锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE CLAW",
+  "accent": "#ce1141",
+  "accent2": "#000000",
+  "style": "atelier",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_kawhi_leonard_2019_nba_finals_(cropped).jpg",
+  "sourceCredit": "All-Pro Reels / Wikimedia Commons, CC BY-SA 4.0",
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "assets": {
+    "front": "/cards/kawhi-leonard/front.webp",
+    "thumb": "/cards/kawhi-leonard/thumb.webp",
+    "layers": {
+      "subject": "/cards/kawhi-leonard/layers/subject.png",
+      "background": "/cards/kawhi-leonard/layers/background.png",
+      "lineart": "/cards/kawhi-leonard/layers/lineart.png",
+      "text": "/cards/kawhi-leonard/layers/text.png"
+    }
+  }
+}

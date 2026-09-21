@@ -1,0 +1,38 @@
+{
+  "id": "james-harden",
+  "name": "James Harden",
+  "number": "13",
+  "team": "Brooklyn",
+  "teamShort": "BKN",
+  "positions": [
+    "SG",
+    "PG"
+  ],
+  "positionsZh": [
+    "分卫",
+    "控卫"
+  ],
+  "rarity": "ELITE",
+  "title": "THE BEARD",
+  "accent": "#000000",
+  "accent2": "#707372",
+  "style": "ink",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Harden_-_51831879443_(cropped).jpg",
+  "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.94,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/james-harden/front.webp",
+    "thumb": "/cards/james-harden/thumb.webp",
+    "layers": {
+      "subject": "/cards/james-harden/layers/subject.png",
+      "background": "/cards/james-harden/layers/background.png",
+      "lineart": "/cards/james-harden/layers/lineart.png",
+      "text": "/cards/james-harden/layers/text.png"
+    }
+  }
+}

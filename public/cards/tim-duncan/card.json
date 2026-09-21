@@ -1,0 +1,38 @@
+{
+  "id": "tim-duncan",
+  "name": "Tim Duncan",
+  "number": "21",
+  "team": "San Antonio",
+  "teamShort": "SAS",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "MYTHIC",
+  "title": "THE BIG FUNDAMENTAL",
+  "accent": "#c4ced4",
+  "accent2": "#000000",
+  "style": "gold",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Duncan_free_throw.jpg",
+  "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY 2.0",
+  "parameters": {
+    "foil": 0.88,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "assets": {
+    "front": "/cards/tim-duncan/front.webp",
+    "thumb": "/cards/tim-duncan/thumb.webp",
+    "layers": {
+      "subject": "/cards/tim-duncan/layers/subject.png",
+      "background": "/cards/tim-duncan/layers/background.png",
+      "lineart": "/cards/tim-duncan/layers/lineart.png",
+      "text": "/cards/tim-duncan/layers/text.png"
+    }
+  }
+}

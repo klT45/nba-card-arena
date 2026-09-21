@@ -794,6 +794,116 @@
       "style": "atelier",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Paul_(51914946966).jpg",
       "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "james-harden",
+      "name": "James Harden",
+      "number": "13",
+      "team": "Brooklyn",
+      "teamShort": "BKN",
+      "positions": [
+        "SG",
+        "PG"
+      ],
+      "positionsZh": [
+        "分卫",
+        "控卫"
+      ],
+      "rarity": "ELITE",
+      "title": "THE BEARD",
+      "accent": "#000000",
+      "accent2": "#707372",
+      "style": "ink",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Harden_-_51831879443_(cropped).jpg",
+      "sourceCredit": "Erik Drost / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "kawhi-leonard",
+      "name": "Kawhi Leonard",
+      "number": "2",
+      "team": "Toronto",
+      "teamShort": "TOR",
+      "positions": [
+        "SF",
+        "PF"
+      ],
+      "positionsZh": [
+        "小前锋",
+        "大前锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE CLAW",
+      "accent": "#ce1141",
+      "accent2": "#000000",
+      "style": "atelier",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_kawhi_leonard_2019_nba_finals_(cropped).jpg",
+      "sourceCredit": "All-Pro Reels / Wikimedia Commons, CC BY-SA 4.0"
+    },
+    {
+      "id": "tim-duncan",
+      "name": "Tim Duncan",
+      "number": "21",
+      "team": "San Antonio",
+      "teamShort": "SAS",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "MYTHIC",
+      "title": "THE BIG FUNDAMENTAL",
+      "accent": "#c4ced4",
+      "accent2": "#000000",
+      "style": "gold",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Duncan_free_throw.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY 2.0"
+    },
+    {
+      "id": "kevin-garnett",
+      "name": "Kevin Garnett",
+      "number": "5",
+      "team": "Boston",
+      "teamShort": "BOS",
+      "positions": [
+        "PF",
+        "C"
+      ],
+      "positionsZh": [
+        "大前锋",
+        "中锋"
+      ],
+      "rarity": "ELITE",
+      "title": "THE BIG TICKET",
+      "accent": "#007a33",
+      "accent2": "#ba9653",
+      "style": "arena",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Garnett_in_Green.jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0"
+    },
+    {
+      "id": "klay-thompson",
+      "name": "Klay Thompson",
+      "number": "11",
+      "team": "Golden State",
+      "teamShort": "GSW",
+      "positions": [
+        "SG",
+        "SF"
+      ],
+      "positionsZh": [
+        "分卫",
+        "小前锋"
+      ],
+      "rarity": "RARE",
+      "title": "SPLASH BROTHER",
+      "accent": "#1d428a",
+      "accent2": "#ffc72c",
+      "style": "prism",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Klay_Thompson_vs._Jared_Dudley_(cropped).jpg",
+      "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0"
     }
   ]
 }

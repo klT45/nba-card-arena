@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "prism",
+  "title": "Klay Thompson",
+  "subtitle": "SPLASH BROTHER",
+  "collection": "CARD ARENA",
+  "edition": "No.11",
+  "description": "Golden State · SG / SF",
+  "assets": {
+    "subject": "/cards/klay-thompson/layers/subject.png",
+    "background": "/cards/klay-thompson/layers/background.png",
+    "lineart": "/cards/klay-thompson/layers/lineart.png",
+    "text": "/cards/klay-thompson/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 1.0,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.34,
+    "backgroundDepth": -0.2
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

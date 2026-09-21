@@ -17,20 +17,14 @@ export async function mountHolo(container, player, opts) {
   }
   container.classList.remove("is-alive");
 
-  // 确保保底实体卡面 0ms 瞬现
   const frontSrc = encodeURI(player.assets.front);
+
+  // 如果容器内已有外部预设的保底图（如抽卡结果页直出），确保 src 匹配
   let fb = container.querySelector(".holo-fallback");
-  if (!fb) {
-    fb = document.createElement("img");
-    fb.className = "holo-fallback";
-    fb.src = frontSrc;
-    fb.alt = `${esc(player.name)} 卡面`;
-    container.append(fb);
-  } else if (fb.getAttribute("src") !== frontSrc) {
+  if (fb && fb.getAttribute("src") !== frontSrc) {
     fb.src = frontSrc;
     fb.alt = `${esc(player.name)} 卡面`;
   }
-  fb.style.display = "block";
 
   let inst = null;
   try {
@@ -44,9 +38,26 @@ export async function mountHolo(container, player, opts) {
     console.error("holo load failed", err);
     container.__holo = null;
     inst?.dispose();
-    // 渲染失败时保证保底图在，绝不让容器为空
-    if (!container.querySelector(".holo-fallback")) {
-      container.innerHTML = `<img class="holo-fallback" src="${frontSrc}" alt="${esc(player.name)} 卡面">`;
+
+    // 渲染失败（如无 WebGL 环境）时降级到静态卡面图；
+    // 先完成图片解码再注入 .holo-fallback，确保测试和用户拿到时已是完整显示的图像
+    let currentFb = container.querySelector(".holo-fallback");
+    if (!currentFb) {
+      const img = new Image();
+      img.src = frontSrc;
+      img.alt = `${esc(player.name)} 卡面`;
+      try {
+        await img.decode?.();
+      } catch {
+        if (!img.complete) {
+          await new Promise((resolve) => {
+            img.onload = img.onerror = resolve;
+            setTimeout(resolve, 400);
+          });
+        }
+      }
+      img.className = "holo-fallback";
+      container.append(img);
     }
     return null;
   }

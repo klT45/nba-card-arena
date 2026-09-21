@@ -1,0 +1,29 @@
+{
+  "mode": "holographic",
+  "style": "atelier",
+  "title": "Kawhi Leonard",
+  "subtitle": "THE CLAW",
+  "collection": "CARD ARENA",
+  "edition": "No.2",
+  "description": "Toronto · SF / PF",
+  "assets": {
+    "subject": "/cards/kawhi-leonard/layers/subject.png",
+    "background": "/cards/kawhi-leonard/layers/background.png",
+    "lineart": "/cards/kawhi-leonard/layers/lineart.png",
+    "text": "/cards/kawhi-leonard/layers/text.png",
+    "model": ""
+  },
+  "parameters": {
+    "foil": 1.15,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.36,
+    "backgroundDepth": -0.24
+  },
+  "safeArea": {
+    "scale": 1.0,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

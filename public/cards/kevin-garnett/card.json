@@ -1,0 +1,38 @@
+{
+  "id": "kevin-garnett",
+  "name": "Kevin Garnett",
+  "number": "5",
+  "team": "Boston",
+  "teamShort": "BOS",
+  "positions": [
+    "PF",
+    "C"
+  ],
+  "positionsZh": [
+    "大前锋",
+    "中锋"
+  ],
+  "rarity": "ELITE",
+  "title": "THE BIG TICKET",
+  "accent": "#007a33",
+  "accent2": "#ba9653",
+  "style": "arena",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kevin_Garnett_in_Green.jpg",
+  "sourceCredit": "Keith Allison / Wikimedia Commons, CC BY-SA 2.0",
+  "parameters": {
+    "foil": 0.9,
+    "subjectScale": 1.05,
+    "subjectDepth": 0.32,
+    "backgroundDepth": -0.18
+  },
+  "assets": {
+    "front": "/cards/kevin-garnett/front.webp",
+    "thumb": "/cards/kevin-garnett/thumb.webp",
+    "layers": {
+      "subject": "/cards/kevin-garnett/layers/subject.png",
+      "background": "/cards/kevin-garnett/layers/background.png",
+      "lineart": "/cards/kevin-garnett/layers/lineart.png",
+      "text": "/cards/kevin-garnett/layers/text.png"
+    }
+  }
+}
