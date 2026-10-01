@@ -36,7 +36,7 @@ for (const kind of Object.keys(NEED)) {
 
 console.log("");
 if (allOk) {
-  console.log("全部就绪。运行 npm run dev 后打开 http://127.0.0.1:5173/admin.html 即可编辑卡片。");
+  console.log("全部就绪。运行 npm run dev 后打开 http://127.0.0.1:5170/admin.html 即可编辑卡片。");
 } else {
   console.log("修复方式（任选其一）：");
   console.log('  1) 给该解释器装依赖： "' + resolved + '" -m pip install rembg onnxruntime pillow numpy opencv-python scipy');

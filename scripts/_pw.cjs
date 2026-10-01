@@ -58,5 +58,5 @@ if (!EXE) {
 module.exports = {
   chromium: mod.chromium,
   EXE,
-  BASE: process.env.BASE || 'http://127.0.0.1:5173',
+  BASE: process.env.BASE || 'http://127.0.0.1:5170',
 };

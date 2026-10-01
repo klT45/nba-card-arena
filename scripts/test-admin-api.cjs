@@ -65,7 +65,7 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 const { execFileSync } = require("node:child_process");
 
-const BASE = process.env.BASE || "http://localhost:5173";
+const BASE = process.env.BASE || "http://localhost:5170";
 const ROOT = path.resolve(__dirname, "..");
 const LIB = path.join(ROOT, "cards", "library", "players.json");
 const MANIFEST = path.join(ROOT, "public", "cards", "manifest.json");

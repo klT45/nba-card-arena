@@ -299,7 +299,7 @@ async function boot() {
     notice(`共 ${state.players.length} 位球员。选择左侧球员即可编辑；切换「卡面风格」后点「保存并重建」。`, "ok");
   } catch (e) {
     $("#api-state").textContent = "接口不可用";
-    notice("管理接口只在本地开发模式可用：请先运行 npm run dev，再打开 http://127.0.0.1:5173/admin.html。", "warn");
+    notice("管理接口只在本地开发模式可用：请先运行 npm run dev，再打开 http://127.0.0.1:5170/admin.html。", "warn");
   }
 }
 

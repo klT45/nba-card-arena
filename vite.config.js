@@ -9,7 +9,7 @@ const base = rawBase === "./" ? "./" : (rawBase.startsWith("/") ? rawBase : `/${
 export default defineConfig({
   base,
   plugins: [adminApi()],
-  server: { host: "127.0.0.1", port: 5173 },
+  server: { host: "127.0.0.1", port: 5170 },
   preview: { host: "127.0.0.1", port: 4174 },
   build: {
     rollupOptions: {

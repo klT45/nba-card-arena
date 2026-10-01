@@ -15,7 +15,7 @@ npm run doctor          # 检查 Python 解释器与依赖是否就绪（换图�
 npm run source:players  # （可选）从 Wikimedia Commons 采集候选比赛照并自动选优
 npm run cutouts         # BiRefNet 抠图 → cards/library/<id>/cutout.png
 npm run build:cards     # 依据球员库生成 22 张卡的图层与静态图
-npm run dev             # http://127.0.0.1:5173 （同时提供卡库管理接口）
+npm run dev             # http://127.0.0.1:5170 （同时提供卡库管理接口）
 npm run preview         # http://127.0.0.1:4174 （生产构建预览）
 ```
 
@@ -200,7 +200,7 @@ float tremble = sin(uTime * 7.3 + p.y * 42.)* .0007 * hh;  // 微颤：避免机
 
 ## 回归脚本
 
-以下脚本需要先 `npm run dev` 起服务（默认打 `http://127.0.0.1:5173`，
+以下脚本需要先 `npm run dev` 起服务（默认打 `http://127.0.0.1:5170`，
 可用 `BASE=http://127.0.0.1:xxxx` 覆盖）。它们共用 `scripts/_pw.cjs` 解析
 `playwright-core` 与 Chromium，不需要预先设 `NODE_PATH`。
 
@@ -524,7 +524,7 @@ cards/library/
 
 ## 卡库管理后台
 
-本地开发模式下访问 **http://127.0.0.1:5173/admin.html**（展厅页脚也有「卡库管理 ↗」入口）。
+本地开发模式下访问 **http://127.0.0.1:5170/admin.html**（展厅页脚也有「卡库管理 ↗」入口）。
 
 - 逐位球员编辑：姓名、号码、球队、称号、稀有度、**卡面风格**、多选位置、主辅色、素材署名；
 - 上传 / 拖拽替换该球员的图片 → 自动调用 rembg 抠图 → 自动重建该卡 → 即时预览；
@@ -569,7 +569,7 @@ set CARD_ARENA_PYTHON=C:\path\to\python.exe
 export CARD_ARENA_PYTHON=/path/to/python
 ```
 
-也可以直接问接口：`curl http://127.0.0.1:5173/api/doctor`。
+也可以直接问接口：`curl http://127.0.0.1:5170/api/doctor`。
 
 > 两个检查是分开的：**重建卡面**只需要 Pillow / numpy / opencv / scipy；
 > **上传换图**才额外需要 rembg / onnxruntime。所以即使没装 rembg，改名字、
